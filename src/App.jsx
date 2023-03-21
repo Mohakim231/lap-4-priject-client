@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path='/' element={<NavBar />}>
           <Route index element={<Home/>}/>
-          <Route path="/signup" component={<SignUp/>} />
-          <Route path="/login" component={<Login/>} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/login" element={<Login/>} />
         </Route>
       </Routes>
     </div>
