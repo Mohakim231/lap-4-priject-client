@@ -4,6 +4,7 @@ import Login from "./Login"
 // import PrivateRoute from "./PrivateRoute"
 import SignUp from "./Signup"
 import { NavBar } from './layout'
+import Services from "./Services"
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path="/signup" element={<SignUp/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/services" element={<Services/>} />
         </Route>
       </Routes>
     </div>
