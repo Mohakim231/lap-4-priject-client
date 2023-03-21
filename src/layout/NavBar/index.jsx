@@ -1,11 +1,7 @@
-import React from "react";
-import { NavLink, useLocation, Outlet } from "react-router-dom";
-// import './style.css'
 
-const LocationDisplay = () => {
-  const location = useLocation();
-  return <span>{location.pathname}</span>;
-};
+import React from 'react';
+import { NavLink,  Outlet } from 'react-router-dom'
+
 
 function NavBar() {
   const activeStyle = {
@@ -15,9 +11,10 @@ function NavBar() {
 
   return (
     <>
+
       <nav className="navbar">
         <h2>
-          <LocationDisplay />
+          Pet Pal
         </h2>
         <ul className="nav-links">
           <li>
@@ -47,6 +44,7 @@ function NavBar() {
         </ul>
       </nav>
       <Outlet />
+
     </>
   );
 }
