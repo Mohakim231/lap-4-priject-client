@@ -1,0 +1,32 @@
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex: 1;
+}
+.card-holder{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+.prov-card {
+    margin: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px #777;
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+.details-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 100%;
+}
