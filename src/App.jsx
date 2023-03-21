@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./Home"
 import Login from "./Login"
-import PrivateRoute from "./PrivateRoute"
+// import PrivateRoute from "./PrivateRoute"
 import SignUp from "./Signup"
 import { NavBar } from './layout'
 

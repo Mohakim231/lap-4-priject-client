@@ -1,11 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation, Outlet } from 'react-router-dom'
-// import './style.css'
-
-const LocationDisplay = () => {
-    const location = useLocation()
-    return <span>{location.pathname}</span>
-}
+import { NavLink,  Outlet } from 'react-router-dom'
 
 function NavBar() {
 
@@ -17,7 +11,7 @@ function NavBar() {
   return (
     <>
         <nav className="navbar">
-            <h2><LocationDisplay /></h2>
+            <h2>Pet Pal</h2>
             <ul className="nav-links">
                 <li>
                     <NavLink
