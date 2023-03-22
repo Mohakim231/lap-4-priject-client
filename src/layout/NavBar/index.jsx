@@ -71,6 +71,32 @@ function NavBar() {
             <div className="bar2"></div>
             <div className="bar3"></div>
           </div>
+          <ul className="nav-links-menu">
+          <li className='navbar-list-item'>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to="/login"
+            >
+              Login
+            </NavLink>
+          </li>
+          <li className='navbar-list-item'>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to="/signup"
+            >
+              Signup
+            </NavLink>
+          </li>
+          <li className='navbar-list-item'>
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to="/pet-profile"
+            >
+              Pet Profile
+            </NavLink>
+          </li>
+        </ul>
         </div>
       </nav>
       <Outlet/>
