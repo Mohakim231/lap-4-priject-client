@@ -19,6 +19,24 @@ const Home = () => {
         >
           Explore Services
         </Link></h2>
+
+        <div className="services">
+          <div className='service'>
+            Sitters
+          </div>
+          <div className='service'>
+            Walkers
+          </div>
+          <div className='service'>
+            Groomers
+          </div>
+          <div className='service'>
+            Vets
+          </div>
+          <div className='service'>
+            Trainers
+          </div>
+        </div>
       
       
     </div>

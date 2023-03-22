@@ -9,7 +9,6 @@
   
 }
 
-
 .welcome-and-image {
     display: flex;
     flex-direction: row;
@@ -24,25 +23,98 @@
     padding-left: 5vh;
 }
 
-/* .home-page h1 {
-    font-size: 2.5em;
-    margin: 0;
-    padding: 0.3em;
-    color: #fff;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    opacity: 0;
-    background-color: lightseagreen;
-  animation-name: rotating-text-1;
+.services {
+    display: flex;
+    flex-direction: row;
+}
+
+.service {
+    padding: 5vw;
+    
+}
+
+
+/* 
+.welcome-and-image {
+	position: relative;
+	margin: 0;
+	line-height: 1;
+	transform: translateY(10rem);
+	animation: up 1000ms linear forwards;
+	z-index: 1;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+}
+.welcome-and-image::before,
+.welcome-and-image::after {
+		position: absolute;
+		content: '';
+		width: 0px;
+		height: 1px;
+		left: 0;
+		background-color: rgba(0,0,0,0.2);
+		z-index: -1;
+	}
+	
+	.welcome-and-image::before {
+		top: 0.4rem;
+		animation: draw 500ms linear 1s forwards;
+	}
+	
+	.welcome-and-image::after {
+		bottom: 0.4rem;
+		animation: draw 500ms linear 1s forwards;
+	}
+	
+
+
+.welcome-and-image{
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+}
+
+@keyframes up {
+	
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes draw {
+	
+	100% {
+		width: 100%;
+	}
+} */
+
+/* slide in animations */
+/* .welcome-image {
+    animation: slide-left 4s;
+    margin-top:0%;
+  }
+  
+  @keyframes slide-left {
+    from {
+      margin-left: 100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }
+
+  .welcome {
+    animation: slide-right 4s;
+    margin-top:0%;
+  }
+  
+  @keyframes slide-right {
+    from {
+      margin-right: 100%;
+    }
+    to {
+      margin-right: 0%;
+    }
   } */
 
-  /* @keyframes rotating-text-1 {
 
-        0% {
-          transform: translateY(250px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      } */
