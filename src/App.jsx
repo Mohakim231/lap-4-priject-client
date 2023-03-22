@@ -1,4 +1,3 @@
-
 import { Route, Routes } from "react-router-dom"
 import Home from "./Pages/Home"
 import Login from "./Login"
@@ -11,6 +10,7 @@ import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
 import './App.css'
 
+
 function App() {
   return (
     <div className="App">
@@ -21,7 +21,7 @@ function App() {
             <Route path="/signup" element={<SignUp/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/services" element={<Services/>} />
-            <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
+            <Route path="/pet-profile" element={<PrivateRoute><PetProfile/></PrivateRoute>} />
           </Route>
         </Routes>
       {/* </AuthProvider> */}
