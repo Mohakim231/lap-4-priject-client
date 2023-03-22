@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <div className='welcome-and-image'>
-        <h1 className='welcome'>Welcome to PetPal</h1>
+        <h1 className='welcome'>Welcome to PetPal</h1> 
         <img src="../../../paw.png" alt="paw" className='welcome-image'/>
       </div>
       <em>All your pet needs in one convenient place</em>

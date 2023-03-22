@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 .home-page {
-    /* padding-top: 100px; */
-    height: 90vh;
+    padding-top: 100px;
+    /* height: 90vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: "Sequel Sans Display";
   
 }
 
@@ -26,10 +28,26 @@
 .services {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #699759;
+    margin-top: 5vh;
+    width: 100%;
+    
 }
 
 .service {
-    padding: 5vw;
+  
+    /* width: 15vw; */
+    min-width: 20px;
+    height: 20vh;
+    background-color:white;
+    margin: 5vh 2vw;
+    padding: 0px 20px;
+    line-height: 20vh;
+    box-shadow: 3px 3px 5px;
+    font-family: "Delicious Handrawn", cursive;
+    font-size: 5vh;
     
 }
 
