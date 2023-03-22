@@ -9,7 +9,7 @@ const SignUp = () => {
     const passwordConfirmRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { setUser, user } = useAuth();
+    const { signup } = useAuth();
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -21,7 +21,7 @@ const SignUp = () => {
         try {
             setError('')
             setLoading(true)
-        // signup(usernameRef.current.value, passwordRef.current.value)    
+            signup(usernameRef.current.value, passwordRef.current.value)    
         } catch (error) {
           setError('Failed to create an account')  
         }

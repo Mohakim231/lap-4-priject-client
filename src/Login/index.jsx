@@ -8,18 +8,20 @@ const Login = () => {
     const passwordRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { setUser, user } = useAuth();
+    const { signin, currentUser } = useAuth();
 
     function handleSubmit(e) {
         e.preventDefault()
 
         try {
             setError('')
-            setLoading(true)
-    
-        // signup(usernameRef.current.value, passwordRef.current.value)    
+            // setLoading(true)
+            signin(usernameRef.current.value, passwordRef.current.value)
+            console.log(usernameRef.current.value, passwordRef.current.value)
+            console.log("signin" + currentUser)
+            navigate("/pet-profile")    
         } catch (error) {
-          setError('Failed to create an account')  
+          setError('Failed to signin')  
         }
         
         setLoading(false)
