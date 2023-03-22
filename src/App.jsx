@@ -1,6 +1,6 @@
 
 import { Route, Routes } from "react-router-dom"
-import Home from "./Home"
+import Home from "./Pages/Home"
 import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import SignUp from "./Signup"
@@ -19,7 +19,7 @@ function App() {
             <Route index element={<Home/>}/>
             <Route path="/signup" element={<SignUp/>} />
             <Route path="/login" element={<Login/>} />
-            {/* <Route path="/services" element={<Services/>} /> */}
+            <Route path="/services" element={<Services/>} />
             <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
           </Route>
         </Routes>
