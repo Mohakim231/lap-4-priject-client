@@ -16,6 +16,7 @@ const Login = () => {
         try {
             setError('')
             setLoading(true)
+    
         // signup(usernameRef.current.value, passwordRef.current.value)    
         } catch (error) {
           setError('Failed to create an account')  
