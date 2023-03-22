@@ -14,6 +14,7 @@ function NavBar() {
   };
   function openMenu() {
     setHamburgerClicked(!hamburgerClicked)
+    
   }
 
   return (
@@ -64,39 +65,43 @@ function NavBar() {
         </ul>
         </div>
         <div className="mobile-display">
-          <img src="../../../paw.png" alt="logo" className="logo"/>
-          <h2 className="pet-pal">PetPal</h2>
-          <div className= {hamburgerClicked ? "clicked" : "container"} onClick={openMenu}>
-            <div className="bar1"></div>
-            <div className="bar2"></div>
-            <div className="bar3"></div>
+          <div className="nav-section">
+            <img src="../../../paw.png" alt="logo" className="logo"/>
+            <h2 className="pet-pal">PetPal</h2>
+            <div className= {hamburgerClicked ? "clicked" : "container"} onClick={openMenu}>
+              <div className="bar1"></div>
+              <div className="bar2"></div>
+              <div className="bar3"></div>
+            </div>
           </div>
-          <ul className="nav-links-menu">
-          <li className='navbar-list-item'>
-            <NavLink
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              to="/login"
-            >
-              Login
-            </NavLink>
-          </li>
-          <li className='navbar-list-item'>
-            <NavLink
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              to="/signup"
-            >
-              Signup
-            </NavLink>
-          </li>
-          <li className='navbar-list-item'>
-            <NavLink
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              to="/pet-profile"
-            >
-              Pet Profile
-            </NavLink>
-          </li>
-        </ul>
+          {hamburgerClicked ? <div className="menu-list">
+            <ul className="nav-links-menu">
+              <li className='menu-list-item'>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              </li>
+              <li className='menu-list-item'>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/signup"
+                >
+                  Signup
+                </NavLink>
+              </li>
+              <li className='menu-list-item'>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/pet-profile"
+                >
+                  Pet Profile
+                </NavLink>
+              </li>
+            </ul>
+          </div> : null}
         </div>
       </nav>
       <Outlet/>

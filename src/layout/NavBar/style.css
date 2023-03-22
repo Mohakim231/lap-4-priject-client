@@ -68,15 +68,16 @@
   
 
   @media screen and (max-width: 800px) {
-    .mobile-display {
+    .mobile-display{
+      display: block;
+    }
+    .nav-section {
       display: block;
       display: flex;
       height: 8vh;
       justify-content: space-between;
       align-items: center;
       background-color: #699759;
-    
-        /* position: fixed; */
       top: 0;
       left: 0;
       right: 0;
@@ -106,12 +107,37 @@
     .clicked .bar3 {
       transform: translate(0, -11px) rotate(45deg);
     }
+    .menu-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: 0px;
+    }
 
     .nav-links-menu {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      text-align:right;
+      list-style: none;
+      background-color:#699759;
+      position:absolute;
+      z-index: 100;
+      border-bottom-left-radius: 10px;
     }
+    .menu-list-item {
+      padding-top: 2vh;
+      margin-right: 2vw;
+      margin-left: 5vw;
+      margin-bottom: 2vh;
+      color: white;
+    }
+
+    .menu-list-item a {
+      color: white;
+    text-decoration: none;
+    }
+
+
     .desktop {
       display: none;
     }
