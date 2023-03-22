@@ -14,7 +14,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <Routes>
           <Route path='/' element={<NavBar />}>
             <Route index element={<Home/>}/>
@@ -24,7 +24,7 @@ function App() {
             <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
           </Route>
         </Routes>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }

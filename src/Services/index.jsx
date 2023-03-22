@@ -76,7 +76,20 @@ const home={latitude:51.553742, longitude: 0.201989}
 
 function displayProviders() {
     
-    return serviceProviders.map(s => <ProviderCard key={s.id} id={s.id} name={s.name}
+    return serviceProviders
+                    .filter(s=> !daycares || s.daily_care)
+                    .filter(s=> !hotels || s.boarding_hotel)
+                    .filter(s =>!petsitters || s.pet_sitter)
+                    .filter(s=> !dogwalkers || s.dog_walker)
+                    .filter(s=> !groomers || s.grooming)
+                    .filter(s=> !vets || s.vet)
+                    .filter(s=> !trainers || s.trainer)
+                    .filter(s=> !dogs || s.dog)
+                    .filter(s=> !cats || s.cat)
+                    .filter(s=> !birds || s.bird)
+                    .filter(s=> !rabbits || s.rabbit)
+                    .filter(s=> !reptiles || s.reptile)
+                    .map(s => <ProviderCard key={s.id} id={s.id} name={s.name}
                         address={s.address} city={s.city}
                         postcode={s.post_code} phone={s.phone} dog={s.dog} cat={s.cat} rabbit={s.rabbit}bird={s.bird}reptile={s.reptile}daycare={s.daily_care} hotel={s.boarding_hotel}petsitter={s.pet_sitter}dogwalker={s.dog_walker}groomer={s.grooming}vet={s.vet}trainer={s.trainer}
                         />)
