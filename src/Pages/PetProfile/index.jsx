@@ -10,3 +10,5 @@ export const PetProfile = () => {
     </div>
   );
 };
+
+export default PetProfile

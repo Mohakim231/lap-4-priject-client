@@ -3,23 +3,17 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { screen, render } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
-import ProviderCard from '.';
+import PetProfileForm from '.';
 
 
-describe("ProviderCard", () => {
+describe("PetProfileForm", () => {
 
     it("exists", () => {
-      expect(ProviderCard).toBeDefined();
+      expect(PetProfileForm).toBeDefined();
     });
     it("renders", () => {
-    //   render(ProviderCard);
+      render(PetProfileForm);
       expect(1 == 1).toBe(true);
     });
-
-      it("renders the paragraphs", () => {
-        render(ProviderCard);
-        expect(screen.getByTestId("prov-card")).toBeDefined();
-      });
-
 
   });
