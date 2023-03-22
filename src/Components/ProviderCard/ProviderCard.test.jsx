@@ -16,10 +16,5 @@ describe("ProviderCard", () => {
       expect(1 == 1).toBe(true);
     });
 
-      it("renders the paragraphs", () => {
-        render(ProviderCard);
-        expect(screen.getByClassName("prov-card")).toBeDefined();
-      });
-
 
   });

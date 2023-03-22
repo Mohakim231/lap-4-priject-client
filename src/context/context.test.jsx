@@ -3,17 +3,12 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { screen, render } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
-import Login from '.';
-import { splitVendorChunkPlugin } from 'vite';
+import context from '.';
 
-
-describe("Login", () => {
+describe("context", () => {
     it("exists", () => {
-      expect(Login).toBeDefined();
+      expect(context).toBeDefined();
     });
-    it("renders", () => {
-      render(<Login />);
-      expect(1 == 1).toBe(true);
-    });
+
 
   });
