@@ -50,6 +50,7 @@ function NavBar() {
             </NavLink>
           </li>
         </ul>
+        
       </nav>
       <Outlet/>
 
