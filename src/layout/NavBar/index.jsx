@@ -1,20 +1,28 @@
 
 import React from 'react';
 import { NavLink,  Outlet } from 'react-router-dom'
+import './style.css'
 
 
 function NavBar() {
   const activeStyle = {
     textDecoration: "underline",
-    color: "darkblue",
+    color: "black",
   };
 
   return (
     <>
 
       <nav className="navbar">
-        <h2>
-          Pet Pal
+        <h2 className="nav-logo">
+          <NavLink 
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to='/'
+          >
+            
+            <img src="../../../paw.png" alt="paw" className="nav-image"/>
+          </NavLink>
+          
         </h2>
         <ul className="nav-links">
           <li>
@@ -43,7 +51,7 @@ function NavBar() {
           </li>
         </ul>
       </nav>
-      <Outlet />
+      <Outlet/>
 
     </>
   );

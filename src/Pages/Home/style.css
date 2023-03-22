@@ -1,0 +1,48 @@
+.home-page {
+    /* padding-top: 100px; */
+    height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+
+.welcome-and-image {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+.welcome {
+    font-size: 10vh;
+}
+.welcome-image {
+    height: 15vh;
+    padding-left: 5vh;
+}
+
+/* .home-page h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0.3em;
+    color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    background-color: lightseagreen;
+  animation-name: rotating-text-1;
+  } */
+
+  /* @keyframes rotating-text-1 {
+
+        0% {
+          transform: translateY(250px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      } */

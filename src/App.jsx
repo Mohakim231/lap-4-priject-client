@@ -9,6 +9,7 @@ import Services from "./Services"
 import { PetProfile } from "./Pages/PetProfile";
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
+import './App.css'
 
 function App() {
   return (
