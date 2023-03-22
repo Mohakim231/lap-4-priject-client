@@ -30,3 +30,8 @@ main {
     justify-content: space-around;
     max-width: 100%;
 }
+.map{
+    height:400px;
+width: 400px;
+border: solid 1px black;
+}

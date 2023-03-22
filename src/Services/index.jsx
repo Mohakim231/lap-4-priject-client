@@ -1,13 +1,81 @@
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import React  from 'react'
-import { ProviderCard } from "../Components"
+import { GoogleMap, LoadScript, MarkerF, InfoWindow} from '@react-google-maps/api';
+import * as geolib from 'geolib'
+import { Filters, ProviderCard } from "../Components"
 import "./index.css"
-
+const mapContainerStyle= {
+    width: "100%",
+    height:"100%"
+}
+const cent={lat:51.553742, lng: 0.201989}
 const Services = () => {
+const[selected, setSelected] = useState(null)
+const[zoom, setZoom] = useState(10)
+const [center, setCenter] = useState(cent)
+const [dogs, setDogs] = useState(false)
+const [cats, setCats] = useState(false)
+const [rabbits, setRabbits] = useState(false)
+const [birds, setBirds] = useState(false)
+const [reptiles, setReptiles] = useState(false)
+const [daycares, setDaycares] = useState(false)
+const [hotels, setHotels] = useState(false)
+const [petsitters, setPetsitters] = useState(false)
+const [dogwalkers, setDogwalkers] = useState(false)
+const [groomers, setGroomers] = useState(false)
+const [vets, setVets] = useState(false)
+const [trainers, setTrainers] = useState(false)
+
+
+
+    function Map() {
+        return (
+          <LoadScript
+            googleMapsApiKey = "AIzaSyAf81ZWQurI47K6AtmX9YF8u0YVHX5rQq8"
+          >
+            <GoogleMap
+            
+              mapContainerStyle={mapContainerStyle}
+              center={center}
+              zoom={zoom}
+              
+              
+              
+            //   onZoomChanged={handleZoomChanged}
+            >
+              { 
+              providers.map((p)=>(
+                <MarkerF key={p.id} position={{lat: p.latitude, lng: p.longitude}}
+                onClick={()=>{setSelected(p), setZoom(13), setCenter({lat: p.latitude, lng: p.longitude}) }}/>
+              ))}
+              <></>
+              {selected && (
+                <InfoWindow position={{lat: selected.latitude, lng: selected.longitude}}
+                onCloseClick={()=>{setSelected(null)}}>
+                    <div>ok</div>
+                </InfoWindow>
+              )}
+            </GoogleMap>
+          </LoadScript>
+        )
+      }
+      
+    
+ 
+const home={latitude:51.553742, longitude: 0.201989}
     const [serviceProviders, setServiceProviders]= useState(providers)
+
+    useEffect(() => {
+        const prov=geolib.orderByDistance(home, providers)
+        console.log(prov)
+        setServiceProviders(prov)
+        
+    }, [])
+
 
 
 function displayProviders() {
+    
     return serviceProviders.map(s => <ProviderCard key={s.id} id={s.id} name={s.name}
                         address={s.address} city={s.city}
                         postcode={s.post_code} phone={s.phone} dog={s.dog} cat={s.cat} rabbit={s.rabbit}bird={s.bird}reptile={s.reptile}daycare={s.daily_care} hotel={s.boarding_hotel}petsitter={s.pet_sitter}dogwalker={s.dog_walker}groomer={s.grooming}vet={s.vet}trainer={s.trainer}
@@ -15,8 +83,13 @@ function displayProviders() {
 }
   return (
     <main className="provider-main">
+        <h2>Services</h2>
+        <Filters dogs={dogs} setDogs={setDogs}cats={cats} setCats={setCats}rabbits={rabbits} setRabbits={setRabbits}birds={birds}setBirds={setBirds} reptiles={reptiles}setReptiles={setReptiles}daycares={daycares} setDaycares={setDaycares}hotels={hotels} setHotels={setHotels}petsitters={petsitters}setPetsitters={setPetsitters}dogwalkers={dogwalkers} setDogwalkers={setDogwalkers}groomers={groomers}setGroomers={setGroomers}vets={vets} setVets={setVets} trainers={trainers} setTrainers={setTrainers}/>
     <div className="card-holder">
             { displayProviders() }
+        </div>
+        <div className="map">
+           <Map/>
         </div>
     </main>
   )
