@@ -23,7 +23,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/services" element={<Services/>} />
             <Route path="/services/:id" element={<ProviderPage/>} />
-            <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
+            <Route path="/pet-profile" element={<CardProfile/>} />
           </Route>
         </Routes>
       {/* </AuthProvider> */}
