@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './style.css'
 
 const ProviderPage = () => {
 
@@ -63,7 +64,44 @@ const ProviderPage = () => {
         
     }
 
-    return loading ? <h2><em>loading...</em></h2> : displayProvider();
+    return loading ? 
+        <div className="paw-prints">
+            <h2 className='loading'>Loading...</h2>
+            <div className="paw-print-1">
+               <img className="pad" src="../../../paw.png" alt="paw" />
+            </div>
+                
+            <div className="paw-print-2">
+                <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>    
+                
+            <div className="paw-print-3">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>    
+                
+            <div className="paw-print-4">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>
+
+            
+                
+            <div className="paw-print-5">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>
+                
+            <div className="paw-print-6">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>
+                
+            <div className="paw-print-7">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>
+
+            <div className="paw-print-8">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+            </div>
+        </div> 
+    : displayProvider();
 
 };
 
