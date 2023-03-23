@@ -16,6 +16,9 @@ function NavBar() {
     setHamburgerClicked(!hamburgerClicked)
     
   }
+  function closeMenu() {
+    setHamburgerClicked(false)
+  }
 
   return (
     <>
@@ -66,7 +69,17 @@ function NavBar() {
         </div>
         <div className="mobile-display">
           <div className="nav-section">
-            <img src="../../../paw.png" alt="logo" className="logo"/>
+          <div className="nav-logo">
+          <NavLink 
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to='/'
+          >
+            <img src="../../../paw.png" alt="paw" className="nav-image"/>
+            
+            
+          </NavLink>
+          
+        </div>
             <h2 className="pet-pal">PetPal</h2>
             <div className= {hamburgerClicked ? "clicked" : "container"} onClick={openMenu}>
               <div className="bar1"></div>
@@ -76,7 +89,7 @@ function NavBar() {
           </div>
           {hamburgerClicked ? <div className="menu-list">
             <ul className="nav-links-menu">
-              <li className='menu-list-item'>
+              <li className='menu-list-item' onClick={closeMenu}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   to="/login"
@@ -84,7 +97,7 @@ function NavBar() {
                   Login
                 </NavLink>
               </li>
-              <li className='menu-list-item'>
+              <li className='menu-list-item' onClick={closeMenu}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   to="/signup"
@@ -92,7 +105,7 @@ function NavBar() {
                   Signup
                 </NavLink>
               </li>
-              <li className='menu-list-item'>
+              <li className='menu-list-item' onClick={closeMenu}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   to="/pet-profile"

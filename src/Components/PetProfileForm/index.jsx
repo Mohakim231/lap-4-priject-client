@@ -27,14 +27,14 @@ const Name = ({ onChange, value }) => (
 );
 const Species = ({ onChange, value }) => (
   <div className="field">
-    <label htmlFor="species">Specie</label>
+    <label htmlFor="species">Species</label>
     <input
       id="species"
       type="text"
       onChange={onChange}
       maxLength="25"
       value={value}
-      placeholder="Pet Specie"
+      placeholder="Pet Species"
       required
     />
   </div>
@@ -83,7 +83,7 @@ const SpecialInfo = ({ onChange, value }) => (
 const Profile = ({ onSubmit, src, name, specialInfo }) => (
   <div className="card">
     <form onSubmit={onSubmit}>
-      <h1>Profile Card</h1>
+      <h1>Your Pet Profile</h1>
       <label className="custom-file-upload fas">
         <div className="img-wrap">
           <img htmlFor="photo-upload" src={src} />
@@ -103,7 +103,7 @@ const Profile = ({ onSubmit, src, name, specialInfo }) => (
 const Edit = ({ onSubmit, children }) => (
   <div className="card">
     <form onSubmit={onSubmit}>
-      <h1>Profile Card</h1>
+      <h1>Your Pet Profile</h1>
       {children}
       <button type="submit" className="save">
         Save{" "}

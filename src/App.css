@@ -16,3 +16,21 @@ body {
       padding: 0px;
     }
   }
+
+  button{
+    position: relative;
+    color: #054231;
+    letter-spacing: 1px;
+    margin: 20px;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    min-width: 10vw;
+    /* background: #64d488; */
+  }
