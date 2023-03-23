@@ -10,8 +10,9 @@ const Home = () => {
         {/* <h1 className='welcome'>Welcome</h1>  */}
         <h1 className="pet-pal">Pet <img src="../../../paw.png" alt="paw" className='welcome-image'/> Pal</h1>
       </div>
+      <div className='line'></div>
+      <em >All your pet needs in one convenient place</em>
       
-      <em>All your pet needs in one convenient place</em>
 
       <div className="buttons-home">
         <button ><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/login">Login</Link></button>
@@ -54,13 +55,17 @@ const Home = () => {
         <img src="../../../paw.png" alt="paw" className="pad"/>
         </div>
       </div> 
-
-      <h2><Link 
-          style={{ color: '#1746a2', textDecoration: "none"}}
-          to="/services"
-        >
-          Explore Services
-        </Link></h2>
+      <div className='link-and-dog'>
+        
+            <h2 className='find-service'><Link 
+              style={{ color: '#1746a2', textDecoration: "none"}}
+              to="/services"
+            >
+              Find a Service
+            </Link></h2>
+            <img src="../../Subject.png" alt="dog" className='dog-pic'/>
+      </div>
+      
 
         <div className="services">
           <div className='service'>
