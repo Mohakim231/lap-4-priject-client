@@ -5,9 +5,10 @@ import PrivateRoute from "./PrivateRoute"
 import SignUp from "./Signup"
 import { NavBar } from './layout'
 import Services from "./Services"
-import { PetProfile } from "./Pages/PetProfile";
+
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
+import { ProviderPage} from "./Pages"
 import './App.css'
 
 
@@ -21,7 +22,8 @@ function App() {
             <Route path="/signup" element={<SignUp/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/services" element={<Services/>} />
-            <Route path="/pet-profile" element={<PrivateRoute><PetProfile/></PrivateRoute>} />
+            <Route path="/services/:id" element={<ProviderPage/>} />
+            <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
           </Route>
         </Routes>
       {/* </AuthProvider> */}
