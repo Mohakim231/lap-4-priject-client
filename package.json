@@ -10,16 +10,19 @@
     "test": "vitest run --reporter verbose",
     "coverage": "vitest run --coverage"
   },
+  "proxy": "http://localhost:5000/upload",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-google-maps/api": "^2.18.1",
+    "cloudinary-react": "^1.8.1",
     "geolib": "^3.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-maps": "^9.4.5",
-    "react-router-dom": "^6.9.0"
+    "react-router-dom": "^6.9.0",
+    "socket.io-client": "^4.6.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
