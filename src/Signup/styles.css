@@ -1,0 +1,60 @@
+.signup-page{
+    background: #19923B;
+    background: -webkit-linear-gradient(top, #19923B, #096321);
+    background: -moz-linear-gradient(top, #19923B, #096321);
+    background: linear-gradient(to bottom, #19923B, #096321);
+    height: 100vh;
+}
+.signup-box{
+    position: absolute;
+    width: 80%;
+    box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.06);
+    border-radius: 10px;
+    background-color: #F6F3F0;
+    height: 500px;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+.signup-heading{
+    text-align: center;
+    margin: 15px 0 0 0;
+    padding-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: 900;
+    font-size: 2em;
+    border-bottom: 1px solid #bfbfbf;
+}
+.signup-form{
+    text-align: center;
+    margin-top: 15px;
+}
+.signup-form-element{
+    margin: 8px 0 8px 0;
+    font-size: 1.25em;
+    height: 50px;
+    width: 90%;
+    padding-left: 10px;
+    background-color: #F6F3F0;
+    border-bottom: 1px solid #bfbfbf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.singup-button{
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    height: 50px;
+    width: 120px;
+    border-radius: 15px;
+    color: #F6F3F0;
+    background-color: #178d38;
+    border: none;
+    margin-bottom: 15px;
+}
+.signup-link{
+    margin: 8px 0 8px 0;
+    text-align: center;
+}

@@ -28,26 +28,20 @@ const Login = () => {
     }
     
   return (
-    <>
-        <div>
-            <h2>
+    <div className='signup-page'>
+        <div className='signup-box'>
+            <h2 className='signup-heading'>
                 Login
             </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username-form'>
-                    Username: 
-                </label>
-                <input type='text' ref={usernameRef} name='username-form' required/>
-                <label htmlFor='password-form'>
-                    Password: 
-                </label>
-                <input type='password' ref={passwordRef} name='password-form' required/>
-                <button disabled={loading} type='submit'>Login</button>
+            <form onSubmit={handleSubmit} className='signup-form'>
+                <input className='signup-form-element' placeholder='Username' type='text' ref={usernameRef} name='username-form' required/>
+                <input className='signup-form-element' placeholder='Password' type='password' ref={passwordRef} name='password-form' required/>
+                <button className='singup-button' disabled={loading} type='submit'>Login</button>
                 {error && <p>{error}</p>}
             </form>
+            <div className='signup-link'>Dont have an account? <Link to='/signup'>Signup</Link></div>
         </div>
-        <div>Dont have an account? <Link to='/signup'>Signup</Link></div>
-    </>
+    </div>
   )
 }
 

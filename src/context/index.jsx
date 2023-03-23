@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
         const user = await response.json();
         console.log("line 45" + user)
         console.log(currentUser)
-        setCurrentUser(user);
+        setCurrentUser(user.username);
         console.log(currentUser)
       } else {
         const error = await response.json();
