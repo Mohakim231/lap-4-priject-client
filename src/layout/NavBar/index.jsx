@@ -29,7 +29,7 @@ function NavBar() {
               <img src="../../../paw.png" alt="paw" className="nav-image" />
             </NavLink>
           </div>
-          <h1 className="pet-pal">PetPal</h1>
+          {/* <h1 className="pet-pal">PetPal</h1> */}
           <ul className="nav-links">
             <li className="navbar-list-item">
               <NavLink
@@ -73,7 +73,7 @@ function NavBar() {
           
         </div>
 
-            <h2 className="pet-pal">PetPal</h2>
+            {/* <h2 className="pet-pal">PetPal</h2> */}
             <div
               className={hamburgerClicked ? "clicked" : "container"}
               onClick={openMenu}

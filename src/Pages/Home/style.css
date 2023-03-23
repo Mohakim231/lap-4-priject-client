@@ -18,7 +18,11 @@
     flex-direction: row;
     align-items:center;
     max-width: 90vw;
-    margin-top: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    /* background-color:#68975979; */
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .welcome {
@@ -27,16 +31,24 @@
 }
 .welcome-image {
     height: 10vh;
+    margin-left: -3vh;
+    margin-right: -3vh;
+    transform: rotate(20deg);
+    z-index: 0;
+    background-color:#699759;
+    border-radius: 60%  60%  60%  60%  / 60%   60%         70%  70%;
+
     /* padding-left: 5vh; */
 }
 
 .services {
+    margin-top: 8vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     background-color: #699759;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     width: 100%;
     
 }
@@ -55,6 +67,14 @@
     font-size: 5vh;
     
 }
+
+.buttons-home {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  margin-top: 5vh;
+}
+
 
 
 /* 
