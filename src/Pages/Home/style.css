@@ -61,11 +61,14 @@
     background-color:white;
     margin: 5vh 2vw;
     padding: 0px 20px;
-    line-height: 20vh;
+    line-height: 10vh;
     box-shadow: 3px 3px 5px;
     font-family: "Delicious Handrawn", cursive;
     font-size: 5vh;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons-home {
@@ -75,6 +78,11 @@
   margin-top: 5vh;
 }
 
+
+.service-icon{
+margin-bottom: 20px;
+  height: 40%;
+}
 
 
 /* 
