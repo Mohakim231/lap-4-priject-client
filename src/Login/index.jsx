@@ -51,8 +51,9 @@ const handleUserLogin = ()=>{
                 setServiceUser(data)
                 console.log('user.token', data.token)
                 localStorage.setItem("token", data.token)
-                localStorage.setItem("usertype", service)
-                navigate("/")
+                localStorage.setItem("usertype", "service")
+                const id = data.token
+                navigate(`/service/profile/${id}`)
             }
     
         // signup(usernameRef.current.value, passwordRef.current.value)    
@@ -62,6 +63,7 @@ const handleUserLogin = ()=>{
         
         setLoading(false)
     }
+    
     
   return (
    
