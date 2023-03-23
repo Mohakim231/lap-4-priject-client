@@ -26,6 +26,7 @@
   .nav-logo {
     display: flex;
     flex-direction: row;
+    
   }
 
   .navbar-list-item {
@@ -62,10 +63,8 @@
   .nav-image {
     height: 6vh;
     margin-left: 0vw;
-    
+    padding-left: 2vw;
   }
-
-  
 
   @media screen and (max-width: 800px) {
     .mobile-display{

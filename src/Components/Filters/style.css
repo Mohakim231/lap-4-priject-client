@@ -1,0 +1,40 @@
+.filters {
+    display: flex;
+    flex-direction: row;
+}
+
+.services-title, .animals-title {
+    background-color: #699759;
+    border-radius: 20px;
+    padding: 1vh; 
+    margin: 2vw;
+    color: white;
+    text-align: center;
+}
+
+.services-filters, .animal-filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.s-filters, .a-filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.s-filters label,
+.a-filters label {
+    padding-right: 2vw;
+    color: white;
+    padding-top: 1vh;
+}
+
+.s-filters, .a-filters {
+    background-color: #699759;
+    border-radius: 20px;
+    padding: 5vh;
+    padding-top: 2vh;
+    margin: 2vw;
+    color: white;
+    text-align: center;
+}
