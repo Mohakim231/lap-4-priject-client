@@ -57,13 +57,14 @@ const SignUp = () => {
             const response = await fetch("http://localhost:5000/service-register", options)
             if (response.status === 201) {
                 const data = await response.json()
-                console.log(data.user)
+                console.log(data.token)
                 // now set user details to user and navigate to main page 
-                setUser(data.user)
+                setUser(data)
                 console.log(user)
                 localStorage.setItem("token", data.token)
+               const id = data.token
                
-                navigate("/login")
+                navigate(`/service-profile/${id}`)
           
         } }
         catch (error) {
