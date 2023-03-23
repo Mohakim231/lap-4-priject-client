@@ -8,7 +8,7 @@ import Services from "./Services"
 
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
-import { ProviderPage} from "./Pages"
+import { ProviderPage, ServiceProfile} from "./Pages"
 import './App.css'
 
 
@@ -23,6 +23,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/services" element={<Services/>} />
             <Route path="/services/:id" element={<ProviderPage/>} />
+            <Route path="/service-profile" element = {<ServiceProfile/>}/>
             <Route path="/pet-profile" element={<CardProfile/>} />
           </Route>
         </Routes>
