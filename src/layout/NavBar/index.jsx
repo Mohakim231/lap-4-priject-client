@@ -1,8 +1,6 @@
-
-import React from 'react';
-import { NavLink,  Outlet } from 'react-router-dom'
-import './style.css'
-
+import React from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import "./style.css";
 
 function NavBar() {
   const activeStyle = {
@@ -12,17 +10,14 @@ function NavBar() {
 
   return (
     <>
-
       <nav className="navbar">
         <h2 className="nav-logo">
-          <NavLink 
+          <NavLink
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            to='/'
+            to="/"
           >
-            
-            <img src="../../../paw.png" alt="paw" className="nav-image"/>
+            <img src="../../../paw.png" alt="paw" className="nav-image" />
           </NavLink>
-          
         </h2>
         <ul className="nav-links">
           <li>
@@ -48,12 +43,11 @@ function NavBar() {
             >
               Pet Profile
             </NavLink>
+            <NavLink to="/message">Message</NavLink>
           </li>
         </ul>
-        
       </nav>
-      <Outlet/>
-
+      <Outlet />
     </>
   );
 }

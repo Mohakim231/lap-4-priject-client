@@ -1,198 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
+import Alert from "../Alert";
 
-import "./style.css";
-
-const ImgUpload = ({ onChange, src }) => (
-  <label htmlFor="photo-upload" className="custom-file-upload fas">
-    <div className="img-wrap img-upload">
-      <img htmlFor="photo-upload" src={src} />
-    </div>
-    <input id="photo-upload" type="file" onChange={onChange} />
-  </label>
-);
-
-const Name = ({ onChange, value }) => (
-  <div className="field">
-    <label htmlFor="name">Name</label>
-    <input
-      id="name"
-      type="text"
-      onChange={onChange}
-      maxLength="25"
-      value={value}
-      placeholder="Pet Name"
-      required
-    />
-  </div>
-);
-const Species = ({ onChange, value }) => (
-  <div className="field">
-    <label htmlFor="species">Specie</label>
-    <input
-      id="species"
-      type="text"
-      onChange={onChange}
-      maxLength="25"
-      value={value}
-      placeholder="Pet Specie"
-      required
-    />
-  </div>
-);
-const Age = ({ onChange, value }) => (
-  <div className="field">
-    <label htmlFor="Age">Age</label>
-    <input
-      id="name"
-      type="text"
-      onChange={onChange}
-      maxLength="25"
-      value={value}
-      placeholder="Pet Age"
-      required
-    />
-  </div>
-);
-
-const SpecialInfo = ({ onChange, value }) => (
-  <div className="field">
-    <label htmlFor="specialInfo">Special Instructions</label>
-    <textarea
-      id="specialInfo"
-      type="text"
-      onChange={onChange}
-      maxLength="35"
-      value={value}
-      placeholder="Special Instructions"
-      required
-      cols="23"
-      rows="2"
-    />
-    {/* <input
-      id="specialInfo"
-      type="text"
-      onChange={onChange}
-      maxLength="35"
-      value={value}
-      placeholder="Special Instructions"
-      required
-    /> */}
-  </div>
-);
-
-const Profile = ({ onSubmit, src, name, specialInfo }) => (
-  <div className="card">
-    <form onSubmit={onSubmit}>
-      <h1>Profile Card</h1>
-      <label className="custom-file-upload fas">
-        <div className="img-wrap">
-          <img htmlFor="photo-upload" src={src} />
-        </div>
-      </label>
-      <div className="name">{name}</div>
-      <div className="specie">{species}</div>
-      <div className="age">{Age}</div>
-      <div className="specialInfo">{specialInfo}</div>
-      <button type="submit" className="edit">
-        Edit Profile{" "}
-      </button>
-    </form>
-  </div>
-);
-
-const Edit = ({ onSubmit, children }) => (
-  <div className="card">
-    <form onSubmit={onSubmit}>
-      <h1>Profile Card</h1>
-      {children}
-      <button type="submit" className="save">
-        Save{" "}
-      </button>
-    </form>
-  </div>
-);
-
-class CardProfile extends React.Component {
-  state = {
-    file: "",
-    imagePreviewUrl: "",
-    name: "",
-    species: "",
-    age: "",
-    specialInfo: "",
-    active: "edit",
-  };
-
-  photoUpload = (e) => {
-    e.preventDefault();
-    const reader = new FileReader();
+export default function PetProfileForm() {
+  const [fileInputState, setFileInputState] = useState("");
+  const [previewSource, setPreviewSource] = useState("");
+  const [selectedFile, setSelectedFile] = useState();
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const handleFileInputChange = (e) => {
     const file = e.target.files[0];
-    reader.onloadend = () => {
-      this.setState({
-        file: file,
-        imagePreviewUrl: reader.result,
-      });
-    };
+    previewFile(file);
+    setSelectedFile(file);
+    setFileInputState(e.target.value);
+  };
+
+  const previewFile = (file) => {
+    const reader = new FileReader();
     reader.readAsDataURL(file);
-  };
-  editName = (e) => {
-    const name = e.target.value;
-    this.setState({
-      name,
-    });
-  };
-  editAge = (e) => {
-    const age = e.target.value;
-    this.setState({
-      age,
-    });
-  };
-  editSpecies = (e) => {
-    const specie = e.target.value;
-    this.setState({
-      age,
-    });
-  };
-  editStatus = (e) => {
-    const specialInfo = e.target.value;
-    this.setState({
-      specialInfo,
-    });
+    reader.onloadend = () => {
+      setPreviewSource(reader.result);
+    };
   };
 
-  handleSubmit = (e) => {
+  const handleSubmitFile = (e) => {
     e.preventDefault();
-    let activeP = this.state.active === "edit" ? "profile" : "edit";
-    this.setState({
-      active: activeP,
-    });
+    if (!selectedFile) return;
+    const reader = new FileReader();
+    reader.readAsDataURL(selectedFile);
+    reader.onloadend = () => {
+      uploadImage(reader.result);
+    };
+    reader.onerror = () => {
+      console.error("AHHHHHHHH!!");
+      setErrMsg("something went wrong!");
+    };
   };
 
-  render() {
-    const { imagePreviewUrl, name, species, age, specialInfo, active } =
-      this.state;
-    return (
-      <div>
-        {active === "edit" ? (
-          <Edit onSubmit={this.handleSubmit}>
-            <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl} />
-            <Name onChange={this.editName} value={name} />
-            <Species onChange={this.editAge} value={age} />
-            <Age onChange={this.editSpecies} value={species} />
-            <SpecialInfo onChange={this.editStatus} value={specialInfo} />
-          </Edit>
-        ) : (
-          <Profile
-            onSubmit={this.handleSubmit}
-            src={imagePreviewUrl}
-            name={name}
-            species={species}
-            age={age}
-            specialInfo={specialInfo}
-          />
-        )}
-      </div>
-    );
-  }
+  const uploadImage = async (base64EncodedImage) => {
+    try {
+      await fetch("http://localhost:5000/pets/upload", {
+        method: "POST",
+        body: JSON.stringify({ data: base64EncodedImage }),
+        headers: {
+          "Content-type": "application/json",
+          // "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Headers":
+          //   "Origin, X-Requested-With, Content-Type, Accept",
+        },
+        // mode: "cors",
+      });
+      setFileInputState("");
+      setPreviewSource("");
+      setSuccessMsg("Image uploaded successfully");
+    } catch (err) {
+      console.error(err);
+      setErrMsg("Something went wrong!");
+    }
+  };
+  return (
+    <div>
+      <h1 className="title">Upload an Image</h1>
+      <Alert msg={errMsg} type="danger" />
+      <Alert msg={successMsg} type="success" />
+      <form onSubmit={handleSubmitFile} className="form">
+        <input
+          id="fileInput"
+          type="file"
+          name="image"
+          onChange={handleFileInputChange}
+          value={fileInputState}
+          className="form-input"
+        />
+        <button className="btn" type="submit">
+          Submit
+        </button>
+      </form>
+      {previewSource && (
+        <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+      )}
+    </div>
+  );
 }
-export default CardProfile;
