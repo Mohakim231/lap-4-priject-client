@@ -1,10 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
+const linkStyle = {
+    color: '#875053'
+  };
+
 
 const ProviderCard = ({ id, name,address, city,postcode, phone, dog, cat, rabbit,bird,reptile,daycare, hotel,petsitter,dogwalker,groomer,vet,trainer 
 }) => {
 
     return <div className='prov-card'>
-        <h3>{name}</h3>
+        <h3><Link to={`/services/${id}`} style={linkStyle}>{name}</Link></h3>
         <h4>{address + city + postcode}</h4>
         <h5>Contact us: {phone}</h5>
         <h5>Our services:</h5>

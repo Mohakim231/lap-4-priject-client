@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 
-  nav {
+  .desktop {
     display: flex;
     height: 8vh;
   justify-content: space-between;
@@ -13,18 +14,37 @@
   color: white;
   } 
   
+  .mobile-display {
+    display: none;
+  }
   
+  .pet-pal {
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 8vh;
+    
+  }
+  .nav-logo {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .navbar-list-item {
+    width: min-content;
+  white-space: nowrap;
+  }
+
   .nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    font-size: 19px;
+    font-size: 3vh;
     color: white;
   }
 
   .nav-links li {
-    margin-right: 20px;
+    margin-right: 2vw;
   }
   
   .nav-links a {
@@ -42,7 +62,85 @@
 
   .nav-image {
     height: 6vh;
+    margin-left: 0vw;
     padding-left: 2vw;
   }
+
+  @media screen and (max-width: 800px) {
+    .mobile-display{
+      display: block;
+    }
+    .nav-section {
+      display: block;
+      display: flex;
+      height: 8vh;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #699759;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: white;
+    }
+    .container,
+    .clicked {
+      display: inline-block;
+      cursor: pointer;
+      padding-right: 2vw;
+    }
+    
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
+    .clicked .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+    
+    .clicked .bar2 {opacity: 0;}
+    
+    .clicked .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+    .menu-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: 0px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      flex-direction: column;
+      text-align:right;
+      list-style: none;
+      background-color:#699759;
+      position:absolute;
+      z-index: 100;
+      border-bottom-left-radius: 10px;
+    }
+    .menu-list-item {
+      padding-top: 2vh;
+      margin-right: 2vw;
+      margin-left: 5vw;
+      margin-bottom: 2vh;
+      color: white;
+    }
+
+    .menu-list-item a {
+      color: white;
+    text-decoration: none;
+    }
+
+
+    .desktop {
+      display: none;
+    }
+
+}
 
   

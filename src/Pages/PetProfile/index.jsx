@@ -1,14 +1,14 @@
 import React from "react";
-import { PetProfileForm } from "../../Components";
+// import { CardProfile } from "../../Components";
 // import { PetProfileForm } from "../../Components/PetProfileForm";
 
-export const PetProfile = () => {
+const PetProfile = () => {
   return (
     <div>
       {/* <PetProfileForm /> */}
-      <PetProfileForm />
+      {/* <CardProfile /> */}
+      index
     </div>
   );
 };
-
 export default PetProfile;

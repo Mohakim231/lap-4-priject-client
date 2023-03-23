@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .home-page {
     /* padding-top: 100px; */
-    height: 90vh;
+    /* height: 90vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: "Montserrat";
   
 }
 
@@ -13,23 +17,42 @@
     display: flex;
     flex-direction: row;
     align-items:center;
+    max-width: 90vw;
+    margin-top: 5vh;
 }
 
 .welcome {
-    font-size: 10vh;
+    font-size: 8vh;
+    font-family: 'Montserrat', sans-serif;
 }
 .welcome-image {
-    height: 15vh;
-    padding-left: 5vh;
+    height: 10vh;
+    /* padding-left: 5vh; */
 }
 
 .services {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #699759;
+    margin-top: 5vh;
+    width: 100%;
+    
 }
 
 .service {
-    padding: 5vw;
+  
+    /* width: 15vw; */
+    min-width: 20px;
+    height: 20vh;
+    background-color:white;
+    margin: 5vh 2vw;
+    padding: 0px 20px;
+    line-height: 20vh;
+    box-shadow: 3px 3px 5px;
+    font-family: "Delicious Handrawn", cursive;
+    font-size: 5vh;
     
 }
 

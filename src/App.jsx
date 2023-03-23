@@ -8,6 +8,7 @@ import Services from "./Services";
 import { PetProfile, Message } from "./Pages";
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context";
+import { ProviderPage } from "./Pages";
 import "./App.css";
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/pet-profile" element={<PetProfile />} />
+          <Route path="/services/:id" element={<ProviderPage />} />
+          <Route path="/pet-profile" element={<CardProfile />} />
           <Route path="/Message" element={<Message />} />
         </Route>
       </Routes>

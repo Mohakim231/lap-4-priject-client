@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 
 const Home = () => {
+
   return (
     <div className="home-page">
       <div className='welcome-and-image'>
-        <h1 className='welcome'>Welcome to PetPal</h1>
-        <img src="../../../paw.png" alt="paw" className='welcome-image'/>
+        {/* <h1 className='welcome'>Welcome</h1>  */}
+        
       </div>
+      <img src="../../../paw.png" alt="paw" className='welcome-image'/>
       <em>All your pet needs in one convenient place</em>
-      <button>login</button>
-      <button>signup</button>
+      <button >login</button>
+     
+      <button ><Link to="/signup">signup</Link></button>
+      
 
       <h2><Link 
           style={{ color: '#1746a2'}}
