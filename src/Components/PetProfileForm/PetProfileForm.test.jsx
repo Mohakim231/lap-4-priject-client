@@ -1,17 +1,18 @@
 import React from 'react'; 
-import { describe, it, expect, beforeEach } from 'vitest'; 
+import { describe, it, expect, beforeEach, afterEach } from 'vitest'; 
 import { screen, render } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
-import NavBar from '.';
+import PetProfileForm from '.';
 
 
-describe("NavBar", () => {
+describe("PetProfileForm", () => {
+
     it("exists", () => {
-      expect(NavBar).toBeDefined();
+      expect(PetProfileForm).toBeDefined();
     });
     it("renders", () => {
-      render(NavBar);
+      render(PetProfileForm);
       expect(1 == 1).toBe(true);
     });
 

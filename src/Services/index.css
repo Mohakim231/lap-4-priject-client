@@ -6,7 +6,13 @@ main {
     justify-content: center;
     margin: 0 auto;
     flex: 1;
+    font-family: 'Montserrat'
 }
+
+.all-services {
+    padding-top: 3vh;
+}
+
 .card-holder{
     display: flex;
     flex-wrap: wrap;
@@ -29,4 +35,9 @@ main {
     flex-direction: row;
     justify-content: space-around;
     max-width: 100%;
+}
+.map{
+    height:400px;
+width: 400px;
+border: solid 1px black;
 }

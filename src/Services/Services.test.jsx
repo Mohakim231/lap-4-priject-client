@@ -3,15 +3,14 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { screen, render } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
-import NavBar from '.';
+import Services from '.';
 
-
-describe("NavBar", () => {
+describe("Services", () => {
     it("exists", () => {
-      expect(NavBar).toBeDefined();
+      expect(Services).toBeDefined();
     });
     it("renders", () => {
-      render(NavBar);
+      render(<Services />);
       expect(1 == 1).toBe(true);
     });
 

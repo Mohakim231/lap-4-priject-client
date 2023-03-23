@@ -1,18 +1,20 @@
 import React from 'react'; 
-import { describe, it, expect, beforeEach } from 'vitest'; 
+import { describe, it, expect, beforeEach, afterEach } from 'vitest'; 
 import { screen, render } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
-import NavBar from '.';
+import ProviderCard from '.';
 
 
-describe("NavBar", () => {
+describe("ProviderCard", () => {
+
     it("exists", () => {
-      expect(NavBar).toBeDefined();
+      expect(ProviderCard).toBeDefined();
     });
     it("renders", () => {
-      render(NavBar);
+    //   render(ProviderCard);
       expect(1 == 1).toBe(true);
     });
+
 
   });

@@ -1,19 +1,39 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import { useAuth } from '../context'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const SignUp = () => {
 
-    const usernameRef = useRef()
+    const [username, setUsername] = useState('')
+    const[email, setEmail] = useState('')
+    const[password, setPassword] = useState('')
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const { signup } = useAuth();
 
-    function handleSubmit(e) {
+    
+    const[userChoice, setUserChoice] = useState(false)
+    const[serviceChoice, setServiceChoice] = useState(false)
+    
+    
+   
+   
+    const handleUserRegister = ()=>{
+      console.log("user register")
+      serviceChoice?setserviceChoice(!serviceChoice):''
+      setUserChoice(!userChoice)
+    }
+    
+    const handleServiceRegister = ()=>{
+      console.log("service register")
+      userChoice? setUserChoice(!userChoice):''
+      setServiceChoice(!serviceChoice)
+    }
+    async function handleSubmit(e) {
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {

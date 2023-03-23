@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for index.jsx</title>
+    <title>Code coverage report for Pages/Home/index.jsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="prettify.css" />
-    <link rel="stylesheet" href="base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> index.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">Pages/Home</a> index.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>37/37</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/37</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
@@ -99,7 +99,18 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -134,60 +145,76 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { NavLink,  Outlet } from 'react-router-dom'
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
+import { Link } from 'react-router-dom'
+import './style.css'
 &nbsp;
-function NavBar() {
-&nbsp;
-    const activeStyle = {
-        textDecoration: 'underline',
-        color: 'darkblue'
-    }
-&nbsp;
+const Home = () =&gt; {
   return (
-    &lt;&gt;
-        &lt;nav className="navbar"&gt;
-            &lt;h2&gt;Pet Pal&lt;/h2&gt;
-            &lt;ul className="nav-links"&gt;
-                &lt;li&gt;
-                    &lt;NavLink
-                        style={<span class="fstat-no" title="function not covered" >({ isActive }) =&gt; (isActive ? activeStyle : undefined)} </span>
-                        to="/login"&gt;
-                        Login
-                    &lt;/NavLink&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;NavLink 
-                        style={<span class="fstat-no" title="function not covered" >({ isActive }) =&gt; (isActive ? activeStyle : undefined)} </span>
-                        to="/signup"&gt;
-                        Signup
-                    &lt;/NavLink&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/nav&gt;
-        &lt;Outlet /&gt;
-    &lt;/&gt;
+    &lt;div className="home-page"&gt;
+      &lt;div className='welcome-and-image'&gt;
+        &lt;h1 className='welcome'&gt;Welcome to PetPal&lt;/h1&gt; 
+        &lt;img src="../../../paw.png" alt="paw" className='welcome-image'/&gt;
+      &lt;/div&gt;
+      &lt;em&gt;All your pet needs in one convenient place&lt;/em&gt;
+      &lt;button&gt;login&lt;/button&gt;
+      &lt;button&gt;signup&lt;/button&gt;
+&nbsp;
+      &lt;h2&gt;&lt;Link 
+          style={{ color: '#1746a2'}}
+          to="/services"
+        &gt;
+          Explore Services
+        &lt;/Link&gt;&lt;/h2&gt;
+&nbsp;
+        &lt;div className="services"&gt;
+          &lt;div className='service'&gt;
+            Sitters
+          &lt;/div&gt;
+          &lt;div className='service'&gt;
+            Walkers
+          &lt;/div&gt;
+          &lt;div className='service'&gt;
+            Groomers
+          &lt;/div&gt;
+          &lt;div className='service'&gt;
+            Vets
+          &lt;/div&gt;
+          &lt;div className='service'&gt;
+            Trainers
+          &lt;/div&gt;
+        &lt;/div&gt;
+      
+      
+    &lt;/div&gt;
   )
 }
 &nbsp;
-export default NavBar;</pre></td></tr></table></pre>
+export default Home</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-21T12:09:44.527Z
+                at 2023-03-22T17:31:23.960Z
             </div>
-        <script src="prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="sorter.js"></script>
-        <script src="block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
