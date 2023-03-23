@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const SignUp = () => {
 
@@ -9,7 +11,7 @@ const SignUp = () => {
     const passwordConfirmRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { setUser, user } = useAuth();
+    const { signup } = useAuth();
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -21,7 +23,7 @@ const SignUp = () => {
         try {
             setError('')
             setLoading(true)
-        // signup(usernameRef.current.value, passwordRef.current.value)    
+            signup(usernameRef.current.value, passwordRef.current.value)    
         } catch (error) {
           setError('Failed to create an account')  
         }
@@ -30,30 +32,21 @@ const SignUp = () => {
     }
     
   return (
-    <>
-        <div>
-            <h2>
+    <div className='signup-page'>
+        <div className='signup-box'>
+            <h2 className='signup-heading'>
                 Sign Up
             </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username-form'>
-                    Username: 
-                </label>
-                <input type='text' ref={usernameRef} name='username-form' required/>
-                <label htmlFor='password-form'>
-                    Password: 
-                </label>
-                <input type='password' ref={passwordRef} name='password-form' required/>
-                <label htmlFor='passwordConfirm-form'>
-                     Confirmation: 
-                </label>
-                <input type='password' ref={passwordConfirmRef} name='passwordConfirm-form' required/>
-                <button disabled={loading} type='submit'>Sign Up</button>
+            <form onSubmit={handleSubmit} className='signup-form'>
+                <input className='signup-form-element' placeholder={"Username"} type='text' ref={usernameRef} name='username-form' required/>
+                <input className='signup-form-element' placeholder='Password' type='password' ref={passwordRef} name='password-form' required/>
+                <input className='signup-form-element' placeholder='Confirm Password' type='password' ref={passwordConfirmRef} name='passwordConfirm-form' required/>
+                <button disabled={loading} type='submit' className='singup-button'>Sign Up</button>
                 {error && <p>{error}</p>}
             </form>
+            <div className='signup-link'>Already have an account? <Link to='/login'>Login</Link></div>    
         </div>
-        <div>Already have an account? <Link to='/login'>Login</Link></div>
-    </>
+    </div>
   )
 }
 
