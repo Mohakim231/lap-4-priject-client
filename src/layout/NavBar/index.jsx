@@ -13,6 +13,9 @@ function NavBar() {
   function openMenu() {
     setHamburgerClicked(!hamburgerClicked);
   }
+  function closeMenu() {
+    setHamburgerClicked(false)
+  }
 
   return (
     <>
@@ -57,7 +60,19 @@ function NavBar() {
         </div>
         <div className="mobile-display">
           <div className="nav-section">
-            <img src="../../../paw.png" alt="logo" className="logo" />
+
+          <div className="nav-logo">
+          <NavLink 
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to='/'
+          >
+            <img src="../../../paw.png" alt="paw" className="nav-image"/>
+            
+            
+          </NavLink>
+          
+        </div>
+
             <h2 className="pet-pal">PetPal</h2>
             <div
               className={hamburgerClicked ? "clicked" : "container"}
@@ -68,45 +83,35 @@ function NavBar() {
               <div className="bar3"></div>
             </div>
           </div>
-          {hamburgerClicked ? (
-            <div className="menu-list">
-              <ul className="nav-links-menu">
-                <li className="menu-list-item">
-                  <NavLink
-                    style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    to="/login"
-                  >
-                    Login
-                  </NavLink>
-                </li>
-                <li className="menu-list-item">
-                  <NavLink
-                    style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    to="/signup"
-                  >
-                    Signup
-                  </NavLink>
-                </li>
-                <li className="menu-list-item">
-                  <NavLink
-                    style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    to="/pet-profile"
-                  >
-                    Pet Profile
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/message">Message</NavLink>
-                </li>
-              </ul>
-            </div>
-          ) : null}
+
+          {hamburgerClicked ? <div className="menu-list">
+            <ul className="nav-links-menu">
+              <li className='menu-list-item' onClick={closeMenu}>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              </li>
+              <li className='menu-list-item' onClick={closeMenu}>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/signup"
+                >
+                  Signup
+                </NavLink>
+              </li>
+              <li className='menu-list-item' onClick={closeMenu}>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/pet-profile"
+                >
+                  Pet Profile
+                </NavLink>
+              </li>
+            </ul>
+          </div> : null}
         </div>
       </nav>
       <Outlet />

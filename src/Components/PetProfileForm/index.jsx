@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Alert from "../Alert";
+import "./style.css";
 
 export default function PetProfileForm() {
   const [fileInputState, setFileInputState] = useState("");
