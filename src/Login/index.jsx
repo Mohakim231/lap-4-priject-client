@@ -8,7 +8,17 @@ const Login = () => {
     const passwordRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { setUser, user } = useAuth();
+    // const { setUser, user } = useAuth();
+//     {loginChoice? (<div className='login-choice'>
+//     <button onClick={handleUserLogin}>Pet owner</button>
+//     <button onClick={handleServiceLogin}>Service provider</button>
+//   </div>):''}
+// const handleUserLogin = ()=>{
+//     console.log("user login")
+//   }
+//   const handleServiceLogin = ()=>{
+//     console.log("service login")
+//   }
 
     function handleSubmit(e) {
         e.preventDefault()

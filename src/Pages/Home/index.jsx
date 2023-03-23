@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 
 const Home = () => {
+
   return (
     <div className="home-page">
       <div className='welcome-and-image'>
@@ -11,10 +12,9 @@ const Home = () => {
       </div>
       <img src="../../../paw.png" alt="paw" className='welcome-image'/>
       <em>All your pet needs in one convenient place</em>
-      <div className='login-buttons'>
-        <button>login</button>
-        <button>signup</button>
-      </div>
+      <button >login</button>
+     
+      <button ><Link to="/signup">signup</Link></button>
       
 
       <h2><Link 
