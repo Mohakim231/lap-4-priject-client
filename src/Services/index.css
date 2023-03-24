@@ -41,3 +41,9 @@ main {
 width: 400px;
 border: solid 1px black;
 }
+
+@media screen and (max-width: 800px) {
+    .card-holder{
+      flex-direction: column;
+    }
+}
