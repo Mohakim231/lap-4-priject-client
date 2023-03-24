@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000"); // replace with your server URL
+const socket = io("http://localhost:5000");
 
-const MessagePopup = ({ customerID, serviceProviderID }) => {
+export const Message = ({ customerID, serviceProviderID }) => {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState([]);
 
@@ -50,5 +50,3 @@ const MessagePopup = ({ customerID, serviceProviderID }) => {
     </div>
   );
 };
-
-export default MessagePopup;
