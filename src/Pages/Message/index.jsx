@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000"); // replace with your server URL
+const socket = io("http://localhost:5000");
 
-const MessagePopup = ({ customerID, serviceProviderID }) => {
+export default function Message({ customerID, serviceProviderID }) {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState([]);
 
   useEffect(() => {
     socket.emit("join", { customerID, serviceProviderID });
 
-    socket.on("message", (data) => {
-      setConversation([...conversation, data]);
-    });
+    socket.on(
+      "message",
+      (data) => {
+        setConversation([...conversation, data]);
+      },
+      3000
+    );
 
     return () => {
       socket.emit("leave", { customerID, serviceProviderID });
@@ -26,6 +30,12 @@ const MessagePopup = ({ customerID, serviceProviderID }) => {
     setConversation([...conversation, data]);
     setMessage("");
   };
+  // socket.timeout(5000).emit("hello", "world", (err, response) => {
+  //   if (err) {
+  //   } else {
+  //     console.log(response);
+  //   }
+  // });
 
   return (
     <div className="message-popup">
@@ -49,6 +59,4 @@ const MessagePopup = ({ customerID, serviceProviderID }) => {
       </div>
     </div>
   );
-};
-
-export default MessagePopup;
+}

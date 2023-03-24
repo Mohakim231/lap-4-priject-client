@@ -17,6 +17,11 @@ body {
     }
   }
 
+h2 {
+  text-align: center;
+  font-size: 6vh;
+}
+
   button{
     position: relative;
     color: #054231;
