@@ -12,6 +12,7 @@ const ProviderCard = ({ id, name,address, city,postcode, phone, dog, cat, rabbit
 }) => {
 
     return <div className='prov-card'>
+
         <div className='details1'>
             <h3 className='service-name'><Link to={`/services/${id}`} style={linkStyle}>{name}</Link></h3>
             <h4>{address + city + postcode}</h4>
@@ -44,9 +45,7 @@ const ProviderCard = ({ id, name,address, city,postcode, phone, dog, cat, rabbit
 
             </p>
         </div>
-        
 
-        
         <br></br>
     </div>
 };
