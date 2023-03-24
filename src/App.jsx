@@ -8,7 +8,7 @@ import Services from "./Services";
 import { PetProfile, Message } from "./Pages";
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
-import { ProviderPage, ServiceProfile, ServiceProfilePage} from "./Pages"
+import { ProviderPage, ServiceProfile, ServiceProfilePage, PetInfo} from "./Pages"
 import './App.css'
 
 
@@ -27,6 +27,7 @@ function App() {
             <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>
             <Route path="/pet-profile" element={<CardProfile/>} />
             <Route path="/Message" element={<Message />} />
+            <Route path="/petinfo" element={<PetInfo />} />
           </Route>
         </Routes>
       {/* </AuthProvider> */}

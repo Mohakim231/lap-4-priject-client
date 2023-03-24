@@ -31,7 +31,7 @@ function NavBar() {
           </div>
           {/* <h1 className="pet-pal">PetPal</h1> */}
           <ul className="nav-links">
-            <li className="navbar-list-item">
+            {/* <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/login"
@@ -46,7 +46,7 @@ function NavBar() {
               >
                 Signup
               </NavLink>
-            </li>
+            </li> */}
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -54,7 +54,22 @@ function NavBar() {
               >
                 Pet Profile
               </NavLink>
-              <NavLink to="/message">Message</NavLink>
+            </li>
+            <li className="navbar-list-item">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/petinfo"
+              >
+                Pet Tips
+              </NavLink>
+            </li>
+            <li className="navbar-list-item">
+              <NavLink 
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/message"
+              >
+                  Message
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -110,6 +125,22 @@ function NavBar() {
                   Pet Profile
                 </NavLink>
               </li>
+              <li className='menu-list-item' onClick={closeMenu}>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/petinfo"
+                >
+                  Pet Tips
+                </NavLink>
+              </li>
+              <li className='menu-list-item' onClick={closeMenu}>
+              <NavLink 
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/message"
+              >
+                  Message
+              </NavLink>
+            </li>
             </ul>
           </div> : null}
         </div>
