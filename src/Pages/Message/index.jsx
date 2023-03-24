@@ -3,7 +3,7 @@ import io from "socket.io-client";
 
 const socket = io("http://localhost:5000");
 
-export const Message = ({ customerID, serviceProviderID }) => {
+export default function Message({ customerID, serviceProviderID }) {
   const [message, setMessage] = useState("");
   const [conversation, setConversation] = useState([]);
 
@@ -59,4 +59,4 @@ export const Message = ({ customerID, serviceProviderID }) => {
       </div>
     </div>
   );
-};
+}
