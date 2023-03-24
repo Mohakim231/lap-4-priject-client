@@ -6,12 +6,15 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <div className='welcome-and-image'>
-        {/* <h1 className='welcome'>Welcome</h1>  */}
-        <h1 className="pet-pal">Pet <img src="../../../paw.png" alt="paw" className='welcome-image'/> Pal</h1>
+      <div className="backg-dog">
+        <div className='welcome-and-image'>
+          {/* <h1 className='welcome'>Welcome</h1>  */}
+          <h1 className="pet-pal">Pet <img src="../../../paw.png" alt="paw" className='welcome-image'/> Pal</h1>
+        </div>
+        <div className='line'></div>
+        <em >All your pet needs in one convenient place</em>
       </div>
-      <div className='line'></div>
-      <em >All your pet needs in one convenient place</em>
+      
       
 
       <div className="buttons-home">
