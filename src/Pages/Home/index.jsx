@@ -70,23 +70,23 @@ const Home = () => {
         <div className="services">
           <div className='service'>
             Sitters
-            <img src={'../../public/dog_sitter3.png'} className='service-icon' />
+            <img src={'../../dog_sitter3.png'} className='service-icon' />
           </div>
           <div className='service'>
             Walkers
-            <img src={'../../public/dog_walker.png'} className='service-icon' />
+            <img src={'../../dog_walker.png'} className='service-icon' />
           </div>
           <div className='service'>
             Groomers
-            <img src={'../../public/dog_groomer.png'} className='service-icon' />
+            <img src={'../../dog_groomer.png'} className='service-icon' />
           </div>
           <div className='service'>
             Vets
-            <img src={'../../public/vet.png'} className='service-icon' />
+            <img src={'../../vet.png'} className='service-icon' />
           </div>
           <div className='service'>
             Trainers
-            <img src={'../../public/dog_trainer.png'} className='service-icon' />
+            <img src={'../../dog_trainer.png'} className='service-icon' />
           </div>
         </div>
       
