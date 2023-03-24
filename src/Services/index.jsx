@@ -52,7 +52,12 @@ const [trainers, setTrainers] = useState(false)
               {selected && (
                 <InfoWindow position={{lat: selected.latitude, lng: selected.longitude}}
                 onCloseClick={()=>{setSelected(null)}}>
-                    <div>ok</div>
+                    <div>
+                      <h4>{selected.name}</h4>
+                      <h4>{selected.address}</h4>
+                      <h4>{selected.postcode}</h4>
+                      
+                      </div>
                 </InfoWindow>
               )}
             </GoogleMap>
@@ -96,7 +101,7 @@ function displayProviders() {
                     .filter(s=> !reptiles || s.reptile)
                     .map(s => <ProviderCard key={s.id} id={s.id} name={s.name}
                         address={s.address} city={s.city}
-                        postcode={s.post_code} phone={s.phone} dog={s.dog} cat={s.cat} rabbit={s.rabbit}bird={s.bird}reptile={s.reptile}daycare={s.daily_care} hotel={s.boarding_hotel}petsitter={s.pet_sitter}dogwalker={s.dog_walker}groomer={s.grooming}vet={s.vet}trainer={s.trainer}
+                        postcode={s.postcode} phone={s.phone} dog={s.dog} cat={s.cat} rabbit={s.rabbit}bird={s.bird}reptile={s.reptile}daycare={s.daily_care} hotel={s.boarding_hotel}petsitter={s.pet_sitter}dogwalker={s.dog_walker}groomer={s.grooming}vet={s.vet}trainer={s.trainer}
                         />)
 }
   return (
