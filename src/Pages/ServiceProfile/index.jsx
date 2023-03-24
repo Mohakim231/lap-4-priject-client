@@ -67,11 +67,11 @@ async function handleSubmit(e) {
                 const data = await response.json()
                 console.log(data.p_id)
                 // now set user details to user and navigate to main page 
-                setUser(data.user)
-                console.log(user)
+                // setUser(data.user)
+                // console.log(user)
                 localStorage.setItem("p_id", data.p_id)
-               
-                navigate(`/service/profile/${userId}`)
+               const id = userId
+                navigate(`/service/profile/${id}`)
           
         } }
         catch (error) {
