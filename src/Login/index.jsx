@@ -8,7 +8,7 @@ const Login = () => {
     const passwordRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signin, currentUser } = useAuth();
+    const { signin } = useAuth();
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -17,8 +17,6 @@ const Login = () => {
             setError('')
             // setLoading(true)
             signin(usernameRef.current.value, passwordRef.current.value)
-            console.log(usernameRef.current.value, passwordRef.current.value)
-            console.log("signin" + currentUser)
             navigate("/pet-profile")    
         } catch (error) {
           setError('Failed to signin')  

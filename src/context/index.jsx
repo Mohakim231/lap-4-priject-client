@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
       // console.log("line 23" + data)
       // setCurrentUser(data)
-      console.log(currentUser)
+      console.log(data)
     } catch (error) {
       console.error("Error registering user", error);
       throw new Error(error.message);
