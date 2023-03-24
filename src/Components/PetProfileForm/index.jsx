@@ -31,7 +31,7 @@ export default function PetProfileForm() {
       uploadImage(reader.result);
     };
     reader.onerror = () => {
-      console.error("AHHHHHHHH!!");
+      console.error("Error!!");
       setErrMsg("something went wrong!");
     };
   };

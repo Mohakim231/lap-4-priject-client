@@ -10,9 +10,13 @@ export const Message = ({ customerID, serviceProviderID }) => {
   useEffect(() => {
     socket.emit("join", { customerID, serviceProviderID });
 
-    socket.on("message", (data) => {
-      setConversation([...conversation, data]);
-    });
+    socket.on(
+      "message",
+      (data) => {
+        setConversation([...conversation, data]);
+      },
+      3000
+    );
 
     return () => {
       socket.emit("leave", { customerID, serviceProviderID });
@@ -26,6 +30,12 @@ export const Message = ({ customerID, serviceProviderID }) => {
     setConversation([...conversation, data]);
     setMessage("");
   };
+  // socket.timeout(5000).emit("hello", "world", (err, response) => {
+  //   if (err) {
+  //   } else {
+  //     console.log(response);
+  //   }
+  // });
 
   return (
     <div className="message-popup">
