@@ -79,7 +79,7 @@
   /* justify-content:center; */
   /* margin-left: auto; */
   align-self: center;
-  
+
 }
 
 .dog-pic {
@@ -112,8 +112,8 @@
     min-width: 20px;
     height: 10vh;
     background-color:white;
-    margin: 5vh 2vw;
-    padding: 0px 20px;
+    margin: 3vh 1vw;
+    padding: 5vh 4vw;
     line-height: 10vh;
     box-shadow: 3px 3px 5px;
     font-family: "Delicious Handrawn", cursive;
@@ -133,8 +133,8 @@
 
 
 .service-icon{
-margin-bottom: 20px;
-  height: 40%;
+margin-bottom: 5vh;
+  height: 5vh;
 }
 
 
