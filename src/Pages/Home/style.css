@@ -118,7 +118,10 @@
     box-shadow: 3px 3px 5px;
     font-family: "Delicious Handrawn", cursive;
     font-size: 5vh;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons-home {
@@ -128,6 +131,11 @@
   margin-top: 5vh;
 }
 
+
+.service-icon{
+margin-bottom: 20px;
+  height: 40%;
+}
 
 
 /* 
