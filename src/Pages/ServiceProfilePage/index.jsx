@@ -13,7 +13,7 @@ const ServiceProfilePage = () => {
 
         setLoading(true);
         async function loadProvider() {
-
+console.log(userId)
             const response = await fetch(`http://localhost:5000/services/profile/${userId}`);
             const data = await response.json();
             setProvider(data);
@@ -26,7 +26,7 @@ const ServiceProfilePage = () => {
     }, [])
 
 
-    const handleDeleteButton = async (userId) => {
+    const handleDeleteButton = async () => {
         console.log("in")
         const options = {
         method:"GET"
@@ -73,7 +73,7 @@ const ServiceProfilePage = () => {
             { provider.reptile ? <span className="">R</span> : ""}
 
         </p>
-<button onClick={handleDeleteButton(userId)}>Delete account</button>
+<button onClick={handleDeleteButton}>Delete account</button>
        
         <br></br>
     </div>
