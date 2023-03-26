@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679655604403" clover="3.2.0">
-  <project timestamp="1679655604403" name="All files">
-    <metrics statements="909" coveredstatements="469" conditionals="15" coveredconditionals="9" methods="36" coveredmethods="8" elements="960" coveredelements="486" complexity="0" loc="909" ncloc="909" packages="11" files="11" classes="11"/>
+<coverage generated="1679839010570" clover="3.2.0">
+  <project timestamp="1679839010570" name="All files">
+    <metrics statements="1027" coveredstatements="538" conditionals="21" coveredconditionals="15" methods="40" coveredmethods="10" elements="1088" coveredelements="563" complexity="0" loc="1027" ncloc="1027" packages="13" files="13" classes="13"/>
     <package name="Components">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.js" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Components/index.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Components\index.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Components.Alert">
-      <metrics statements="14" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Components/Alert/index.jsx">
-        <metrics statements="14" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Components\Alert\index.jsx">
+        <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="3" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="6" type="stmt"/>
       </file>
     </package>
     <package name="Components.Filters">
       <metrics statements="92" coveredstatements="37" conditionals="3" coveredconditionals="1" methods="15" coveredmethods="1"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Components/Filters/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Components\Filters\index.jsx">
         <metrics statements="92" coveredstatements="37" conditionals="3" coveredconditionals="1" methods="15" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -133,7 +134,7 @@
     </package>
     <package name="Components.PetProfileForm">
       <metrics statements="84" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Components/PetProfileForm/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Components\PetProfileForm\index.jsx">
         <metrics statements="84" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -223,7 +224,7 @@
     </package>
     <package name="Components.ProviderCard">
       <metrics statements="46" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Components/ProviderCard/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Components\ProviderCard\index.jsx">
         <metrics statements="46" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -273,9 +274,51 @@
         <line num="46" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="Components.TipCard">
+      <metrics statements="36" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Components\TipCard\index.jsx">
+        <metrics statements="36" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="Login">
       <metrics statements="117" coveredstatements="40" conditionals="3" coveredconditionals="1" methods="6" coveredmethods="1"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Login/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Login\index.jsx">
         <metrics statements="117" coveredstatements="40" conditionals="3" coveredconditionals="1" methods="6" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -397,9 +440,9 @@
       </file>
     </package>
     <package name="Pages.Home">
-      <metrics statements="98" coveredstatements="98" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Pages/Home/index.jsx">
-        <metrics statements="98" coveredstatements="98" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="101" coveredstatements="101" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Pages\Home\index.jsx">
+        <metrics statements="101" coveredstatements="101" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -496,13 +539,84 @@
         <line num="94" count="3" type="stmt"/>
         <line num="95" count="3" type="stmt"/>
         <line num="96" count="3" type="stmt"/>
-        <line num="97" count="1" type="stmt"/>
-        <line num="98" count="1" type="stmt"/>
+        <line num="97" count="3" type="stmt"/>
+        <line num="98" count="3" type="stmt"/>
+        <line num="99" count="3" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Pages.Message">
+      <metrics statements="62" coveredstatements="48" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Pages\Message\index.jsx">
+        <metrics statements="62" coveredstatements="48" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Pages.PetProfile">
       <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Pages/PetProfile/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Pages\PetProfile\index.jsx">
         <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -522,7 +636,7 @@
     </package>
     <package name="Services">
       <metrics statements="257" coveredstatements="245" conditionals="7" coveredconditionals="5" methods="5" coveredmethods="4"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/Services/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\Services\index.jsx">
         <metrics statements="257" coveredstatements="245" conditionals="7" coveredconditionals="5" methods="5" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -785,7 +899,7 @@
     </package>
     <package name="context">
       <metrics statements="45" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/context/index.jsx">
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\context\index.jsx">
         <metrics statements="45" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -835,9 +949,9 @@
       </file>
     </package>
     <package name="layout.NavBar">
-      <metrics statements="137" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="/Users/tesscunningham/futureproof/lap4/project/lap-4-project-client/src/layout/NavBar/index.jsx">
-        <metrics statements="137" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="153" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.jsx" path="C:\Users\Charlie\Futureproof\finalproject\frontend\lap-4-project-client\src\layout\NavBar\index.jsx">
+        <metrics statements="153" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -973,8 +1087,24 @@
         <line num="133" count="0" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
         <line num="135" count="0" type="stmt"/>
-        <line num="136" count="1" type="stmt"/>
-        <line num="137" count="1" type="stmt"/>
+        <line num="136" count="0" type="stmt"/>
+        <line num="137" count="0" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="149" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="152" count="1" type="stmt"/>
+        <line num="153" count="1" type="stmt"/>
       </file>
     </package>
   </project>
