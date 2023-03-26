@@ -12,7 +12,7 @@ describe("ProviderCard", () => {
       expect(ProviderCard).toBeDefined();
     });
     it("renders", () => {
-    //   render(ProviderCard);
+      render(<ProviderCard />);
       expect(1 == 1).toBe(true);
     });
 

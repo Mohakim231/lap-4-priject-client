@@ -16,7 +16,7 @@ const Filters = ({dogs,setDogs,cats, setCats,rabbits, setRabbits,birds, setBirds
     
     return <div className="filters">
         <div className='services-filters'>
-            <h2 className="services-title" onClick={showServicesFilters}>Services</h2>
+            <h2 className="services-title" onClick={showServicesFilters} >Services</h2>
             {
                 servicesClicked ? 
                 <div className="s-filters">
