@@ -1,13 +1,22 @@
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../context';
+import { Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useAuth } from "../context";
 
 const PrivateRoute = ({ children }) => {
-  const { currentUser } = useAuth();
-  return currentUser ? (
-    <>{children}</>
-  ) : (
-    <Navigate to="/login" />
-  );
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(!user);
+  }, [user]);
+
+  if (user) {
+    return <>{children}</>;
+  } else if (loading) {
+    return <p>Loading...</p>;
+  } else {
+    return <Navigate to="/login" />;
+  }
 };
 
 export default PrivateRoute;

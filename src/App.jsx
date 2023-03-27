@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Login from "./Login";
+// import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import SignUp from "./Signup";
 import { NavBar } from "./layout";
 import Services from "./Services";
-import { PetProfile, Message } from "./Pages";
+import { PetProfile, Message, Register, Login } from "./Pages";
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
 import { ProviderPage, ServiceProfile, ServiceProfilePage} from "./Pages"
@@ -18,8 +18,8 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path='/' element={<NavBar />}>
-            <Route index element={<Home/>}/>
-            <Route path="/signup" element={<SignUp/>} />
+            <Route index element={<PrivateRoute><Home/></PrivateRoute>}/>
+            <Route path="/signup" element={<Register />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/services" element={<Services/>} />
             <Route path="/services/:id" element={<ProviderPage/>} />

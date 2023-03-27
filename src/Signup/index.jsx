@@ -1,61 +1,39 @@
-import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { useAuth } from '../context'
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+// import { AuthContext } from '../context/index'
 import './style.css'
 
 const SignUp = () => {
 
-    const usernameRef = useRef()
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signup } = useAuth();
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    const { register } = useContext(AuthContext);
+    const navigate = useNavigate();
+      
+    const [UserUserName, setUserUserName] = useState("");
+    const [password, setPassword] = useState("");
 
-        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError('Passwords do not match')
-        }
-
-        try {
-            setError('')
-            setLoading(true)
-            signup(usernameRef.current.value, passwordRef.current.value)    
-        } catch (error) {
-          setError('Failed to create an account')  
-        }
-        
-        setLoading(false)
-    }
-
-    
     const[userChoice, setUserChoice] = useState(false)
     const[serviceChoice, setServiceChoice] = useState(false)
-   
+
+    const handleSubmitUser = async (e) => {
+        e.preventDefault();
+        try {
+        await register({
+            username,
+            password
+        });
+        navigate("/login");
+        } catch (error) {
+        setErrorMessage(error.message);
+        }
+    };
    
     const handleUserRegister = ()=>{
       console.log("user register")
       serviceChoice? setServiceChoice(!serviceChoice):''
       setUserChoice(!userChoice)
-    }
-
-    function handleSubmitUser(e) {
-        e.preventDefault()
-
-        try {
-            setError('')
-            // setLoading(true)
-            signin(usernameRef.current.value, passwordRef.current.value)
-            console.log(usernameRef.current.value, passwordRef.current.value)
-            console.log("signin" + currentUser)
-            navigate("/pet-profile")    
-        } catch (error) {
-          setError('Failed to signin')  
-        }
-        
-        setLoading(false)
     }
 
     const handleServiceRegister = ()=>{
@@ -189,8 +167,8 @@ const SignUp = () => {
                 Login
             </h2>
             <form onSubmit={handleSubmitUser} className='signup-form'>
-                <input className='signup-form-element' placeholder='Username' type='text' ref={usernameRef} name='username-form' required/>
-                <input className='signup-form-element' placeholder='Password' type='password' ref={passwordRef} name='password-form' required/>
+                <input className='signup-form-element' placeholder='Username' type='text' value={UserUserName} onChange={(e) => setUserUserName(e.target.value)} name='username-form' required/>
+                <input className='signup-form-element' placeholder='Password' type='password' value={password} name='password-form' required/>
                 <button className='singup-button' disabled={loading} type='submit'>Login</button>
                 {error && <p>{error}</p>}
             </form>

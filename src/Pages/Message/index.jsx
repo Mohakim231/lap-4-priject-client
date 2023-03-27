@@ -1,54 +1,41 @@
 import React, { useState, useEffect } from "react";
-import io from "socket.io-client";
+import Conversation from "../../Components/Conversation";
 
-// const socket = io("http://localhost:5000"); // replace with your server URL
+function Message() {
+  const [conversations, setConversations] = useState([]);
+  const [selectedConversation, setSelectedConversation] = useState(null);
 
-const MessagePopup = ({ customerID, serviceProviderID }) => {
-  const [message, setMessage] = useState("");
-  const [conversation, setConversation] = useState([]);
+  async function getConversationsByUser(userId) {
+    const response = await fetch(`http://localhost:5000/conversations?user_id=${userId}`);
+    const data = await response.json();
+    setConversations(data.conversations);
+  }
 
   useEffect(() => {
-    socket.emit("join", { customerID, serviceProviderID });
-
-    socket.on("message", (data) => {
-      setConversation([...conversation, data]);
-    });
-
-    return () => {
-      socket.emit("leave", { customerID, serviceProviderID });
-      socket.off();
-    };
+    // getConversationsByUser(user.id);
+    getConversationsByUser(1);
   }, []);
 
-  const sendMessage = () => {
-    const data = { customerID, serviceProviderID, message };
-    socket.emit("sendMessage", data);
-    setConversation([...conversation, data]);
-    setMessage("");
-  };
-
   return (
-    <div className="message-popup">
-      <div className="header">Chat with Service Provider</div>
-      <div className="conversation">
-        {conversation.map((msg, idx) => (
-          <div key={idx}>
-            <span>{msg.customerID === customerID ? "You: " : "SP: "}</span>
-            {msg.message}
-          </div>
-        ))}
-      </div>
-      <div className="input-box">
-        <input
-          type="text"
-          placeholder="Type a message..."
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button onClick={sendMessage}>Send</button>
-      </div>
+    <div>
+      <h2>Conversations</h2>
+      {conversations.map((conversation) => (
+        <div
+          className='conversation-box'
+          key={conversation.conversation.id}
+          onClick={() => setSelectedConversation(conversation.conversation.id)}
+        >
+          <p>User: {conversation.user.username}</p>
+          <p>Service: {conversation.service.username}</p>
+        </div>
+      ))}
+      {selectedConversation && (
+        <div id='messages'>
+          <Conversation conversationId={selectedConversation} />
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default MessagePopup;
+export default Message;

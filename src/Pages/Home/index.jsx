@@ -61,7 +61,7 @@ const Home = () => {
         >
           Explore Services
         </Link></h2>
-
+        <h1></h1>
         <div className="services">
           <div className='service'>
             Sitters
