@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 // import React, { useRef, useState } from 'react'
 // import { Link, useNavigate } from 'react-router-dom'
 // import { useAuth } from '../context'
-=======
-import React, { useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../context'
-import './style.css'
->>>>>>> 941dcb353da9eeb3db5a90cbffc5cdd5d0f4682e
 
 // const Login = () => {
 
@@ -93,7 +86,6 @@ import './style.css'
 //   return (
    
 
-<<<<<<< HEAD
 //     <>
 //      <div className='login-choice'>
 //     <button onClick={handleUserLogin}>Pet owner</button>
@@ -133,95 +125,5 @@ import './style.css'
 //     </>
 //   )
 // }
-=======
-    <>
-     <div className='login-choice'>
-     <h1>Log in as ...</h1>
-    <button onClick={handleUserLogin} className={userForm ? "clicked" : "not-clicked"}>Pet owner</button>
-    <button onClick={handleServiceLogin} className={serviceForm ? "clicked" : "not-clicked"}>Service provider</button>
-    </div>
-    {serviceForm || userForm ? 
-        null :
-            <div className="paw-prints">
-        <div className="paw-print-1">
-           <img className="pad" src="../../../paw.png" alt="paw" />
-        </div>
-            
-        <div className="paw-print-2">
-            <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>    
-            
-        <div className="paw-print-3">
-        <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>    
-            
-        <div className="paw-print-4">
-        <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>
-
-        
-            
-        <div className="paw-print-5">
-        <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>
-            
-        <div className="paw-print-6">
-        <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>
-            
-        <div className="paw-print-7">
-        <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>
-
-        <div className="paw-print-8">
-        <img src="../../../paw.png" alt="paw" className="pad"/>
-        </div>
-            </div> 
-        }
-     {userForm?(
-     <div>
-            {/* <h2>
-                Login
-            </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username-form'>
-                    Username: 
-                </label>
-                <input type='text' ref={usernameRef} name='username-form' required/>
-                <label htmlFor='password-form'>
-                    Password: 
-                </label>
-                <input type='password' ref={passwordRef} name='password-form' required/>
-                <button disabled={loading} type='submit'>Login</button>
-                {error && <p>{error}</p>}
-            </form> */}
-        </div>): serviceForm?(
-        <div>
-            <h2>
-                Login
-            </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username-form'>
-                    Username: 
-                </label>
-                <input type='text' value={loginEmail} onChange={(e) => setloginEmail(e.target.value)} placeholder={"Username or Email"} name='username-form' required/>
-                <label htmlFor='password-form'>
-                    Password: 
-                </label>
-                <input type='password' value={loginPassword} onChange={(e) => setloginPassword(e.target.value)} placeholder={"Enter Password"} name='password-form' required/>
-                <button disabled={loading} type='submit'>Login</button>
-                {error && <p>{error}</p>}
-            </form>
-        </div>):''}
-        
-        {serviceForm || userForm ? 
-        null :
-           <div className='no-account'>Dont have an account? <Link to='/signup' className='signup-link'>Signup Now</Link></div> 
-        }
-        
-    </>
-  )
-}
->>>>>>> 941dcb353da9eeb3db5a90cbffc5cdd5d0f4682e
 
 // export default Login
