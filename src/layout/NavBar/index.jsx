@@ -34,27 +34,26 @@ function NavBar() {
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/login"
-              >
-                Login
-              </NavLink>
-            </li>
-            <li className="navbar-list-item">
-              <NavLink
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/signup"
-              >
-                Signup
-              </NavLink>
-            </li>
-            <li className="navbar-list-item">
-              <NavLink
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/pet-profile"
               >
                 Pet Profile
               </NavLink>
-              <NavLink to="/message">Message</NavLink>
+            </li>
+            <li className="navbar-list-item">
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/petinfo"
+              >
+                Pet Tips
+              </NavLink>
+            </li>
+            <li className="navbar-list-item">
+              <NavLink 
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/message"
+              >
+                  Message
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -110,6 +109,22 @@ function NavBar() {
                   Pet Profile
                 </NavLink>
               </li>
+              <li className='menu-list-item' onClick={closeMenu}>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/petinfo"
+                >
+                  Pet Tips
+                </NavLink>
+              </li>
+              <li className='menu-list-item' onClick={closeMenu}>
+              <NavLink 
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/message"
+              >
+                  Message
+              </NavLink>
+            </li>
             </ul>
           </div> : null}
         </div>

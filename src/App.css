@@ -8,14 +8,19 @@
     
 }
 body {
-    /* padding-top: 60px; */
+    padding-top: 8vh;
     background: #CFE1EE;
   }
 @media (max-width: 979px) {
     body {
-      padding: 0px;
+      /* padding: 0px; */
+      padding-top: 8vh;
     }
   }
+
+h2 {
+  text-align: center;
+}
 
   button{
     position: relative;

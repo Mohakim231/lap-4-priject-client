@@ -32,7 +32,7 @@ export default function PetProfileForm() {
       uploadImage(reader.result);
     };
     reader.onerror = () => {
-      console.error("AHHHHHHHH!!");
+      console.error("Error!!");
       setErrMsg("something went wrong!");
     };
   };
@@ -60,10 +60,10 @@ export default function PetProfileForm() {
   };
   return (
     <div>
-      <h1 className="title">Upload an Image</h1>
+      <h1 className="title">Pet Profile</h1>
       <Alert msg={errMsg} type="danger" />
       <Alert msg={successMsg} type="success" />
-      <form onSubmit={handleSubmitFile} className="form">
+      {/* <form onSubmit={handleSubmitFile} className="form">
         <input
           id="fileInput"
           type="file"
@@ -72,6 +72,72 @@ export default function PetProfileForm() {
           value={fileInputState}
           className="form-input"
         />
+        <button className="btn" type="submit">
+          Submit
+        </button>
+      </form> */}
+      <form
+        action="http://localhost:5000/pets/upload"
+        method="post"
+        encType="multipart/form-data"
+      >
+        <label htmlFor="File">
+          Upload Pet Profile Image
+          <input
+            id="fileInput"
+            type="file"
+            name="image"
+            onChange={handleFileInputChange}
+            value={fileInputState}
+            className="form-input"
+          />
+        </label>
+        <label htmlFor="pet-name">
+          {" "}
+          Pet Name
+          <input
+            type="text"
+            name="pet-name"
+            id="pet-name"
+            placeholder="Enter Pet Name"
+            required
+          />
+        </label>
+        <label htmlFor="pet-age">
+          {" "}
+          Pet Age
+          <input
+            type="text"
+            name="pet-age"
+            id="pet-age"
+            placeholder="Enter Pet Name"
+          />
+        </label>
+        <label htmlFor="pet-species">
+          {" "}
+          Pet Species
+          <select name="species" id="pet-specie">
+            <option value="">Select Pet Species</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+            <option value="rabbit">Rabbit</option>
+            <option value="reptile">Reptile</option>
+          </select>
+        </label>
+        <label htmlFor="pet-instructions">
+          {" "}
+          Special Instructions
+          <textarea
+            type="text"
+            name="pet-instructions"
+            id="pet-instructions"
+            placeholder="Enter Instructions"
+            cols="30"
+            rows="2"
+          ></textarea>
+        </label>
+
         <button className="btn" type="submit">
           Submit
         </button>

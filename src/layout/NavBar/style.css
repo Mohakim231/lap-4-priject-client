@@ -7,11 +7,12 @@
   align-items: center;
   background-color: #699759;
  
-    /* position: fixed; */
+    position: fixed;
   top: 0;
   left: 0;
   right: 0;
   color: white;
+  z-index: 1000;
   } 
   
   .mobile-display {
@@ -81,6 +82,8 @@
   @media screen and (max-width: 800px) {
     .mobile-display{
       display: block;
+       position: fixed;
+       z-index: 1000;
     }
     .nav-section {
       display: block;
@@ -89,10 +92,12 @@
       justify-content: space-between;
       align-items: center;
       background-color: #699759;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
       color: white;
+      
     }
     .container,
     .clicked {

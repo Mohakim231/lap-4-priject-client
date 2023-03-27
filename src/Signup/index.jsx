@@ -177,7 +177,13 @@ const SignUp = () => {
     </div>
         
         
-    </>):''}</>
+    </>):''}
+    {serviceChoice || userChoice ? 
+        null :
+           <div className='no-account'>Already have an account? <Link to='/login' className='signup-link'>Login Now</Link></div> 
+        }
+    </>
+    
   )
 }
 
