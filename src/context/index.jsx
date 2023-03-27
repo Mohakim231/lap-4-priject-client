@@ -1,42 +1,30 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import httpClient from "../httpClient";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-  const [currentUser, setCurrentUser] = useState();
+  useEffect(() => {
+    (async () => {
+      try {
+        const resp = await httpClient.get("http://localhost:5000/user");
+        console.log(resp.data);
+        setUser(resp.data);
+      } catch (error) {
+        console.log("Not authenticated");
+      }
+    })();
+  }, []);
 
-  // function signup(username, password){
-  //   return AuthContext.createUserWithUsernameAndPassword(username, password)
-  // }
-
-  // function login(username, password) {
-  //   return AuthContext.signInWithUsernameAndPassword(username, password)
-  // }
-
-  // function logout() {
-  //   return AuthContext.signOut()
-  // }
-
-//   useEffect(() => {
-//     const unsubscribe = AuthContext.onAuthStateChanged(user => {
-//         setCurrentUser(user)
-//     })
-
-//     return unsubscribe
-//   },[])
-  
-  console.log("context updated", { currentUser });
-
-  const value ={
-    currentUser,
-    // signup,
-    // login,
-    // logout
+  const logout = () => {
+    setUser(null)
   }
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, logout }}>
       {children}
     </AuthContext.Provider>
   );
