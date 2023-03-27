@@ -113,22 +113,16 @@ export default function PetProfileForm() {
             placeholder="Enter Pet Name"
           />
         </label>
-        <label htmlFor="pet-specie">
+        <label htmlFor="pet-species">
           {" "}
-          Pet Specie
-          <select name="specie" id="pet-specie">
-            <option value="">Select Pet Specie</option>
+          Pet Species
+          <select name="species" id="pet-specie">
+            <option value="">Select Pet Species</option>
             <option value="dog">Dog</option>
             <option value="cat">Cat</option>
-            <option value="fish">Fish</option>
             <option value="bird">Bird</option>
-            <option value="hamster">Hamster</option>
             <option value="rabbit">Rabbit</option>
-            <option value="guinea pig">Guinea pig</option>
-            <option value="snake">Snake</option>
-            <option value="lizard">Lizard</option>
-            <option value="turtle">Turtle</option>
-            <option value="Horse">Horse</option>
+            <option value="reptile">Reptile</option>
           </select>
         </label>
         <label htmlFor="pet-instructions">
