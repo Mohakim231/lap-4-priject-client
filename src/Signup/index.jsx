@@ -1,32 +1,41 @@
-import React, { useRef, useState } from 'react'
-import { Link , useNavigate} from 'react-router-dom'
-import { useAuth } from '../context'
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+// import { AuthContext } from '../context/index'
 import './style.css'
 
 const SignUp = () => {
 
-    const [username, setUsername] = useState('')
-    const[email, setEmail] = useState('')
-    const[password, setPassword] = useState('')
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const[user, setUser] = useState({})
-    const navigate = useNavigate()
-    // const { setUser, user } = useAuth();
 
-    
+    const { register } = useContext(AuthContext);
+    const navigate = useNavigate();
+      
+    const [UserUserName, setUserUserName] = useState("");
+    const [password, setPassword] = useState("");
+
     const[userChoice, setUserChoice] = useState(false)
     const[serviceChoice, setServiceChoice] = useState(false)
-   
+
+    const handleSubmitUser = async (e) => {
+        e.preventDefault();
+        try {
+        await register({
+            username,
+            password
+        });
+        navigate("/login");
+        } catch (error) {
+        setErrorMessage(error.message);
+        }
+    };
    
     const handleUserRegister = ()=>{
       console.log("user register")
       serviceChoice? setServiceChoice(!serviceChoice):''
       setUserChoice(!userChoice)
     }
-    
+
     const handleServiceRegister = ()=>{
       console.log("service register")
       userChoice? setUserChoice(!userChoice):''
@@ -152,35 +161,29 @@ const SignUp = () => {
         </div>
         
     </>): userChoice? (<>
-        <div className="signup-service">
-            {/* <h2>
-                Sign Up As Pet Owner
-            </h2> */}
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username-form'>
-                    Username: 
-                </label>
-                <input type='text' value={username} onChange={(e)=> setUsername(e.target.value)} placeholder={"Username"} name='username-form' required/>
-                <label htmlFor='email-form'>
-                    Email: 
-                </label>
-                <input type='email' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder={"Email"} name='username-form' required/>
-                <label htmlFor='password-form'>                    
-                    Password: 
-                </label>
-                <input type='password' ref={passwordRef} value={password} onChange={(e)=> setPassword(e.target.value)} placeholder={"Password"}name='password-form' required/>
-                <label htmlFor='passwordConfirm-form'>
-                     Confirmation: 
-                </label>
-                <input type='password' ref={passwordConfirmRef} placeholder={"Confirm Password"} name='passwordConfirm-form' required/>
-                <button disabled={loading} type='submit'>Sign Up</button>
+        <div className='signup-page'>
+        <div className='signup-service'>
+            <h2 className='signup-heading'>
+                Login
+            </h2>
+            <form onSubmit={handleSubmitUser} className='signup-form'>
+                <input className='signup-form-element' placeholder='Username' type='text' value={UserUserName} onChange={(e) => setUserUserName(e.target.value)} name='username-form' required/>
+                <input className='signup-form-element' placeholder='Password' type='password' value={password} name='password-form' required/>
+                <button className='singup-button' disabled={loading} type='submit'>Login</button>
                 {error && <p>{error}</p>}
             </form>
-            <div>Already have an account? <Link to='/login'>Login</Link></div>
+            <div className='signup-link'>Dont have an account? <Link to='/signup'>Signup</Link></div>
         </div>
+    </div>
         
         
-    </>):''}</>
+    </>):''}
+    {serviceChoice || userChoice ? 
+        null :
+           <div className='no-account'>Already have an account? <Link to='/login' className='signup-link'>Login Now</Link></div> 
+        }
+    </>
+    
   )
 }
 

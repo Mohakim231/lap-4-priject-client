@@ -1,6 +1,12 @@
 import { useState } from "react"
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Geocode from "react-geocode";
+Geocode.setApiKey("AIzaSyAf81ZWQurI47K6AtmX9YF8u0YVHX5rQq8")
+    Geocode.setLanguage("en");
+    Geocode.setRegion("uk")
+    Geocode.setLocationType("ROOFTOP");
+    Geocode.enableDebug();
 
 const ServiceProfile = () => {
     const [dogs, setDogs] = useState(false)
@@ -22,64 +28,89 @@ const ServiceProfile = () => {
     const [phone, setPhone] = useState('')
     const { userId } = useParams()
     const [error, setError] = useState('')
+    // const[latitude, setLatitude] = useState('')
+    // const [longitude, setLongitude] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+
+
 
 async function handleSubmit(e) {
         e.preventDefault()
 
-       
+        const fullAddress = `${address}, ${city}, ${postcode}`
+        const res = await  Geocode.fromAddress(fullAddress)
+           
+        const data = res.results[0].geometry.location;
+              console.log(data);
 
-        try {
-            setError('')
-            setLoading(true)
-            const options = {
-                method:"POST",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    sp_id : userId,
-                    address :address,
-                    city :city,
-                    name:name,
-                    post_code :postcode,
-                    phone :phone ,
-                    latitude:0.12,
-                    longitude:0.12,
-                    dog :dogs,
-                    cat :cats,
-                    rabbit :rabbits,
-                    bird :birds,
-                    reptile :reptiles,
-                    daily_care :daycares,
-                    boarding_hotel :hotels,
-                    pet_sitter :petsitters,
-                    dog_walker :dogwalkers,
-                    vet :vets,
-                    grooming :groomers,
-                    trainer :trainers
-                })
+   const latitude = data.lat
+    const longitude = data.lng  
+              try {
+                setError('')
+                setLoading(true)
+                const options = {
+                    method:"POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        sp_id : userId,
+                        address :address,
+                        city :city,
+                        name:name,
+                        post_code :postcode,
+                        phone :phone ,
+                        latitude:latitude,
+                        longitude:longitude,
+                        dog :dogs,
+                        cat :cats,
+                        rabbit :rabbits,
+                        bird :birds,
+                        reptile :reptiles,
+                        daily_care :daycares,
+                        boarding_hotel :hotels,
+                        pet_sitter :petsitters,
+                        dog_walker :dogwalkers,
+                        vet :vets,
+                        grooming :groomers,
+                        trainer :trainers
+                    })
+                }
+                const response = await fetch("http://localhost:5000/service-profile", options)
+                if (response.status === 201) {
+                    const data = await response.json()
+                    console.log(data.p_id)
+                    // now set user details to user and navigate to main page 
+                    // setUser(data.user)
+                    // console.log(user)
+                    localStorage.setItem("p_id", data.p_id)
+                   const id = userId
+                    navigate(`/service/profile/${id}`)
+              
+             }}
+            catch (error) {
+              setError('Failed to create an account')  
             }
-            const response = await fetch("http://localhost:5000/service-profile", options)
-            if (response.status === 201) {
-                const data = await response.json()
-                console.log(data.p_id)
-                // now set user details to user and navigate to main page 
-                // setUser(data.user)
-                // console.log(user)
-                localStorage.setItem("p_id", data.p_id)
-               const id = userId
-                navigate(`/service/profile/${id}`)
-          
-        } }
-        catch (error) {
-          setError('Failed to create an account')  
-        }
+    
+            
+        //     (error) => {
+        //       console.error(error);
+        //     }
+        //   );
+
+        
         
         setLoading(false)
     }
+
+const handleAddress =()=>{
+    
+     
+   
+}
+
 
     return (
         <div className="which-signup">
@@ -90,7 +121,7 @@ async function handleSubmit(e) {
                 </label>
                 <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder={"Name"} name='username' required />
                 <label >
-                    Address::
+                    Address:
                 </label>
                 <input type='text' value={address} onChange={(e) => setAddress(e.target.value)} placeholder={"Address"} name='address' required />
                 <label >
@@ -166,8 +197,10 @@ async function handleSubmit(e) {
                     </div>
 
                 </div>
-                <button disabled={loading} type='submit'>Submit</button>
+                {/* <button disabled={loading} type='submit'>Submit</button> */}
+                <button  onClick={handleAddress}>Check</button>
             </form>
+            
             {error && <p>{error}</p>}
         </div>
     )

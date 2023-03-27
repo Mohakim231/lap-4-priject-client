@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Login from "./Login";
+// import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
-import SignUp from "./Signup";
+// import SignUp from "./Signup";
 import { NavBar } from "./layout";
 import Services from "./Services";
-import { PetProfile, Message } from "./Pages";
+import { PetProfile, Message, Register, Login } from "./Pages";
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
 import { ProviderPage, ServiceProfile, ServiceProfilePage, PetInfo} from "./Pages"
@@ -15,22 +15,22 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      {/* <AuthProvider> */}
+      <AuthProvider>
         <Routes>
           <Route path='/' element={<NavBar />}>
-            <Route index element={<Home/>}/>
-            <Route path="/signup" element={<SignUp/>} />
+            <Route index element={<PrivateRoute><Home/></PrivateRoute>}/>
+            <Route path="/signup" element={<Register />} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/services" element={<Services/>} />
-            <Route path="/services/:id" element={<ProviderPage/>} />
-            <Route path="/service-profile/:userId" element = {<ServiceProfile/>}/>
-            <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>
-            <Route path="/pet-profile" element={<CardProfile/>} />
-            <Route path="/Message" element={<Message />} />
-            <Route path="/petinfo" element={<PetInfo />} />
+            <Route path="/services" element={<PrivateRoute><Services/></PrivateRoute>} />
+            <Route path="/services/:id" element={<PrivateRoute><ProviderPage/></PrivateRoute>} />
+            <Route path="/service-profile/:userId" element = {<PrivateRoute><ServiceProfile/></PrivateRoute>}/>
+            <Route path="/service/profile/:userId" element = {<PrivateRoute><ServiceProfilePage/></PrivateRoute>}/>
+            <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
+            <Route path="/Message" element={<PrivateRoute><Message /></PrivateRoute>} />
+            <Route path="/petinfo" element={<PrivateRoute><PetInfo /></PrivateRoute>} />
           </Route>
         </Routes>
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.provider-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../../background.png");
+    padding-bottom: 50vh;
+
+}
+
+.profile-card {
+    width: 50vw;
+    height: 60vh;
+    justify-content: center;
+    margin-top: 10vh;
+}
