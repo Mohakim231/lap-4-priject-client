@@ -62,7 +62,24 @@ export default function PetProfileForm() {
       <h1 className="title">Upload an Image</h1>
       <Alert msg={errMsg} type="danger" />
       <Alert msg={successMsg} type="success" />
-      <form onSubmit={handleSubmitFile} className="form">
+      {/* <form onSubmit={handleSubmitFile} className="form">
+        <input
+          id="fileInput"
+          type="file"
+          name="image"
+          onChange={handleFileInputChange}
+          value={fileInputState}
+          className="form-input"
+        />
+        <button className="btn" type="submit">
+          Submit
+        </button>
+      </form> */}
+      <form
+        action="http://localhost:5000/pets/upload"
+        method="post"
+        encType="multipart/form-data"
+      >
         <input
           id="fileInput"
           type="file"
