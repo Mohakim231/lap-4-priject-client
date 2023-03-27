@@ -1,4 +1,9 @@
-  form{
+body {
+  font-family: 'Montserrat';
+}
+
+form{
+  padding-top: 0vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,21 +93,7 @@
     max-width: 220px;
     overflow-wrap: break-word;
   }
-  button{
-    position: relative;
-    color: #054231;
-    letter-spacing: 1px;
-    margin: 20px;
-    font-size: 18px;
-    padding: 10px;
-    text-align: center;
-    transition: 0.5s;
-    border-radius: 10px;
-    cursor: pointer;
-    border-radius: 25px;
-    border: none;
-    /* background: #64d488; */
-  }
+  
   .save{
     font-weight: 600;
     left: -20px;
@@ -118,10 +109,14 @@
   button:hover{
     left: 0;
     color: #fff;
-    background-color: #054231;
-    width: 100px;
+    background-color: #0b504f;
+    /* width: 100px; */
     box-shadow: 0px 0px 20px 0px  #63d3a6;
   } 
   button:focus{
     outline: none;
   } 
+
+  #specialInfo {
+    height: 10vh;
+  }

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link , useNavigate} from 'react-router-dom'
 import { useAuth } from '../context'
+import './style.css'
 
 const SignUp = () => {
 
@@ -18,13 +19,11 @@ const SignUp = () => {
     
     const[userChoice, setUserChoice] = useState(false)
     const[serviceChoice, setServiceChoice] = useState(false)
-    
-    
    
    
     const handleUserRegister = ()=>{
       console.log("user register")
-      serviceChoice?setserviceChoice(!serviceChoice):''
+      serviceChoice? setServiceChoice(!serviceChoice):''
       setUserChoice(!userChoice)
     }
     
@@ -58,10 +57,14 @@ const SignUp = () => {
             const response = await fetch("http://localhost:5000/service-register", options)
             if (response.status === 201) {
                 const data = await response.json()
+                console.log(data.token)
                 // now set user details to user and navigate to main page 
-                setUser(data.user)
-                localStorage.setItem("token", user.token)
-                navigate("/login")
+                setUser(data)
+                console.log(user)
+                localStorage.setItem("token", data.token)
+               const id = data.token
+               
+                navigate(`/service-profile/${id}`)
           
         } }
         catch (error) {
@@ -75,16 +78,56 @@ const SignUp = () => {
 
   return (<>
     
-        <div>
-          <button onClick={handleUserRegister}>Pet owner</button>
-          <button onClick={handleServiceRegister}>Service provider</button>
+        <div className="which-signup">
+        <h1>Sign up as ...</h1>
+          <button onClick={handleUserRegister} className={userChoice ? "clicked" : "not-clicked"}>Pet owner</button>
+          <button onClick={handleServiceRegister} className={serviceChoice ? "clicked" : "not-clicked"}>Service provider</button>
         </div>
+        {serviceChoice || userChoice ? 
+        null :
+            <div className="paw-prints">
+        <div className="paw-print-1">
+           <img className="pad" src="../../../paw.png" alt="paw" />
+        </div>
+            
+        <div className="paw-print-2">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>    
+            
+        <div className="paw-print-3">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>    
+            
+        <div className="paw-print-4">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+
+        
+            
+        <div className="paw-print-5">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+            
+        <div className="paw-print-6">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+            
+        <div className="paw-print-7">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+
+        <div className="paw-print-8">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+            </div> 
+        }
+        
            {serviceChoice?(
     <>
-        <div>
-            <h2>
+        <div className="signup-service">
+            {/* <h2>
                 Sign Up As Service Provider
-            </h2>
+            </h2> */}
             <form onSubmit={handleSubmit}>
                 <label htmlFor='username-form'>
                     Username: 
@@ -105,13 +148,14 @@ const SignUp = () => {
                 <button disabled={loading} type='submit'>Sign Up</button>
                 {error && <p>{error}</p>}
             </form>
+            <em className="already">Already have an account? <Link to='/login'>Login</Link></em>
         </div>
-        <div>Already have an account? <Link to='/login'>Login</Link></div>
+        
     </>): userChoice? (<>
-        {/* <div>
-            <h2>
+        <div className="signup-service">
+            {/* <h2>
                 Sign Up As Pet Owner
-            </h2>
+            </h2> */}
             <form onSubmit={handleSubmit}>
                 <label htmlFor='username-form'>
                     Username: 
@@ -132,9 +176,10 @@ const SignUp = () => {
                 <button disabled={loading} type='submit'>Sign Up</button>
                 {error && <p>{error}</p>}
             </form>
+            <div>Already have an account? <Link to='/login'>Login</Link></div>
         </div>
-        <div>Already have an account? <Link to='/login'>Login</Link></div> */}
-        user register
+        
+        
     </>):''}</>
   )
 }
