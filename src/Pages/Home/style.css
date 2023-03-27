@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .home-page {
-    /* padding-top: 100px; */
+    
     /* height: 90vh; */
   /* display: flex;
   flex-direction: column;
@@ -68,7 +68,6 @@
   .home-links {
     padding-right: 5vw;
     padding-top: 5vh;
-
   }
 
   .dog-pic {
@@ -96,6 +95,13 @@
     text-align: end;
     color: white;
     padding-top: 1vh;
+  }
+  .signup-home {
+    background-color: #CFE1EE;
+  }
+
+  .signup-home:hover {
+    background-color:#3fa1a9;
   }
 
 }

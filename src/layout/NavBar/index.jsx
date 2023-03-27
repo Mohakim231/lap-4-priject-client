@@ -31,22 +31,6 @@ function NavBar() {
           </div>
           {/* <h1 className="pet-pal">PetPal</h1> */}
           <ul className="nav-links">
-            {/* <li className="navbar-list-item">
-              <NavLink
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/login"
-              >
-                Login
-              </NavLink>
-            </li>
-            <li className="navbar-list-item">
-              <NavLink
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/signup"
-              >
-                Signup
-              </NavLink>
-            </li> */}
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}

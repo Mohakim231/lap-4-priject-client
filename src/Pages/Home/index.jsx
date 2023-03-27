@@ -15,7 +15,7 @@ const Home = () => {
         <em >All your pet needs in one convenient place</em>
       
         <div className="buttons-home">
-          <button ><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/login">Login</Link></button>
+          <button className="signup-home"><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/login">Login</Link></button>
           <button className="signup-home"><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/signup">Signup</Link></button>
           
         </div>

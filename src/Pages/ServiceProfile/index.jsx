@@ -121,7 +121,7 @@ const handleAddress =()=>{
                 </label>
                 <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder={"Name"} name='username' required />
                 <label >
-                    Address::
+                    Address:
                 </label>
                 <input type='text' value={address} onChange={(e) => setAddress(e.target.value)} placeholder={"Address"} name='address' required />
                 <label >
