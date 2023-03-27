@@ -80,8 +80,10 @@ export default function PetProfileForm() {
         action="http://localhost:5000/pets/upload"
         method="post"
         encType="multipart/form-data"
+        htmlFor="fileInput"
       >
-        <label htmlFor="File">
+        Click here
+        <label htmlFor="fileInput">
           Upload Pet Profile Image
           <input
             id="fileInput"
@@ -137,7 +139,6 @@ export default function PetProfileForm() {
             rows="2"
           ></textarea>
         </label>
-
         <button className="btn" type="submit">
           Submit
         </button>
