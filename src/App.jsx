@@ -26,7 +26,7 @@ function App() {
             <Route path="/service-profile/:userId" element = {<ServiceProfile/>}/>
             <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>
             <Route path="/pet-profile" element={<CardProfile/>} />
-            <Route path="/Message" element={<Message />} />
+            {/* <Route path="/Message" element={<Message />} /> */}
             <Route path="/petinfo" element={<PetInfo />} />
           </Route>
         </Routes>
