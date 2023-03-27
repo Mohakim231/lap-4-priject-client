@@ -1,8 +1,8 @@
 import React from 'react'; 
-import { describe, it, expect, beforeEach, afterEach } from 'vitest'; 
+
+import { describe, it, beforeEach, afterEach, expect } from 'vitest'; 
 import { screen, render, fireEvent } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
-import '@testing-library/jest-dom/extend-expect';
 expect.extend(matchers); 
 import PetProfileForm from '.';
 

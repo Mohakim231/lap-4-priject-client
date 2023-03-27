@@ -10,9 +10,9 @@ const Login = () => {
     const[userForm, setUserForm] = useState(false)
     const[serviceForm, setServiceForm]= useState(false)
     const[loginEmail, setloginEmail] = useState('')
-   const[loginPassword, setloginPassword]= useState('')
-   const navigate = useNavigate()
-   const[serviceUser, setServiceUser] = useState({})
+    const[loginPassword, setloginPassword]= useState('')
+    const navigate = useNavigate()
+    const[serviceUser, setServiceUser] = useState({})
 
 
 const handleUserLogin = ()=>{

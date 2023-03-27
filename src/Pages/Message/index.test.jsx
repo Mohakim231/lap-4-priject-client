@@ -11,6 +11,8 @@ describe("Message", () => {
   });
   it("renders", () => {
     render(<Message />);
-    expect(1 == 1).toBe(true);
+    expect(screen.getByText('Chat with Service Provider')).toBeInTheDocument();
   });
+
+  
 });
