@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './style.css'
 
 
 const ServiceProfilePage = () => {
@@ -41,9 +42,9 @@ console.log(userId)
     }
 
     function displayProvider() {
-        return <div className='prov-card'>
-        <h2>Your address:</h2>    
-        <h3>{provider.name}</h3>
+        return <div className='prov-card profile-card'>
+        {/* <h2>Your Company:</h2>     */}
+        <h2>{provider.name}</h2>
         <h4>{provider.address }</h4>
         <h4>{provider.city}</h4>
         <h4>{provider.postcode}</h4>
@@ -66,11 +67,11 @@ console.log(userId)
         <h5>Animals you provide for:</h5>
         <p className="details-holder">
             
-            { provider.dog? <span className="">D</span> : ""}
-            { provider.cat ? <span className="">C</span> : ""}
-            { provider.bird ? <span className="">B</span> : ""}
-            { provider.rabbit ? <span className="">RA</span> : ""}
-            { provider.reptile ? <span className="">R</span> : ""}
+            { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
+            { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
+            { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
+            { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
+            { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
 
         </p>
 <button onClick={handleDeleteButton}>Delete account</button>
@@ -118,7 +119,13 @@ console.log(userId)
             <img src="../../../paw.png" alt="paw" className="pad"/>
             </div>
         </div> 
-    : displayProvider();
+    : 
+    <div className="provider-profile">
+        {displayProvider()}
+    </div>
+    
+
+
 
 };
 

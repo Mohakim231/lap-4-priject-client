@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context'
+import './style.css'
 
 const Login = () => {
 
@@ -70,9 +71,48 @@ const handleUserLogin = ()=>{
 
     <>
      <div className='login-choice'>
-    <button onClick={handleUserLogin}>Pet owner</button>
-    <button onClick={handleServiceLogin}>Service provider</button>
+     <h1>Log in as ...</h1>
+    <button onClick={handleUserLogin} className={userForm ? "clicked" : "not-clicked"}>Pet owner</button>
+    <button onClick={handleServiceLogin} className={serviceForm ? "clicked" : "not-clicked"}>Service provider</button>
     </div>
+    {serviceForm || userForm ? 
+        null :
+            <div className="paw-prints">
+        <div className="paw-print-1">
+           <img className="pad" src="../../../paw.png" alt="paw" />
+        </div>
+            
+        <div className="paw-print-2">
+            <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>    
+            
+        <div className="paw-print-3">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>    
+            
+        <div className="paw-print-4">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+
+        
+            
+        <div className="paw-print-5">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+            
+        <div className="paw-print-6">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+            
+        <div className="paw-print-7">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+
+        <div className="paw-print-8">
+        <img src="../../../paw.png" alt="paw" className="pad"/>
+        </div>
+            </div> 
+        }
      {userForm?(
      <div>
             {/* <h2>
@@ -109,7 +149,11 @@ const handleUserLogin = ()=>{
             </form>
         </div>):''}
         
-        <div>Dont have an account? <Link to='/signup'>Signup</Link></div>
+        {serviceForm || userForm ? 
+        null :
+           <div className='no-account'>Dont have an account? <Link to='/signup' className='signup-link'>Signup Now</Link></div> 
+        }
+        
     </>
   )
 }
