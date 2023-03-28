@@ -66,8 +66,19 @@ const Home = () => {
           </div>
           
         </div>
+        <div className='message-button-div'><Link 
+                style={{ color: 'white', textDecoration: "none"}}
+                to="/services"
+              > <h2>Chats</h2>
+                <img src="../../../chat.png" alt="chat" className='message-button'/>
+                
+              </Link>
+          
+            
+        </div>
         
         <div className='link-and-dog'>
+              
           
               <h2 className='home-links'><Link 
                 style={{ color: '#1746a2', textDecoration: "none"}}
@@ -79,7 +90,7 @@ const Home = () => {
                 style={{ color: '#1746a2', textDecoration: "none"}}
                 to="/petinfo"
               >
-                Pet Facts
+                Pet Tips
               </Link></h2>
               <img src="../../Subject.png" alt="dog" className='dog-pic'/>
         </div>

@@ -33,11 +33,13 @@ const Register = () => {
             userName,
             password
             })
+            
         } catch (error) {
             if (error.response.status == 401){
                 alert("Invalid credintals")
             }
         }
+
     }
 
     const handleSubmitService = async () => {
@@ -47,6 +49,7 @@ const Register = () => {
             servicePassword,
             serviceEmail
             })
+            window.location.href = "/login"
         } catch (error) {
             if (error.response.status == 401){
                 alert("Invalid credintals")
@@ -102,13 +105,13 @@ const Register = () => {
        {serviceChoice?(<>
         <div>
         <h2>
-            Login
+            Register
         </h2>
         <form className='signup-form'>
             <input className='signup-form-element' placeholder='Username' type='text' value={serviceName} onChange={(e) => setServiceName(e.target.value)} name='service-username-form' required/>
             <input className='signup-form-element' placeholder='Password' type='password' value={servicePassword} onChange={(e) => setServicePassword(e.target.value)} name='service-password-form' required/>
             <input className='signup-form-element' placeholder='Email' type='email' value={serviceEmail} onChange={(e) => setServiceEmail(e.target.value)} name='service-password-form' required/>
-            <button className='singup-button' type='button' onClick={() => handleSubmitService()}>Login</button>
+            <button className='singup-button' type='button' onClick={() => handleSubmitService()}>Register</button>
             {error && <p>{error}</p>}
         </form>
     </div>
