@@ -1,6 +1,7 @@
 .filters {
     display: flex;
     flex-direction: row;
+    align-self: left;
 }
 
 .services-title, .animals-title {
