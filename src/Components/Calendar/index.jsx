@@ -16,7 +16,8 @@ function Calendar(userId) {
 
 
   useEffect(() => {
-    if(clicked){saveEvent()}
+    if(clicked){saveEvent()
+    setClicked(!clicked)}
     
     // fetchEvents();
 
@@ -41,13 +42,14 @@ function Calendar(userId) {
         const data = await response.json();
         const e = JSON.parse(data.events)
     console.log(e)
-    setEvents(e);
+    if(e){setEvents(e);}
+    
     }
     
   };
 
   const saveEvent = async() => {
-
+console.log(userId)
     const id = userId.userId
    
        console.log(JSON.stringify(events)) 
@@ -81,7 +83,7 @@ function Calendar(userId) {
       initialView="dayGridMonth"
       selectable={true}
     //   select = 
-      dateClick={(arg) => handleDateClick(arg)}
+      dateClick={handleDateClick}
     //   events={events}
     events = {events}
       eventBackgroundColor= '#378006'

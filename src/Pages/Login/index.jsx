@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import httpClient from '../../httpClient';
+import { useAuth } from '../../context';
+
 
 const Login = () => {
     const[userChoice, setUserChoice] = useState(false)
     const[serviceChoice, setServiceChoice] = useState(false)
-
+    const{user} = useAuth
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState('');
@@ -47,15 +49,22 @@ const Login = () => {
             serviceEmail,
             servicePassword
             })
-            window.location.href = "/"
+            console.log("done")
+            
+            // const id = await user.id
+            // console.log(user.id)
+            window.location.href = "/service-profile"
+            // console.log(user.id)
+            
         } catch (error) {
             
         }
+        
     }
   return (<>
     
     <div className="which-signup">
-    <h1>Sign up as ...</h1>
+    <h1>Login as ...</h1>
       <button onClick={handleUserRegister} className={userChoice ? "clicked" : "not-clicked"}>Pet owner</button>
       <button onClick={handleServiceRegister} className={serviceChoice ? "clicked" : "not-clicked"}>Service provider</button>
     </div>

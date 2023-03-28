@@ -23,14 +23,15 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/services" element={<PrivateRoute><Services/></PrivateRoute>} />
             <Route path="/services/:id" element={<PrivateRoute><ProviderPage/></PrivateRoute>} />
-            <Route path="/service-profile/:userId" element = {<PrivateRoute><ServiceProfile/></PrivateRoute>}/>
-            <Route path="/service/profile/:userId" element = {<PrivateRoute><ServiceProfilePage/></PrivateRoute>}/>
+            <Route path="/service-profile" element = {<PrivateRoute><ServiceProfile/></PrivateRoute>}/>
+            <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>
             <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
             <Route path="/Message" element={<PrivateRoute><Message /></PrivateRoute>} />
             <Route path="/petinfo" element={<PrivateRoute><PetInfo /></PrivateRoute>} />
           </Route>
         </Routes>
       </AuthProvider>
+      
     </div>
   );
 }
