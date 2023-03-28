@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { CalendarUser } from '../../Components';
 import './style.css'
 
 const ProviderPage = () => {
@@ -7,6 +8,7 @@ const ProviderPage = () => {
     const [loading, setLoading] = useState(false);
     const [provider, setProvider] = useState({});
     const {id} = useParams()
+    const [isCalendar, setIsCalendar] = useState(false)
 
     useEffect(() => {
 
@@ -20,12 +22,22 @@ const ProviderPage = () => {
             setLoading(false);
         };
 
+        async function checkCalendar(){
+            const response = await fetch(`http://localhost:5000/service/calendar/${id}`);
+            if (response.status===201){
+                const data = await response.json()
+                console.log(data.calendar)
+                setIsCalendar(data.calendar)
+            }
+        }
+        checkCalendar()
         loadProvider();
 
     }, [])
 
     function displayProvider() {
-        return <div className='prov-card'>
+        return <>
+        <div className='prov-card'>
         <h3>{provider.name}</h3>
         <h4>{provider.address }</h4>
         <h4>{provider.city}</h4>
@@ -60,6 +72,10 @@ const ProviderPage = () => {
         <Link to="/services">Back</Link>
         <br></br>
     </div>
+    <div className='calendar'>
+    {isCalendar? <CalendarUser userId={id}/>:''}
+    </div>
+    </>
             
         
     }
