@@ -2,6 +2,9 @@ import { useState } from "react"
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Geocode from "react-geocode";
+import { useAuth } from "../../context";
+import { useEffect } from 'react';
+import httpClient from "../../httpClient";
 Geocode.setApiKey("AIzaSyAf81ZWQurI47K6AtmX9YF8u0YVHX5rQq8")
     Geocode.setLanguage("en");
     Geocode.setRegion("uk")
@@ -26,16 +29,38 @@ const ServiceProfile = () => {
     const [city, setCity] = useState('')
     const [postcode, setPostcode] = useState('')
     const [phone, setPhone] = useState('')
-    const { userId } = useParams()
+    // const { userId } = useParams()
     const [error, setError] = useState('')
     // const[latitude, setLatitude] = useState('')
     // const [longitude, setLongitude] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+    const[userId, setUserId] = useState(null)
+    // const{user}= useAuth
 
+  useEffect(() => {
+       
 
+            async function getUser () {
+            const resp = await httpClient.get("http://localhost:5000/user");
+            const id = resp.data.id
+            setUserId(id)
+            // console.log(id);
+        }
+
+            
+            getUser()
+
+        // setClicked(!clicked)
+        
+        // fetchEvents();
+    
+        
+      }, []);
 
 async function handleSubmit(e) {
+    
+    console.log(userId)
         e.preventDefault()
 
         const fullAddress = `${address}, ${city}, ${postcode}`
