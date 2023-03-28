@@ -4,11 +4,14 @@ import { GoogleMap, LoadScript, MarkerF, InfoWindow} from '@react-google-maps/ap
 import * as geolib from 'geolib'
 import { Filters, ProviderCard } from "../Components"
 import "./index.css"
+import { useParams } from "react-router-dom";
 const mapContainerStyle= {
     width: "100%",
     height:"100%"
 }
 const cent={lat:51.553742, lng: 0.201989}
+
+
 const Services = () => {
 const[selected, setSelected] = useState(null)
 const[zoom, setZoom] = useState(10)
@@ -25,7 +28,7 @@ const [dogwalkers, setDogwalkers] = useState(false)
 const [groomers, setGroomers] = useState(false)
 const [vets, setVets] = useState(false)
 const [trainers, setTrainers] = useState(false)
-
+const{id} = useParams()
 
 
     function Map() {
@@ -78,14 +81,32 @@ const home={latitude:51.553742, longitude: 0.201989}
             console.log(prov)
             setServiceProviders(prov)
         }
-       
+        const setService=()=>{
+          console.log(id)
+          if (id == 1){
+           setDaycares(true)
+           setHotels(true)
+           setPetsitters(true)
+          } else if(id=="all"){
+            console.log("all services")
+          }else if(id == 2){
+            setDogwalkers(true)
+          }else if(id == 3 ){
+            setGroomers(true)
+          }else if(id==4){
+            setVets(true)
+          }else if(id == 5){
+            setTrainers(true)
+          }
+        }
+        setService()
         loadServices()
     }, [])
 
 
 
 function displayProviders() {
-    
+    console.log(petsitters)
     return serviceProviders
                     .filter(s=> !daycares || s.daily_care)
                     .filter(s=> !hotels || s.boarding_hotel)
@@ -106,15 +127,19 @@ function displayProviders() {
 }
   return (
     <main className="provider-main">
+      <div>
         <h1 className="all-services">What are you looking for?</h1>
         <h2>Filter by:</h2>
+      
+      
         <Filters dogs={dogs} setDogs={setDogs}cats={cats} setCats={setCats}rabbits={rabbits} setRabbits={setRabbits}birds={birds}setBirds={setBirds} reptiles={reptiles}setReptiles={setReptiles}daycares={daycares} setDaycares={setDaycares}hotels={hotels} setHotels={setHotels}petsitters={petsitters}setPetsitters={setPetsitters}dogwalkers={dogwalkers} setDogwalkers={setDogwalkers}groomers={groomers}setGroomers={setGroomers}vets={vets} setVets={setVets} trainers={trainers} setTrainers={setTrainers}/>
-    <div className="card-holder">
-            { displayProviders() }
-        </div>
-        <div className="map">
-           <Map/>
-        </div>
+      </div>
+      <div className="card-holder">
+          { displayProviders() }
+      </div>
+      <div className="map">
+          <Map/>
+      </div>
     </main>
   )
 }
@@ -123,27 +148,27 @@ export default Services
 
 // const providers=[{
 //     "id":1,
-//     "sp_id":1,
-//     "name": "ARK",
-//     "address":"127, Albany Road",
-//     "city": "Hornchurch",
-//     "post_code": "RM12 4AQ",
-//     "phone":"12345",
-//     "email": "ark@gmail.com",
-//     "latitude":51.560351,
-//     "longitude":0.196177,
-//     "dog": true,
-//     "cat":true,
-//     "rabbit":false,
-//     "bird":false,
-//     "reptile":false,
-//     "daily_care":false,
-//     "boarding_hotel": false,
-//     "pet_sitter": false,
-//     "dog_walker": false,
-//     "vet":true,
-//     "grooming": false,
-//     "trainer": false,
+    // "sp_id":1,
+    // "name": "ARK",
+    // "address":"127, Albany Road",
+    // "city": "Hornchurch",
+    // "post_code": "RM12 4AQ",
+    // "phone":"12345",
+    // "email": "ark@gmail.com",
+    // "latitude":51.560351,
+    // "longitude":0.196177,
+    // "dog": true,
+    // "cat":true,
+    // "rabbit":false,
+    // "bird":false,
+    // "reptile":false,
+    // "daily_care":false,
+    // "boarding_hotel": false,
+    // "pet_sitter": false,
+    // "dog_walker": false,
+    // "vet":true,
+    // "grooming": false,
+    // "trainer": false,
 //     },{
 //         "id":2,
 //         "sp_id":2,

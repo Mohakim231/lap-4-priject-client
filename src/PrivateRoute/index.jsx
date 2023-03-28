@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../context";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useAuth();
+  const { username } = useAuth();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(!user);
-  }, [user]);
+    setLoading(!username);
+  }, [username]);
 
-  if (user) {
+  if (username) {
     return <>{children}</>;
   } else if (loading) {
     return <p>Loading...</p>;

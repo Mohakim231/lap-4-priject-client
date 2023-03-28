@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './style.css'
 
-
+import { Calendar } from '../../Components';
 const ServiceProfilePage = () => {
 
     const [loading, setLoading] = useState(false);
     const [provider, setProvider] = useState({});
     const {userId} = useParams()
     const navigate = useNavigate()
+    const[calendar, setCalendar] = useState(false)
+
 
     useEffect(() => {
 
@@ -20,11 +22,18 @@ console.log(userId)
             setProvider(data);
             console.log(data)
             setLoading(false);
+            const res = await fetch(`http://localhost:5000/service/calendar/${userId}`)
+            if(res.status === 201){
+                const dat = await res.json()
+                console.log(dat.calendar)
+                setCalendar(dat.calendar)
+            }
         };
 
+        updateCalendar()
         loadProvider();
 
-    }, [])
+    }, [calendar])
 
 
     const handleDeleteButton = async () => {
@@ -40,9 +49,31 @@ console.log(userId)
         }
 
     }
+    const handleCalendar =async ()=>{
+       await setCalendar(!calendar)
+      
+    }
+    const updateCalendar = async ()=>{
+        console.log(calendar)
+        const options = {
+            method:"POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                sp_id : userId,
+                calendar:calendar
+            })
+        }
+        const response = await fetch('http://localhost:5000/service/add-calendar', options)
+        const data = await response.json()
+console.log(data)
+    }
 
     function displayProvider() {
-        return <div className='prov-card profile-card'>
+        return (<>
+        <div className='prov-card profile-card'>
         {/* <h2>Your Company:</h2>     */}
         <h2>{provider.name}</h2>
         <h4>{provider.address }</h4>
@@ -52,13 +83,13 @@ console.log(userId)
         <h5>Your services:</h5>
         <p className="details-holder">
             
-            { provider.daily_care? <span className="">DC</span> : ""}
-            { provider.boarding_hotel ? <span className="">H</span> : ""}
-            { provider.pet_sitter ? <span className="">PS</span> : ""}
-            { provider.dog_walker ? <span className="">DW</span> : ""}
-            { provider.grooming ? <span className="">G</span> : ""}
-            { provider.vet ? <span className="">V</span> : ""}
-            { provider.trainer ? <span className="">T</span> : ""}
+            { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
+            { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
+            { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
+            { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
+            { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
+            { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
+            { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
 
             {/* <button onClick={() => vote(id, 1)}>+</button>
             <button onClick={() => vote(id, -1)}>-</button> */}
@@ -75,10 +106,14 @@ console.log(userId)
 
         </p>
 <button onClick={handleDeleteButton}>Delete account</button>
-       
+<button onClick={handleCalendar}>Show calendar</button>      
         <br></br>
     </div>
-            
+    <div className='calendar'>
+      {calendar? <Calendar userId = {userId}/>:''}  
+    </div>
+    </>)
+    
         
     }
 
