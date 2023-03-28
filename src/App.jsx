@@ -5,7 +5,7 @@ import PrivateRoute from "./PrivateRoute";
 // import SignUp from "./Signup";
 import { NavBar } from "./layout";
 import Services from "./Services";
-import { PetProfile, Message, Register, Login } from "./Pages";
+import { PetProfile, Message, Register, Login, UserProfile } from "./Pages";
 import CardProfile from "./Components/PetProfileForm";
 import { AuthProvider } from "./context"
 import { ProviderPage, ServiceProfile, ServiceProfilePage, PetInfo} from "./Pages"
@@ -22,6 +22,9 @@ function App() {
             <Route path="/signup" element={<Register />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/services/filter/:id" element={<PrivateRoute><Services/></PrivateRoute>} />
+            <Route path="/user" element={<PrivateRoute><UserProfile/></PrivateRoute>} />
+            <Route path="/pet" element={<PrivateRoute><PetProfile/></PrivateRoute>} />
+            
             <Route path="/services/:id" element={<PrivateRoute><ProviderPage/></PrivateRoute>} />
             <Route path="/service-profile" element = {<PrivateRoute><ServiceProfile/></PrivateRoute>}/>
             <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>

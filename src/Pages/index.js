@@ -7,3 +7,4 @@ export {default as PetInfo} from './PetInfo'
 export {default as ServiceProfilePage} from "./ServiceProfilePage"
 export {default as Register} from "./Register"
 export {default as Login} from "./Login"
+export {default as UserProfile} from "./userProfile"

@@ -127,15 +127,19 @@ function displayProviders() {
 }
   return (
     <main className="provider-main">
+      <div>
         <h1 className="all-services">What are you looking for?</h1>
         <h2>Filter by:</h2>
+      
+      
         <Filters dogs={dogs} setDogs={setDogs}cats={cats} setCats={setCats}rabbits={rabbits} setRabbits={setRabbits}birds={birds}setBirds={setBirds} reptiles={reptiles}setReptiles={setReptiles}daycares={daycares} setDaycares={setDaycares}hotels={hotels} setHotels={setHotels}petsitters={petsitters}setPetsitters={setPetsitters}dogwalkers={dogwalkers} setDogwalkers={setDogwalkers}groomers={groomers}setGroomers={setGroomers}vets={vets} setVets={setVets} trainers={trainers} setTrainers={setTrainers}/>
-    <div className="card-holder">
-            { displayProviders() }
-        </div>
-        <div className="map">
-           <Map/>
-        </div>
+      </div>
+      <div className="card-holder">
+          { displayProviders() }
+      </div>
+      <div className="map">
+          <Map/>
+      </div>
     </main>
   )
 }
