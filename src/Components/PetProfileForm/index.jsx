@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import { useAuth } from "../../context";
 import Alert from "../Alert";
 import "./style.css";
 
 export default function PetProfileForm() {
+  const { user_id } = useAuth()
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [selectedFile, setSelectedFile] = useState();
   const [successMsg, setSuccessMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
+
+  const [petName, setPetName] = useState("")
+  const [petAge, setPetAge] = useState("")
+  const [petSpecies, setPetSpecies] = useState("")
+  const [petInst, setPetInst] = useState("")
+
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
@@ -58,6 +66,31 @@ export default function PetProfileForm() {
       setErrMsg("Something went wrong!");
     }
   };
+
+  const handleSubmitPet = async () => {
+
+    const response = await fetch(`http://localhost:5000/users/${user_id}/pets`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: petName,
+        animal_type: petSpecies,
+        animal_age: petAge,
+        comment:petInst
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.log(error);
+    } else {
+      const data = await response.json();
+      console.log(data);
+      // Do something with the newly created pet ID
+    }
+  }
   return (
     <div>
       <h1 className="title">Pet Profile</h1>
@@ -93,28 +126,40 @@ export default function PetProfileForm() {
           />
         </label>
         <label htmlFor="pet-name">
-          {" "}
           Pet Name
           <input
             type="text"
             name="pet-name"
             id="pet-name"
             placeholder="Enter Pet Name"
+            value={petName}
+            onChange={(e) => setPetName(e.target.value)}
             required
           />
         </label>
         <label htmlFor="pet-age">
-          {" "}
           Pet Age
           <input
             type="text"
             name="pet-age"
             id="pet-age"
             placeholder="Enter Pet Name"
+            value={petAge}
+            onChange={(e) => setPetAge(e.target.value)}
           />
         </label>
         <label htmlFor="pet-species">
-          {" "}
+          Pet Species
+          <input
+            type="text"
+            name="pet-species"
+            id="pet-species"
+            placeholder="Enter Pet Species"
+            value={petSpecies}
+            onChange={(e) => setPetSpecies(e.target.value)}
+          />
+        </label>
+        {/* <label htmlFor="pet-species">
           Pet Species
           <select name="species" id="pet-specie">
             <option value="">Select Pet Species</option>
@@ -124,9 +169,8 @@ export default function PetProfileForm() {
             <option value="rabbit">Rabbit</option>
             <option value="reptile">Reptile</option>
           </select>
-        </label>
+        </label> */}
         <label htmlFor="pet-instructions">
-          {" "}
           Special Instructions
           <textarea
             type="text"
@@ -135,10 +179,12 @@ export default function PetProfileForm() {
             placeholder="Enter Instructions"
             cols="30"
             rows="2"
+            value={petInst}
+            onChange={(e) => setPetInst(e.target.value)}
           ></textarea>
         </label>
 
-        <button className="btn" type="submit">
+        <button className="btn" type="button" onClick={() => handleSubmitPet()}>
           Submit
         </button>
       </form>
