@@ -1,8 +1,9 @@
+
 .provider-profile {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../../../background.png");
+    /* background-image: url("../../../background.png"); */
     padding-bottom: 50vh;
 
 }
@@ -12,4 +13,19 @@
     height: 60vh;
     justify-content: center;
     margin-top: 10vh;
+    justify-content: center;
+}
+
+.details-holder {
+    /* list-style:none; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    max-height: 10vh;
+}
+
+.calendar {
+    padding-left: 2vw;
 }
