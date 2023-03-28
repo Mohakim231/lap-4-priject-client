@@ -3,32 +3,48 @@ import './style.css'
 
 function TipCard() {
   return (
-    <div>
-        <div className="tips-filters">
-            <ul className="tips-list">
-                <button>
-                   dogs 
-                </button>
-                <button>
-                   cats 
-                </button>
-                <button>
-                   birds 
-                </button>
-                <button>
-                   fish 
-                </button>
-                <button>
-                   reptiles 
-                </button>
-                <button>
-                   hamsters 
-                </button>
-                <button>
-                   guinea pigs 
-                </button>
-            </ul>
+    <div className='tip-card-holder'>
+        <div className='tip-card'>
+            <div className='tip-info'>
+                <h2>House training<img src="../../../dog-icon.png" alt="dog" className='icons'/></h2>
+                <span>Dogs thrive on routine and structure, so it's important to establish a regular schedule for feeding, playtime, and potty breaks.</span>
+            </div>
+            <img src="../../../background.png" alt="dog" className='tip-image'/>
         </div>
+        <div className='tip-card'>
+            <div className='tip-info'>
+                <h2>Title</h2>
+                <h3>For:</h3>
+                <span>icons</span>
+            </div>
+            <img src="../../../background.png" alt="dog" className='tip-image'/>
+        </div>
+        <div className='tip-card'>
+            <div className='tip-info'>
+                <h2>Title</h2>
+                <h3>For:</h3>
+                <span>icons</span>
+            </div>
+            <img src="../../../background.png" alt="dog" className='tip-image'/>
+        </div>
+        <div className='tip-card'>
+            <div className='tip-info'>
+                <h2>Title</h2>
+                <h3>For:</h3>
+                <span>icons</span>
+            </div>
+            <img src="../../../background.png" alt="dog" className='tip-image'/>
+        </div>
+        <div className='tip-card'>
+            <div className='tip-info'>
+                <h2>Title</h2>
+                <h3>For:</h3>
+                <span>icons</span>
+            </div>
+            <img src="../../../background.png" alt="dog" className='tip-image'/>
+        </div>
+        
+        
     </div>
   )
 }
