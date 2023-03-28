@@ -13,7 +13,7 @@ const ProviderPage = () => {
         setLoading(true);
         async function loadProvider() {
 
-            const response = await fetch(`http://localhost:5000/services/${id}`);
+            const response = await fetch(`http://localhost:5000/services/profile/${id}`);
             const data = await response.json();
             setProvider(data);
             console.log(data)
