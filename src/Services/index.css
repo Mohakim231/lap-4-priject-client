@@ -80,18 +80,42 @@
 
 @media screen and (max-width: 800px) {
     
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    main.provider-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        
+    }
 
-    flex: 1;
-    font-family: 'Montserrat';
-    text-align: center;
-    max-width: 100vw;
-}
+    .filters-and-results, .which-service-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
     .card-holder{
       flex-direction: column;
+    }
+
+    .which-service-title h1 {
+        font-size: 4vh;
+        padding-bottom: 2vh;
+    }
+    .which-service-title h2 {
+        font-size: 2.5vh;
+        padding-bottom: 2vh;
+    }
+
+    .map {
+        height:40vh;
+        width: 90vw;
+        border: solid 1px black;
+        
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
     }
 }
