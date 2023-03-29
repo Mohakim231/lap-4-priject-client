@@ -15,14 +15,18 @@ const ProviderCard = ({ id, name,address, city,postcode, phone, dog, cat, rabbit
 
         <div className='details1'>
             <h3 className='service-name'><Link to={`/services/${id}`} style={linkStyle}>{name}</Link></h3>
-            <h4>{address}</h4>
-            <h4>{city}</h4>
-            <h4>{postcode}</h4>
-            <h5>Contact us: {phone}</h5>
-            <h5>Our services:</h5>
+            <div className='contact-details'>
+                <h4>{address}</h4>
+                <h4>{city}</h4>
+                <h4>{postcode}</h4>
+                <h5>Contact us: {phone}</h5>
+            </div>
+            
+            
         </div>
         
         <div className="details2">
+            <h5>Our services:</h5>
             <ul className="details-holder">
                 
                 { daycare? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
