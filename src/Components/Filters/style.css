@@ -1,14 +1,18 @@
 .filters {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-self: left;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+
+    background-color: #68975952;
 }
 
 .services-title, .animals-title {
     /* background-color: #699759; */
     border-radius: 20px;
-    padding: 1vh; 
-    margin: 2vw;
+    padding: 2vh 0vw; 
+    /* margin: 2vw; */
     color: white;
     text-align: center;
     max-width: 100px;
@@ -29,7 +33,7 @@
 .a-filters label {
     padding-right: 2vw;
     color: white;
-    padding-top: 1vh;
+    padding-top: 1.5vh;
     min-width: 200px;
     text-align: left;
 }
@@ -37,8 +41,8 @@
 .s-filters, .a-filters {
     background-color: #699759;
     border-radius: 20px;
-    padding: 5vh;
-    padding-top: 2vh;
+    padding: 2vh 5vh;
+    /* padding-top: 2vh; */
     /* margin: 2vw; */
     color: white;
     text-align: center;

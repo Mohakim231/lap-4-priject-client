@@ -4,9 +4,10 @@
 }
 
 .prov-card {
-    padding: 2vh 0vw;
+    display: flex;
+    flex-direction: row;
+    padding: 4vh 2vw;
     background-color:white;
-    
 }
 
 .service-name {
@@ -17,10 +18,10 @@
     padding: 1vh;
 }
 
-.details-holder-services {
+.details-holder {
     padding: 2vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .details1, .details2 {
