@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Conversation from "../../Components/Conversation";
+import { useAuth } from "../../context";
 
 function Message() {
+  const { user_id } = useAuth()
   const [conversations, setConversations] = useState([]);
   const [selectedConversation, setSelectedConversation] = useState(null);
 
@@ -13,7 +15,7 @@ function Message() {
 
   useEffect(() => {
     // getConversationsByUser(user.id);
-    getConversationsByUser(1);
+    getConversationsByUser(user_id);
   }, []);
 
   return (
