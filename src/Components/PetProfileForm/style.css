@@ -139,10 +139,15 @@ input, textarea{
 /* .img-upload:hover:before{
  opacity: 1;
 } */
-img {
+
+
+
+.file-upload {
   width: 100%;
   height: auto;
 }
+
+
 /* .img-wrap .img-upload img:nth-child(2){
   display: none;
 }

@@ -32,7 +32,8 @@
     /* max-width: 100%; */
     justify-content: flex-start;
     min-width: 40vw;
-    padding-left: 2vw;
+    padding-left: 4vw;
+    margin-top: 1rem;
 }
 .prov-card {
     margin: 0.5rem;
@@ -53,7 +54,7 @@
 }
 .map{
     height:90vh;
-    width: 25vw;
+    width: 28vw;
     border: solid 1px black;
     
     position: fixed;

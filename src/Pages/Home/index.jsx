@@ -101,7 +101,7 @@ const Home = () => {
                 style={{ color: '#1746a2', textDecoration: "none"}}
                 to="/pet-profile"
               >
-                Pet Profile
+                Create Pet Profile
               </Link></button>
               <img src="../../Subject.png" alt="dog" className='dog-pic'/>
         </div>

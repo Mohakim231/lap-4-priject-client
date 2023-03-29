@@ -45,91 +45,7 @@
 
 }
 
-@media screen and (min-width: 800px) {
-  .backg-dog {
-    background-image: url('../../background.png');
-    background-repeat:no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-bottom: 10vh;
-    padding-right: 5vw;
-  }
-  .buttons-home {
-    padding-right: 5vw;
-  }
 
-  .link-and-dog {
-    display: flex;
-    flex-direction: row;
-  }
-  .home-links {
-    margin: 2.5rem;
-    width: 10rem;
-  }
-  
-  .message-button-div {
-    position: fixed;
-    bottom: 1vh;
-    left: 1vw;
-    
-  }
-  .message-button-div h2 {
-    color: black;
-  }
-  .message-button {
-    height: 10vh;
-  }
-
-  .dog-pic {
-    display: none;
-  }
-
-  .home-page em {
-    color: white;
-  }
-  .descriptions {
-    display: flex;
-    flex-direction: column;
-    /* max-width: 40vw; */
-    padding-right: 2vw;
-    padding-bottom: 2vh;
-    background-color:#68975952;
-   
-    
-  }
-  .owners, .providers{
-    display: flex;
-    flex-direction: column;
-    text-align: end;
-  }
-  .description {
-    max-width:  40vw;
-    text-align: end;
-    color: white;
-    padding-top: 1vh;
-  }
-  .signup-home {
-    background-color: #CFE1EE;
-    padding: 5rem;
-  }
-
-  .signup-home:hover {
-    background-color:#3fa1a9;
-  }
-
-  .welcome {
-    color: white;
-    margin-top: 12vh;
-    padding: 1rem;
-    font-size: 8vh;
-    z-index: 100;
-    background-color:#68975952;
-  }
-
-}
 
 
 
@@ -311,6 +227,92 @@ margin-bottom: 5vh;
   }
   .service-icon {
     height: 2vh;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .backg-dog {
+    background-image: url('../../background.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 10vh;
+    padding-right: 5vw;
+  }
+  .buttons-home {
+    padding-right: 5vw;
+  }
+
+  .link-and-dog {
+    display: flex;
+    flex-direction: row;
+  }
+  .home-links {
+    margin: 2.5rem;
+    width: 10rem;
+  }
+  
+  .message-button-div {
+    position: fixed;
+    bottom: 1vh;
+    left: 1vw;
+    
+  }
+  .message-button-div h2 {
+    color: black;
+  }
+  .message-button {
+    height: 10vh;
+  }
+
+  .dog-pic {
+    display: none;
+  }
+
+  .home-page em {
+    color: white;
+  }
+  .descriptions {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 40vw; */
+    padding-right: 2vw;
+    padding-bottom: 2vh;
+    background-color:#68975952;
+   
+    
+  }
+  .owners, .providers{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+  .description {
+    max-width:  40vw;
+    text-align: end;
+    color: white;
+    padding-top: 1vh;
+  }
+  .signup-home {
+    background-color: #CFE1EE;
+    padding: 5rem;
+  }
+
+  .signup-home:hover {
+    background-color:#3fa1a9;
+  }
+
+  .welcome {
+    color: white;
+    margin-top: 12vh;
+    padding: 1rem;
+    font-size: 8vh;
+    z-index: 100;
+    background-color:#68975952;
   }
 
 }

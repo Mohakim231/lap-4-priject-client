@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-self: left;
-    margin-top: 5vh;
-    padding-bottom: 5vh;
+    margin-top: 3vh;
+    padding-bottom: 3vh;
 
     background-color: #68975952;
 }
@@ -13,7 +13,7 @@
     border-radius: 20px;
     padding: 2vh 0vw; 
     /* margin: 2vw; */
-    color: white;
+    color: #054231;
     text-align: center;
     max-width: 100px;
 }
@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .s-filters, .a-filters {
