@@ -50,3 +50,32 @@
 .s-filters input{
     float: right; 
 }
+
+
+@media screen and (max-width: 800px) {
+    .filters {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 1vh;
+        padding-bottom: 1vh;
+        padding: 0rem 1rem;
+        width: 90vw;
+    }
+
+    .services-filters {
+        padding: 0rem 2rem;
+    }
+    .services-filters input {
+        padding: 5rem 0rem;
+    }
+
+    .s-filters {
+        font-size: 1.5vh;
+        padding: 1rem;
+        width: 40vw;
+    }
+    
+}

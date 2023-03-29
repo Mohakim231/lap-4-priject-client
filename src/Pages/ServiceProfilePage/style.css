@@ -1,3 +1,10 @@
+.service-profile-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
 .provider-profile {
     display: flex;
@@ -5,7 +12,7 @@
     align-items: center;
     justify-content: center;
     /* background-image: url("../../../background.png"); */
-    padding-bottom: 50vh;
+    padding-bottom: 40vh;
     
 
 }
@@ -53,8 +60,8 @@
 .profile-card {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    height: 80vh;
+    width: 50%;
+    height: 75vh;
     justify-content: center;
     margin-top: 5vh;
     justify-content: center;
@@ -80,11 +87,23 @@
 }
 
 @media screen and (max-width: 800px) {
+    .service-profile-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .profile-card {
+        height: 70vh;
+    }
+
     .details-and-filters {
         display: flex;
         flex-direction: column;
         background-color: white;
-        margin-top: 30vh;
+        margin-top: 9vh;
         border-radius: 20px;
     }
 
@@ -96,4 +115,18 @@
         text-align: center;
         max-width: 90vw;
       }
+
+      #delete-account {
+        display: flex;
+        flex-direction: row;
+        /* align-items: right; */
+        justify-content: flex-end;
+        width: 90vw;
+        margin-top: 1rem;
+        
+    }
+    .avail-btn {
+        margin-bottom: 5vh;
+        margin-top: 0vh;
+    }
 }
