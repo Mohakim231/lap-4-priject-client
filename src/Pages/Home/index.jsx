@@ -78,7 +78,7 @@ const Home = () => {
           </div> : null
         }
         
-        <div className='message-button-div'><Link 
+        {/* <div className='message-button-div'><Link 
                 style={{ color: 'white', textDecoration: "none"}}
                 to="/services"
               > <h2>Chats</h2>
@@ -87,7 +87,7 @@ const Home = () => {
               </Link>
           
             
-        </div>
+        </div> */}
         
         <div className='link-and-dog'>
           

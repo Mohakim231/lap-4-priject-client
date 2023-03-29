@@ -20,8 +20,17 @@ function NavBar() {
     setHamburgerClicked(false)
   }
 
+  function openMessages(){
+    setIsOpen(!isOpen)
+    console.log('open')
+  }
+  function closeMessages(){
+    setIsOpen(!isOpen)
+    console.log('close')
+  }
+
   const handleButtonClick = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -121,9 +130,30 @@ function NavBar() {
         </div>
       </nav>
       <Outlet />
-      <div
+
+      <div className={isOpen ? "messages" : "closed"}>
+        <div className={isOpen ? "close-button-div" : "no-image"}>
+          <h2>Messages</h2>
+          <button onClick={closeMessages} className={isOpen ? "close-button" : "no-image"}>X</button>
+        </div>
+        <div className={isOpen ? "messages-holder" : "no-image"}>
+            <div className='message'>
+              <h4>Service provider</h4>
+            </div>
+            <div className='message'>
+              <h4>Service provider</h4>
+            </div>
+            <div className='message'>
+              <h4>Service provider</h4>
+            </div>
+        </div>
+            
+            <img src="../../../chat.png" alt="chat" onClick={openMessages} className={isOpen ? "no-image" : "yes-image"}/>
+      </div>
+
+      {/* <div
       className={`message-container-navbar ${isOpen ? 'open' : 'closed'}`}
-      style={{ width: '0px', height: '0px' }}
+      style={{ width: '200px', height: '50px' }}
     >
       <div>
         <button className="message-button-navbar" onClick={handleButtonClick}>
@@ -133,7 +163,7 @@ function NavBar() {
       <div>
         
       </div>
-    </div>
+    </div> */}
     </>
   );
 }
