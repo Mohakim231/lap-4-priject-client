@@ -13,6 +13,10 @@ const PetProfile = () => {
     setCommentClicked(!commentClicked)
   }
 
+  function newPet() {
+    window.location.href = "/pet-profile";
+  }
+
   useEffect(() => {
     async function fetchPets() {
       try {
@@ -33,6 +37,7 @@ const PetProfile = () => {
   return (
     <div className='pet-profile-page'>
       <h1>My Pets</h1>
+      <em>Here you can see all the pets you've added to your profile and add more</em>
       {/* <img src="../../../rooftop.png" alt="rooftop" className='roof'/> */}
       <div className='pets-holder'>
         {pets.map((pet) => (
@@ -46,6 +51,7 @@ const PetProfile = () => {
               
             </div>
           ))}
+          <button className='add-pet' onClick={newPet}>+</button>
       </div>
       
     </div>

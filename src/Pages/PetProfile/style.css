@@ -9,6 +9,20 @@
     color: white;
     margin-top: 2rem;
 }
+
+.pet-profile-page em {
+    color: #054231;
+    margin-top: 2rem;
+}
+
+.add-pet {
+    min-width: 2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    /* padding: 0rem 0rem; */
+    border-radius: 100px;
+    font-size: 8rem;
+}
 .roof {
     margin-top: 10vh;
     position: fixed;
@@ -23,7 +37,7 @@
     align-items: center;
     justify-content: center;
     background-color: #68975952;
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 100%;
 }
 
@@ -44,10 +58,12 @@
 }
 
 .pet h3 {
-    padding-bottom: 2rem;
+    margin-top: 2rem;
     font-size: 2rem;
     color: #699759;
 }
+
+
 
 .pet p.appear {
     display: block;

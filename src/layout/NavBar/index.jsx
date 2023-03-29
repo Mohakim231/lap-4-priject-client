@@ -48,6 +48,15 @@ function NavBar() {
           {/* <h1 className="pet-pal">PetPal</h1> */}
           {
             username ? <ul className="nav-links">
+              <li className="navbar-list-item">
+              <NavLink 
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/services/filter/all"
+              >
+                  Explore Services
+              </NavLink>
+            </li>
+            
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -64,14 +73,7 @@ function NavBar() {
                 Pet Tips
               </NavLink>
             </li> */}
-            <li className="navbar-list-item">
-              <NavLink 
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/message"
-              >
-                  Messages
-              </NavLink>
-            </li>
+            
           </ul> : null
           }
           
@@ -107,7 +109,14 @@ function NavBar() {
 
           {hamburgerClicked ? <div className="menu-list">
             <ul className="nav-links-menu">
-              
+              <li className='menu-list-item' onClick={closeMenu}>
+              <NavLink 
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to="/services/filter/all"
+              >
+                  Explore Services
+              </NavLink>
+              </li>
               <li className='menu-list-item' onClick={closeMenu}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -117,14 +126,7 @@ function NavBar() {
                 </NavLink>
               </li>
              
-              <li className='menu-list-item' onClick={closeMenu}>
-              <NavLink 
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/message"
-              >
-                  Messages
-              </NavLink>
-            </li>
+              
             </ul>
           </div> : null}
         </div>
