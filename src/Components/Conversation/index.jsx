@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from "../../context";
 
 function Conversation(props) {
+  const { user_id } = useAuth()
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
 
@@ -22,13 +24,39 @@ function Conversation(props) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        sender_id: 1, // replace with the actual sender ID
+        sender_id: user_id,
         content: newMessage
       })
     });
     setNewMessage("");
     getMessages(props.conversationId);
   }
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   fetch("http://localhost:5000/conversations", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       user_id: user_id,
+  //       service_id: service_id,
+  //     }),
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setMessage(data.message);
+  //     })
+  //     .catch((error) => {
+  //       setMessage(error.message);
+  //     });
+  // };
 
   return (
     <div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CalendarUser } from '../../Components';
+import { useAuth } from '../../context';
+
 import './style.css'
 
 const ProviderPage = () => {
@@ -9,6 +11,7 @@ const ProviderPage = () => {
     const [provider, setProvider] = useState({});
     const {id} = useParams()
     const [isCalendar, setIsCalendar] = useState(false)
+    const{user} = useAuth
 
     useEffect(() => {
 
@@ -69,9 +72,10 @@ const ProviderPage = () => {
 
         </p>
 
-        <Link to="/services">Back</Link>
+        <Link to="/services/filter/all">Back</Link>
         <br></br>
     </div>
+    <button onClick={handleSubmit}>Message</button>
     <div className='calendar'>
     {isCalendar? <CalendarUser userId={id}/>:''}
     </div>
@@ -79,6 +83,33 @@ const ProviderPage = () => {
             
         
     }
+    
+  const handleSubmit = (event) => {
+//     event.preventDefault();
+//     fetch("http://localhost:5000/conversations", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         user_id: user.id,
+//         service_id: id,
+//       }),
+//     })
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Network response was not ok");
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         setMessage(data.message);
+//       })
+//       .catch((error) => {
+//         setMessage(error.message);
+//       });
+  };
+
 
     return loading ? 
         <div className="paw-prints">

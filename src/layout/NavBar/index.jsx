@@ -4,6 +4,7 @@ import "./style.css";
 
 function NavBar() {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const activeStyle = {
     // textDecoration: "underline",
@@ -16,6 +17,10 @@ function NavBar() {
   function closeMenu() {
     setHamburgerClicked(false)
   }
+
+  const handleButtonClick = () => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
 
   return (
     <>
@@ -130,6 +135,19 @@ function NavBar() {
         </div>
       </nav>
       <Outlet />
+      <div
+      className={`message-container-navbar ${isOpen ? 'open' : 'closed'}`}
+      style={{ width: '0px', height: '0px' }}
+    >
+      <div>
+        <button className="message-button-navbar" onClick={handleButtonClick}>
+          {isOpen ? 'Hide' : 'Show'}
+        </button>
+      </div>
+      <div>
+        
+      </div>
+    </div>
     </>
   );
 }

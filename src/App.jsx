@@ -24,7 +24,6 @@ function App() {
             <Route path="/services/filter/:id" element={<PrivateRoute><Services/></PrivateRoute>} />
             <Route path="/user" element={<PrivateRoute><UserProfile/></PrivateRoute>} />
             <Route path="/pet" element={<PrivateRoute><PetProfile/></PrivateRoute>} />
-            
             <Route path="/services/:id" element={<PrivateRoute><ProviderPage/></PrivateRoute>} />
             <Route path="/service-profile" element = {<PrivateRoute><ServiceProfile/></PrivateRoute>}/>
             <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>
