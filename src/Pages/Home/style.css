@@ -66,16 +66,18 @@
     flex-direction: row;
   }
   .home-links {
-    padding-right: 5vw;
-    padding-top: 3vh;
+    margin: 2.5rem;
+    width: 10rem;
   }
   
   .message-button-div {
-    
     position: fixed;
     bottom: 1vh;
-    left: 2vw;
+    left: 1vw;
     
+  }
+  .message-button-div h2 {
+    color: black;
   }
   .message-button {
     height: 10vh;
@@ -111,10 +113,19 @@
   }
   .signup-home {
     background-color: #CFE1EE;
+    padding: 5rem;
   }
 
   .signup-home:hover {
     background-color:#3fa1a9;
+  }
+
+  .welcome {
+    color: white;
+    margin-top: 12vh;
+    padding: 1rem;
+    z-index: 100;
+    background-color:#68975952;
   }
 
 }
@@ -163,14 +174,27 @@
   .message-button {
     height: 5vh;
   }
+  .welcome {
+    color: white;
+    margin-top: 4vh;
+    padding: 1rem;
+    font-size: 6vh;
+    z-index: 100;
+    background-color:#68975952;
+    width: 80vw;
+  }
+  .signup-home {
+    background-color: #CFE1EE;
+    padding: 5rem;
+  }
 
 }
 
-.welcome {
+/* .welcome {
     font-size: 8vh;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-}
+} */
 .welcome-image {
     height: 10vh;
     margin-left: -3vh;

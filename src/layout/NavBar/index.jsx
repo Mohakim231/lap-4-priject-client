@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { useAuth } from "../../context";
 import "./style.css";
 
 function NavBar() {
+  const { username } = useAuth();
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,32 +37,35 @@ function NavBar() {
             </NavLink>
           </div>
           {/* <h1 className="pet-pal">PetPal</h1> */}
-          <ul className="nav-links">
+          {
+            username ? <ul className="nav-links">
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/pet-profile"
               >
-                Pet Profile
+                My Pet Profile
               </NavLink>
             </li>
-            <li className="navbar-list-item">
+            {/* <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/petinfo"
               >
                 Pet Tips
               </NavLink>
-            </li>
+            </li> */}
             <li className="navbar-list-item">
               <NavLink 
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/message"
               >
-                  Message
+                  Messages
               </NavLink>
             </li>
-          </ul>
+          </ul> : null
+          }
+          
         </div>
         <div className="mobile-display">
           <div className="nav-section">
@@ -77,57 +82,38 @@ function NavBar() {
           
         </div>
 
-            {/* <h2 className="pet-pal">PetPal</h2> */}
-            <div
+            {
+              username ? <div
               className={hamburgerClicked ? "clicked" : "container"}
               onClick={openMenu}
             >
               <div className="bar1"></div>
               <div className="bar2"></div>
               <div className="bar3"></div>
-            </div>
+            </div> : null
+            }
+            
+            
           </div>
 
           {hamburgerClicked ? <div className="menu-list">
             <ul className="nav-links-menu">
-              <li className='menu-list-item' onClick={closeMenu}>
-                <NavLink
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  to="/login"
-                >
-                  Login
-                </NavLink>
-              </li>
-              <li className='menu-list-item' onClick={closeMenu}>
-                <NavLink
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  to="/signup"
-                >
-                  Signup
-                </NavLink>
-              </li>
+              
               <li className='menu-list-item' onClick={closeMenu}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   to="/pet-profile"
                 >
-                  Pet Profile
+                  My Pet Profile
                 </NavLink>
               </li>
-              <li className='menu-list-item' onClick={closeMenu}>
-                <NavLink
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  to="/petinfo"
-                >
-                  Pet Tips
-                </NavLink>
-              </li>
+             
               <li className='menu-list-item' onClick={closeMenu}>
               <NavLink 
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/message"
               >
-                  Message
+                  Messages
               </NavLink>
             </li>
             </ul>

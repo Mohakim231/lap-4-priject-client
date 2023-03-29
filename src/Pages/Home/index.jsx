@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from "../../context";
 import './style.css'
 
 const Home = () => {
+  const { username } = useAuth();
 
   return (
     <div className="home-page">
@@ -13,12 +15,16 @@ const Home = () => {
         </div>
         <div className='line'></div>
         <em >All your pet needs in one convenient place</em>
-      
+        
+      {
+        !username ? 
+        
         <div className="buttons-home">
           <button className="signup-home"><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/login">Login</Link></button>
           <button className="signup-home"><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/signup">Signup</Link></button>
-          
-        </div>
+        </div> : <h2 className='welcome'>Welcome {username}</h2>
+      }
+        
 
         <div className="paw-prints">
           <div className="paw-print-1">
@@ -55,17 +61,23 @@ const Home = () => {
           <img src="../../../paw.png" alt="paw" className="pad"/>
           </div>
         </div> 
-        <div className='descriptions'>
-          <div className='owners'>
-            <h3>Owners</h3>
-            <p className='description'>Browse pet services by location, contact services and view top tips for caring for your pet </p>
-          </div>
-           <div className='providers'>
-            <h3>Service Providers</h3>
-            <p className='description'>Connect with new potential customers and show your availability</p>
-          </div>
+
+        {
+          !username ? 
           
-        </div>
+          <div className='descriptions'>
+            <div className='owners'>
+              <h3>Owners</h3>
+              <p className='description'>Browse pet services by location, contact services and view top tips for caring for your pet </p>
+            </div>
+            <div className='providers'>
+              <h3>Service Providers</h3>
+              <p className='description'>Connect with new potential customers and show your availability</p>
+            </div>
+            
+          </div> : null
+        }
+        
         <div className='message-button-div'><Link 
                 style={{ color: 'white', textDecoration: "none"}}
                 to="/services"
@@ -78,20 +90,19 @@ const Home = () => {
         </div>
         
         <div className='link-and-dog'>
-              
           
-              <h2 className='home-links'><Link 
+              <button className='home-links'><Link 
                 style={{ color: '#1746a2', textDecoration: "none"}}
                 to="/services/filter/all"
               >
                 Explore Services
-              </Link></h2>
-              <h2 className='home-links'><Link 
+              </Link></button>
+              <button className='home-links'><Link 
                 style={{ color: '#1746a2', textDecoration: "none"}}
-                to="/petinfo"
+                to="/pet-profile"
               >
-                Pet Tips
-              </Link></h2>
+                Pet Profile
+              </Link></button>
               <img src="../../Subject.png" alt="dog" className='dog-pic'/>
         </div>
       </div>
