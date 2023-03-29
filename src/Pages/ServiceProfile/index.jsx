@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Geocode from "react-geocode";
 import { useAuth } from "../../context";
 import { useEffect } from 'react';
+import './style.css'
 import httpClient from "../../httpClient";
 Geocode.setApiKey("AIzaSyAf81ZWQurI47K6AtmX9YF8u0YVHX5rQq8")
     Geocode.setLanguage("en");
@@ -130,90 +131,101 @@ const handleAddress =()=>{
 
 
     return (
-        <div className="which-signup">
+        <div className='service-profile-creation'>
             <h1>Create your profile</h1><br/><br/>
             <form onSubmit={handleSubmit}>
-                <label >
-                    Company name:
-                </label>
-                <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder={"Name"} name='username' required />
-                <label >
-                    Address:
-                </label>
-                <input type='text' value={address} onChange={(e) => setAddress(e.target.value)} placeholder={"Address"} name='address' required />
-                <label >
-                    City:
-                </label>
-                <input type='text' value={city} onChange={(e) => setCity(e.target.value)} placeholder={"City"} name='city' required />
-                <label >
-                    Postcode:
-                </label>
-                <input type='text' value={postcode} onChange={(e) => setPostcode(e.target.value)} placeholder={"Postcode"} name='postcode' required />
-                <label >
-                    Phone:
-                </label>
-                <input type='text' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={"Phone"} name='phone' required />
-                <div className='services-filters'>
+            <div className='create-service-profile'>
+            <div className='provider-info'>
+            
+            <label htmlFor='username'>
+                Company name:
+            </label>
+            <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder={"Name"} name='username' required className='signup-form-element'/>
+            <label htmlFor='address'>
+                Address:
+            </label>
+            <input type='text' value={address} onChange={(e) => setAddress(e.target.value)} placeholder={"Address"} name='address' required className='signup-form-element'/>
+            <label htmlFor='city'>
+                City:
+            </label>
+            <input type='text' value={city} onChange={(e) => setCity(e.target.value)} placeholder={"City"} name='city' required className='signup-form-element'/>
+            <label htmlFor='postcode'>
+                Postcode:
+            </label>
+            <input type='text' value={postcode} onChange={(e) => setPostcode(e.target.value)} placeholder={"Postcode"} name='postcode' required className='signup-form-element'/>
+            <label htmlFor='phone'>
+                Phone:
+            </label>
+            <input type='text' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={"Phone"} name='phone' required className='signup-form-element'/>
+        </div>
+        
+        <div className='all-filters'>
+        <div className='services-filters'>
             <h2 className="services-title">Which services do you provide?</h2>
+            <div className="s-filters">
+                
+                <label>
+                    Daycare
+                    <input type="checkbox"
+                        checked={daycares}
+                        onChange={() => setDaycares(!daycares)}>
+                    </input>
+                </label>
+                <label>
+                    Boarding hotels
+                    <input type="checkbox"
+                        checked={hotels}
+                        onChange={() => setHotels(!hotels)}>
+                    </input>
+                </label>
+                <label>Pet-sitters
+                    <input type="checkbox"
+                        checked={petsitters}
+                        onChange={() => setPetsitters(!petsitters)}>
+                    </input>
+                </label>
+                <label>Dog walkers<input type="checkbox"
+                    checked={dogwalkers}
+                    onChange={() => setDogwalkers(!dogwalkers)}></input></label>
+                <label>Groomers<input type="checkbox"
+                    checked={groomers}
+                    onChange={() => setGroomers(!groomers)}></input></label>
+                <label>Vets<input type="checkbox"
+                    checked={vets}
+                    onChange={() => setVets(!vets)}></input></label>
+                <label>Trainers<input type="checkbox"
+                    checked={trainers}
+                    onChange={() => setTrainers(!trainers)}></input></label>
+            </div>
+            </div>
+        <div className='services-filters'>
+                <h2 className="animals-title" > Which animals do you accept?</h2>
+
+
                 <div className="s-filters">
-                    
-                    <label>
-                        Daycare
-                        <input type="checkbox"
-                            checked={daycares}
-                            onChange={() => setDaycares(!daycares)}>
-                        </input>
-                    </label>
-                    <label>
-                        Boarding hotels
-                        <input type="checkbox"
-                            checked={hotels}
-                            onChange={() => setHotels(!hotels)}>
-                        </input>
-                    </label>
-                    <label>Pet-sitters
-                        <input type="checkbox"
-                            checked={petsitters}
-                            onChange={() => setPetsitters(!petsitters)}>
-                        </input>
-                    </label>
-                    <label>Dog walkers<input type="checkbox"
-                        checked={dogwalkers}
-                        onChange={() => setDogwalkers(!dogwalkers)}></input></label>
-                    <label>Groomers<input type="checkbox"
-                        checked={groomers}
-                        onChange={() => setGroomers(!groomers)}></input></label>
-                    <label>Vets<input type="checkbox"
-                        checked={vets}
-                        onChange={() => setVets(!vets)}></input></label>
-                    <label>Trainers<input type="checkbox"
-                        checked={trainers}
-                        onChange={() => setTrainers(!trainers)}></input></label>
+                    <label>Dogs<input type="checkbox"
+                        checked={dogs}
+                        onChange={() => setDogs(!dogs)}></input></label>
+                    <label>Cats<input type="checkbox"
+                        checked={cats}
+                        onChange={() => setCats(!cats)}></input></label>
+                    <label>Birds<input type="checkbox"
+                        checked={birds}
+                        onChange={() => setBirds(!birds)}></input></label>
+                    <label>Rabbits<input type="checkbox"
+                        checked={rabbits}
+                        onChange={() => setRabbits(!rabbits)}></input></label>
+                    <label>Reptiles<input type="checkbox"
+                        checked={reptiles}
+                        onChange={() => setReptiles(!reptiles)}></input></label>
                 </div>
-                </div>
-                <div className='animal-filters'>
-                    <h2 className="animals-title" > Which Animals you accept?</h2>
 
-
-                    <div className="a-filters">
-                        <label>Dogs<input type="checkbox"
-                            checked={dogs}
-                            onChange={() => setDogs(!dogs)}></input></label>
-                        <label>Cats<input type="checkbox"
-                            checked={cats}
-                            onChange={() => setCats(!cats)}></input></label>
-                        <label>Birds<input type="checkbox"
-                            checked={birds}
-                            onChange={() => setBirds(!birds)}></input></label>
-                        <label>Rabbits<input type="checkbox"
-                            checked={rabbits}
-                            onChange={() => setRabbits(!rabbits)}></input></label>
-                        <label>Reptiles<input type="checkbox"
-                            checked={reptiles}
-                            onChange={() => setReptiles(!reptiles)}></input></label>
-                    </div>
-
-                </div>
+            </div>
+        </div>
+            </div>
+            
+            
+            
                 {/* <button disabled={loading} type='submit'>Submit</button> */}
                 <button  onClick={handleAddress}>Submit</button>
             </form>

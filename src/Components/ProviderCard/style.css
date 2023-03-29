@@ -17,10 +17,10 @@
     padding: 1vh;
 }
 
-.details-holder-services {
+.details-holder {
     padding: 2vh;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: row;
 }
 
 .details1, .details2 {
