@@ -20,7 +20,7 @@ function Message() {
 
   return (
     <div>
-      <h2>Conversations</h2>
+      {/* <h2>Conversations</h2> */}
       {conversations.map((conversation) => (
         <div
           className='conversation-box'

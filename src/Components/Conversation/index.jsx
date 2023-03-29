@@ -32,34 +32,8 @@ function Conversation(props) {
     getMessages(props.conversationId);
   }
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   fetch("http://localhost:5000/conversations", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       user_id: user_id,
-  //       service_id: service_id,
-  //     }),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setMessage(data.message);
-  //     })
-  //     .catch((error) => {
-  //       setMessage(error.message);
-  //     });
-  // };
-
   return (
-    <div>
+    <div className="messages-box-navbar">
       {messages.map((message) => (
         <div className='message-box' key={message.id}>
           <p>{message.sender}</p>

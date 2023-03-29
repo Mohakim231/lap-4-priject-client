@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Conversation from "../../Components/Conversation";
+import { useAuth } from "../../context";
 import "./style.css";
 
 function NavBar() {
@@ -21,6 +24,22 @@ function NavBar() {
   const handleButtonClick = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
+
+  const { user_id } = useAuth()
+  const [conversations, setConversations] = useState([]);
+  const [selectedConversation, setSelectedConversation] = useState(null);
+
+  // async function getConversationsByUser(userId) {
+  //   const response = await fetch(`http://localhost:5000/conversations?user_id=${userId}`);
+  //   const data = await response.json();
+  //   setConversations(data.conversations);
+  // }
+
+  // useEffect(() => {
+  //   // getConversationsByUser(user.id);
+  //   console.log(user_id)
+  //   getConversationsByUser(user_id);
+  // }, []);
 
   return (
     <>
@@ -135,17 +154,37 @@ function NavBar() {
         </div>
       </nav>
       <Outlet />
-      <div
-      className={`message-container-navbar ${isOpen ? 'open' : 'closed'}`}
+      {/* <div
+      className={`message-container-navbar ${isOpen ? 'closed' : 'open'}`}
       style={{ width: '400px', height: '600px' }}
-    >
-      <div>
+      >
+      <div className="message-heading-navbar">
+        <p>Messages</p>
         <button className="message-button-navbar" onClick={handleButtonClick}>
           {isOpen ? 'Hide' : 'Show'}
         </button>
       </div>
-      <div></div>
+      <div>
+      <h2>Conversations</h2>
+      {conversations.map((conversation) => (
+        <div
+          className='conversation-box'
+          key={conversation.conversation.id}
+          onClick={() => setSelectedConversation(conversation.conversation.id)}
+        >
+          <p>User: {conversation.user.username}</p>
+          <p>Service: {conversation.service.username}</p>
+        </div>
+      ))}
+      {selectedConversation && (
+        <div>
+        <div id='messages'>
+          <Conversation conversationId={selectedConversation} />
+        </div>
+        </div>
+      )}
     </div>
+    </div> */}
     </>
   );
 }
