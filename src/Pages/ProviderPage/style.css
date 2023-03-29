@@ -1,3 +1,19 @@
+
+
+#back-btn {
+  display: flex;
+  flex-direction: row;
+  /* align-items: right; */
+  justify-content: flex-start;
+  width: 50vw;
+  margin-top: -5rem;
+  
+}
+
+#back-btn button {
+  font-size: 2vh;
+}
+
 .paw-prints {
     padding-top: 10vh;
 }
@@ -100,4 +116,61 @@
   25%  {opacity: 1;}
   /* disappear */
   100% {opacity: 0;}
+}
+
+.details-holder {
+  /* list-style:none; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  max-height: 10vh;
+}
+
+@media screen and (max-width: 800px) {
+  /* .details-and-filters {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      margin-top: 30vh;
+      border-radius: 20px;
+  } */
+
+  .user-view {
+      display: flex;
+      flex-direction: row;
+      align-items:center;
+      justify-items: center;
+      text-align: center;
+     
+    }
+
+     #user-view {
+      margin:0;
+      margin-top: 2rem;
+      padding: 0;
+      height: 62vh;
+    }
+
+    .user-view .details-and-filters {
+      margin-top: 17vh;
+    }
+
+     .all-services {
+      padding-top: 0vh;
+      width: 70vw;
+    }
+
+    .userview .provider-info {
+      margin: 0;
+      width: 70vw;
+    }
+
+    .provider-info {
+      font-size: 2vh;
+    }
+    .calendar {
+      max-width: 80vw;
+    }
 }

@@ -74,39 +74,55 @@ console.log(data)
     function displayProvider() {
         return (<>
         <div className='prov-card profile-card'>
-        {/* <h2>Your Company:</h2>     */}
-        <h2>{provider.name}</h2>
-        <h4>{provider.address }</h4>
-        <h4>{provider.city}</h4>
-        <h4>{provider.postcode}</h4>
-        <h5>Your contact number: {provider.phone}</h5>
-        <h5>Your services:</h5>
-        <p className="details-holder">
-            
-            { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
-            { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
-            { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
-            { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
-            { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
-            { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
-            { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
+            <div id='delete-account'>
+                <button onClick={handleDeleteButton} >Delete account</button>
+            </div>
+        
+            <div className='details-and-filters'>
+                {/* <h2>Your Company:</h2>     */}
+                <div className='provider-info profile-page-details-holder'>
+                    <h2 className='company-name'>{provider.name}</h2> 
+                    <h3>Address:</h3>
+                    <h4>{provider.address }</h4>
+                    <h4>{provider.city}</h4>
+                    <h4>{provider.postcode}</h4>
+                    <h5>Contact number: {provider.phone}</h5> 
+                </div>
 
-            {/* <button onClick={() => vote(id, 1)}>+</button>
-            <button onClick={() => vote(id, -1)}>-</button> */}
-            
-        </p>
-        <h5>Animals you provide for:</h5>
-        <p className="details-holder">
-            
-            { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
-            { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
-            { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
-            { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
-            { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
+                <div className='all-services'>
+                    <h5>Your services:</h5>
+                    <p className="details-holder">
+                        
+                        { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
+                        { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
+                        { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
+                        { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
+                        { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
+                        { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
+                        { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
 
-        </p>
-<button onClick={handleDeleteButton}>Delete account</button>
-<button onClick={handleCalendar}>Show calendar</button>      
+                        {/* <button onClick={() => vote(id, 1)}>+</button>
+                        <button onClick={() => vote(id, -1)}>-</button> */}
+                        
+                    </p>
+                    <h5>Animals you provide for:</h5>
+                    <p className="details-holder">
+                        
+                        { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
+                        { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
+                        { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
+                        { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
+                        { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
+
+                    </p>
+                </div>
+            </div>
+        
+        
+        
+        <button onClick={handleCalendar} className='avail-btn'>Select availability</button>   
+        
+   
         <br></br>
     </div>
     <div className='calendar'>
