@@ -12,6 +12,8 @@
 
 .company-name {
     color: black;
+    padding-bottom: 2vh;
+    font-size: 3vh;
 }
 
 .details-and-filters {
@@ -73,6 +75,8 @@
 
 .calendar {
     padding-left: 4vw;
+    padding-top: 5vh;
+   
 }
 
 @media screen and (max-width: 800px) {

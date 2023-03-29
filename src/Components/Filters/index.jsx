@@ -59,11 +59,11 @@ const Filters = ({dogs,setDogs,cats, setCats,rabbits, setRabbits,birds, setBirds
         </div>
     
     
-    <div className='animal-filters'>
+    <div className='services-filters'>
         <h2 className="animals-title" onClick={showAnimalsFilters}>Animals</h2>
         {
             animalsClicked ?
-            <div className="a-filters">
+            <div className="s-filters">
                 <label>Dogs<input type="checkbox"
                 checked={dogs}
                 onChange={()=> setDogs(!dogs)}></input></label>

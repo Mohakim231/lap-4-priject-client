@@ -89,7 +89,7 @@ console.log(data)
                     <h5>Contact number: {provider.phone}</h5> 
                 </div>
 
-                <div className='all-services'>
+                <div className='all-services ' >
                     <h5>Your services:</h5>
                     <p className="details-holder">
                         
