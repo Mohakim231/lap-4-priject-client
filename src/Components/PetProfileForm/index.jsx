@@ -4,17 +4,17 @@ import Alert from "../Alert";
 import "./style.css";
 
 export default function PetProfileForm() {
-  const { user_id } = useAuth()
+  const { user_id } = useAuth();
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [selectedFile, setSelectedFile] = useState();
   const [successMsg, setSuccessMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
-  const [petName, setPetName] = useState("")
-  const [petAge, setPetAge] = useState("")
-  const [petSpecies, setPetSpecies] = useState("")
-  const [petInst, setPetInst] = useState("")
+  const [petName, setPetName] = useState("");
+  const [petAge, setPetAge] = useState("");
+  const [petSpecies, setPetSpecies] = useState("");
+  const [petInst, setPetInst] = useState("");
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
@@ -68,19 +68,21 @@ export default function PetProfileForm() {
   };
 
   const handleSubmitPet = async () => {
-
-    const response = await fetch(`http://localhost:5000/users/${user_id}/pets`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: petName,
-        animal_type: petSpecies,
-        animal_age: petAge,
-        comment:petInst
-      }),
-    });
+    const response = await fetch(
+      `http://localhost:5000/users/${user_id}/pets`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: petName,
+          animal_type: petSpecies,
+          animal_age: petAge,
+          comment: petInst,
+        }),
+      }
+    );
 
     if (!response.ok) {
       const error = await response.json();
@@ -90,10 +92,10 @@ export default function PetProfileForm() {
       console.log(data);
       // Do something with the newly created pet ID
     }
-  }
+  };
   return (
     <div>
-      <h1 className="title">Pet Profile</h1>
+      <h1 className="pet-title">Pet Profile</h1>
       <Alert msg={errMsg} type="danger" />
       <Alert msg={successMsg} type="success" />
       {/* <form onSubmit={handleSubmitFile} className="form">
@@ -115,9 +117,22 @@ export default function PetProfileForm() {
         encType="multipart/form-data"
         htmlFor="fileInput"
       >
-        Click here
-        <label htmlFor="fileInput">
-          Upload Pet Profile Image
+        <label>
+          <div htmlFor="fileInput" className="img-wrap img-upload">
+            {previewSource && (
+              <img
+                src={previewSource}
+                alt="chosen"
+                style={{ height: "100%", width: "100%" }}
+              />
+            )}
+            <img
+              className="file-upload"
+              src="/Pet-icon.png"
+              alt="An image of multiple different pets morphed within each other."
+            />
+          </div>
+
           <input
             id="fileInput"
             type="file"
@@ -172,14 +187,14 @@ export default function PetProfileForm() {
             <option value="reptile">Reptile</option>
           </select>
         </label> */}
-        <label htmlFor="pet-instructions">
+        <label className="special-inst" htmlFor="pet-instructions">
           Special Instructions
           <textarea
             type="text"
             name="pet-instructions"
             id="pet-instructions"
             placeholder="Enter Instructions"
-            cols="30"
+            cols="20"
             rows="2"
             value={petInst}
             onChange={(e) => setPetInst(e.target.value)}
@@ -190,9 +205,6 @@ export default function PetProfileForm() {
           Submit
         </button>
       </form>
-      {previewSource && (
-        <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
-      )}
     </div>
   );
 }
