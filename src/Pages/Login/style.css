@@ -19,11 +19,13 @@
 }
 
 .signup-link {
+    text-align: center;
+    justify-content: center;
     color: #699759;
     text-decoration: none;
-    margin-left: 2vw;
-
-    font-size: 3vh;
+    max-width: 30vw;
+    margin-top: 3vh;
+    font-size: 2vh;
     background-color:white;
     padding: 1vw;
     border-radius: 30px;
