@@ -49,13 +49,13 @@ const ProviderPage = () => {
         <h5>Our services:</h5>
         <p className="details-holder">
             
-            { provider.daily_care? <span className="">DC</span> : ""}
-            { provider.boarding_hotel ? <span className="">H</span> : ""}
-            { provider.pet_sitter ? <span className="">PS</span> : ""}
-            { provider.dog_walker ? <span className="">DW</span> : ""}
-            { provider.grooming ? <span className="">G</span> : ""}
-            { provider.vet ? <span className="">V</span> : ""}
-            { provider.trainer ? <span className="">T</span> : ""}
+        { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
+            { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
+            { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
+            { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
+            { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
+            { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
+            { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
 
             {/* <button onClick={() => vote(id, 1)}>+</button>
             <button onClick={() => vote(id, -1)}>-</button> */}
@@ -64,11 +64,11 @@ const ProviderPage = () => {
         <h5>Animals we provide for:</h5>
         <p className="details-holder">
             
-            { provider.dog? <span className="">D</span> : ""}
-            { provider.cat ? <span className="">C</span> : ""}
-            { provider.bird ? <span className="">B</span> : ""}
-            { provider.rabbit ? <span className="">RA</span> : ""}
-            { provider.reptile ? <span className="">R</span> : ""}
+        { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
+            { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
+            { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
+            { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
+            { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
 
         </p>
 

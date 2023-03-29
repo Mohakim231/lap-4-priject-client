@@ -20,7 +20,7 @@
 .details-holder-services {
     padding: 2vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .details1, .details2 {

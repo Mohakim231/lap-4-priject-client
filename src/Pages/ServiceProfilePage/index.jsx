@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './style.css'
 
-import { Calendar } from '../../Components';
+import { Calendar, ImageUpload } from '../../Components';
+
 const ServiceProfilePage = () => {
 
     const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ const ServiceProfilePage = () => {
     const {userId} = useParams()
     const navigate = useNavigate()
     const[calendar, setCalendar] = useState(false)
-
+const[upload, setUpload]= useState(false)
 
     useEffect(() => {
 
@@ -71,6 +72,13 @@ console.log(userId)
 console.log(data)
     }
 
+function showUpload(){
+setUpload(true)
+}
+const handleUpload=()=>{
+    setUpload(false)
+ }
+
     function displayProvider() {
         return (<>
         <div className='prov-card profile-card'>
@@ -105,6 +113,8 @@ console.log(data)
             { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
 
         </p>
+        <button onClick={showUpload}>Add photo</button>
+        {upload? <ImageUpload handleUpload={handleUpload}/> : ''}
 <button onClick={handleDeleteButton}>Delete account</button>
 <button onClick={handleCalendar}>Show calendar</button>      
         <br></br>
