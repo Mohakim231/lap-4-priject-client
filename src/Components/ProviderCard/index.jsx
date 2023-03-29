@@ -21,15 +21,17 @@ const ProviderCard = ({ id, name,address, city,postcode, phone, dog, cat, rabbit
         </div>
         
         <div className="details2">
-            <ul className="details-holder-services">
+            <ul className="details-holder">
                 
-                { daycare? <span className="">Daycare</span> : ""}
-                { hotel ? <span className="">H</span> : ""}
-                { petsitter ? <span className="">PS</span> : ""}
-                { dogwalker ? <span className="">DW</span> : ""}
-                { groomer ? <span className="">G</span> : ""}
-                { vet ? <span className="">V</span> : ""}
-                { trainer ? <span className="">T</span> : ""}
+                { daycare? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
+            { hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
+            { petsitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
+            { dogwalker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
+            { groomer ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
+            { vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
+            { trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
+
+           
 
                 {/* <button onClick={() => vote(id, 1)}>+</button>
                 <button onClick={() => vote(id, -1)}>-</button> */}

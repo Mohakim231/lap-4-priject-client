@@ -40,45 +40,65 @@ const ProviderPage = () => {
 
     function displayProvider() {
         return <>
-        <div className='prov-card'>
-        <h3>{provider.name}</h3>
-        <h4>{provider.address }</h4>
-        <h4>{provider.city}</h4>
-        <h4>{provider.postcode}</h4>
-        <h5>Contact us: {provider.phone}</h5>
-        <h5>Our services:</h5>
-        <p className="details-holder">
-            
-            { provider.daily_care? <span className="">DC</span> : ""}
-            { provider.boarding_hotel ? <span className="">H</span> : ""}
-            { provider.pet_sitter ? <span className="">PS</span> : ""}
-            { provider.dog_walker ? <span className="">DW</span> : ""}
-            { provider.grooming ? <span className="">G</span> : ""}
-            { provider.vet ? <span className="">V</span> : ""}
-            { provider.trainer ? <span className="">T</span> : ""}
+        <div className='user-view'>
+            <div id='back-btn'>
+                        <Link to="/services/filter/all"> <button>Back</button> </Link>
+            </div>
+            <div className='prov-card profile-card' id='user-view'>
+                    {/* <div id='back-btn'>
+                        <Link to="/services/filter/all"> <button>Back</button> </Link>
+                    </div> */}
+                    
+                    <div className='details-and-filters'>
+                        <div className='provider-info profile-page-details-holder'>
+                                <h3>{provider.name}</h3>
+                                <h4>{provider.address }</h4>
+                                <h4>{provider.city}</h4>
+                                <h4>{provider.postcode}</h4>
+                                <h5>Contact us: {provider.phone}</h5> 
+                            </div>
+                        
+                        <div className='all-services'>
+                            <h5>Our services:</h5>
+                            <p className="details-holder">
+                                
+                                { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
+                                { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
+                                { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
+                                { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
+                                { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
+                                { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
+                                { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
 
-            {/* <button onClick={() => vote(id, 1)}>+</button>
-            <button onClick={() => vote(id, -1)}>-</button> */}
-            
-        </p>
-        <h5>Animals we provide for:</h5>
-        <p className="details-holder">
-            
-            { provider.dog? <span className="">D</span> : ""}
-            { provider.cat ? <span className="">C</span> : ""}
-            { provider.bird ? <span className="">B</span> : ""}
-            { provider.rabbit ? <span className="">RA</span> : ""}
-            { provider.reptile ? <span className="">R</span> : ""}
+                                {/* <button onClick={() => vote(id, 1)}>+</button>
+                                <button onClick={() => vote(id, -1)}>-</button> */}
+                                
+                            </p>
+                            <h5>Animals we provide for:</h5>
+                            <p className="details-holder">
+                                
+                                    { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
+                                    { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
+                                    { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
+                                    { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
+                                    { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
 
-        </p>
+                            </p>
+                        </div>
+                    
+                    </div>
+                    
 
-        <Link to="/services/filter/all">Back</Link>
-        <br></br>
-    </div>
-    <button onClick={handleSubmit}>Message</button>
-    <div className='calendar'>
-    {isCalendar? <CalendarUser userId={id}/>:''}
-    </div>
+                
+                <br></br>
+            </div>
+            
+            <button onClick={handleSubmit}>Message</button>
+            <div className='calendar'>
+            {isCalendar? <CalendarUser userId={id}/>:''}
+            </div>
+        </div>
+        
     </>
             
         
