@@ -118,16 +118,17 @@ const Home = () => {
             Walkers
             <img src={'../../dog_walker.png'} className='service-icon' />
           </div></Link>
-          <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/3">
-          <div className='service'>
-            Groomers
-            <img src={'../../dog_groomer.png'} className='service-icon' />
-          </div></Link>
           <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/4">
           <div className='service'>
             Vets
             <img src={'../../vet.png'} className='service-icon' />
           </div></Link>
+          <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/3">
+          <div className='service'>
+            Groomers
+            <img src={'../../dog_groomer.png'} className='service-icon' />
+          </div></Link>
+          
           <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/5">
           <div className='service'>
             Trainers
