@@ -29,7 +29,7 @@ function App() {
             <Route path="/service/profile/:userId" element = {<ServiceProfilePage/>}/>
             <Route path="/pet-profile" element={<PrivateRoute><CardProfile/></PrivateRoute>} />
             <Route path="/Message" element={<PrivateRoute><Message /></PrivateRoute>} />
-            <Route path="/petinfo" element={<PrivateRoute><PetInfo /></PrivateRoute>} />
+         
           </Route>
         </Routes>
       </AuthProvider>

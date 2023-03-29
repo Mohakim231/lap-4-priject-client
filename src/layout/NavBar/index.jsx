@@ -51,7 +51,7 @@ function NavBar() {
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                to="/pet-profile"
+                to="/pet"
               >
                 My Pet Profile
               </NavLink>

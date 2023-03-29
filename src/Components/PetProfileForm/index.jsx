@@ -68,6 +68,7 @@ export default function PetProfileForm() {
   };
 
   const handleSubmitPet = async () => {
+    console.log(user_id)
     const response = await fetch(
       `http://localhost:5000/users/${user_id}/pets`,
       {
@@ -91,11 +92,12 @@ export default function PetProfileForm() {
       const data = await response.json();
       console.log(data);
       // Do something with the newly created pet ID
+      window.location.href = "/pet";
     }
   };
   return (
     <div>
-      <h1 className="pet-title">Pet Profile</h1>
+      <h1 className="pet-title">Create Your Pet Profile</h1>
       <Alert msg={errMsg} type="danger" />
       <Alert msg={successMsg} type="success" />
       {/* <form onSubmit={handleSubmitFile} className="form">
