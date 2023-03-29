@@ -51,7 +51,7 @@ const ProviderPage = () => {
                     
                     <div className='details-and-filters'>
                         <div className='provider-info profile-page-details-holder'>
-                                <h3>{provider.name}</h3>
+                                <h3 className='company-name'>{provider.name}</h3>
                                 <h4>{provider.address }</h4>
                                 <h4>{provider.city}</h4>
                                 <h4>{provider.postcode}</h4>
@@ -89,11 +89,11 @@ const ProviderPage = () => {
                     </div>
                     
 
-                
+                    <button onClick={handleSubmit}>Message</button>
                 <br></br>
             </div>
             
-            <button onClick={handleSubmit}>Message</button>
+            
             <div className='calendar'>
             {isCalendar? <CalendarUser userId={id}/>:''}
             </div>
