@@ -124,6 +124,7 @@ export default function PetProfileForm() {
                 src={previewSource}
                 alt="chosen"
                 style={{ height: "100%", width: "100%" }}
+                className="file-upload"
               />
             )}
             <img
@@ -142,13 +143,14 @@ export default function PetProfileForm() {
             className="form-input"
           />
         </label>
-        <label htmlFor="pet-name">
+        <label className="name-1" htmlFor="pet-name">
           Pet Name
           <input
             type="text"
             name="pet-name"
             id="pet-name"
             placeholder="Enter Pet Name"
+            className="form-input"
             value={petName}
             onChange={(e) => setPetName(e.target.value)}
             required
@@ -161,6 +163,7 @@ export default function PetProfileForm() {
             name="pet-age"
             id="pet-age"
             placeholder="Enter Pet Name"
+            className="form-input"
             value={petAge}
             onChange={(e) => setPetAge(e.target.value)}
           />
@@ -172,6 +175,7 @@ export default function PetProfileForm() {
             name="pet-species"
             id="pet-species"
             placeholder="Enter Pet Species"
+            className="form-input"
             value={petSpecies}
             onChange={(e) => setPetSpecies(e.target.value)}
           />
@@ -188,7 +192,7 @@ export default function PetProfileForm() {
           </select>
         </label> */}
         <label className="special-inst" htmlFor="pet-instructions">
-          Special Instructions
+          Pet Instructions
           <textarea
             type="text"
             name="pet-instructions"
@@ -196,6 +200,7 @@ export default function PetProfileForm() {
             placeholder="Enter Instructions"
             cols="20"
             rows="2"
+            className="form-input"
             value={petInst}
             onChange={(e) => setPetInst(e.target.value)}
           ></textarea>
