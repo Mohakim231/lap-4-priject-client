@@ -11,11 +11,13 @@
     margin: 2vw;
     color: white;
     text-align: center;
+    max-width: 100px;
 }
 
 .services-filters, .animal-filters {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .s-filters, .a-filters {
@@ -28,6 +30,8 @@
     padding-right: 2vw;
     color: white;
     padding-top: 1vh;
+    min-width: 200px;
+    text-align: left;
 }
 
 .s-filters, .a-filters {
@@ -38,4 +42,7 @@
     margin: 2vw;
     color: white;
     text-align: center;
+}
+.s-filters input{
+    float: right; 
 }

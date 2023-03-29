@@ -5,6 +5,7 @@ import * as geolib from 'geolib'
 import { Filters, ProviderCard } from "../Components"
 import "./index.css"
 import { useParams } from "react-router-dom";
+
 const mapContainerStyle= {
     width: "100%",
     height:"100%"
@@ -49,7 +50,8 @@ const{id} = useParams()
               { 
               serviceProviders.map((p)=>(
                 <MarkerF key={p.id} position={{lat: p.latitude, lng: p.longitude}}
-                onClick={()=>{setSelected(p), setZoom(13), setCenter({lat: p.latitude, lng: p.longitude}) }}/>
+                onClick={()=>{setSelected(p), setZoom(13), setCenter({lat: p.latitude, lng: p.longitude}) }}
+                icon={{url:"../../mapmarker.png", scaledSize: new window.google.maps.Size(30,30)}} />
               ))}
               <></>
               {selected && (
