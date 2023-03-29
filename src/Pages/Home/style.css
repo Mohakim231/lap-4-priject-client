@@ -256,6 +256,10 @@
     align-items: center;
 }
 
+.service:hover {
+  padding: 5vh 5vw;
+}
+
 .buttons-home {
   display: flex;
   flex-direction: column;

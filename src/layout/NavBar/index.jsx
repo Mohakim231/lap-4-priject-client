@@ -137,14 +137,16 @@ function NavBar() {
       <Outlet />
       <div
       className={`message-container-navbar ${isOpen ? 'open' : 'closed'}`}
-      style={{ width: '400px', height: '600px' }}
+      style={{ width: '0px', height: '0px' }}
     >
       <div>
         <button className="message-button-navbar" onClick={handleButtonClick}>
           {isOpen ? 'Hide' : 'Show'}
         </button>
       </div>
-      <div></div>
+      <div>
+        
+      </div>
     </div>
     </>
   );
