@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import httpClient from '../../httpClient';
+import './style.css'
 
 const Register = () => {
 
@@ -103,10 +104,10 @@ const Register = () => {
     }
     
        {serviceChoice?(<>
-        <div>
-        <h2>
+        <div className='signup-service'>
+        {/* <h2>
             Register
-        </h2>
+        </h2> */}
         <form className='signup-form'>
             <input className='signup-form-element' placeholder='Username' type='text' value={serviceName} onChange={(e) => setServiceName(e.target.value)} name='service-username-form' required/>
             <input className='signup-form-element' placeholder='Password' type='password' value={servicePassword} onChange={(e) => setServicePassword(e.target.value)} name='service-password-form' required/>
@@ -114,21 +115,22 @@ const Register = () => {
             <button className='singup-button' type='button' onClick={() => handleSubmitService()}>Register</button>
             {error && <p>{error}</p>}
         </form>
+        <div className='signup-link'>Dont have an account? <Link to='/signup' style={ {color: "#3fa1a9" }}>Signup</Link></div>
     </div>
        </>
         ): userChoice? (<>
             <div className='signup-page'>
             <div className='signup-service'>
-                <h2 className='signup-heading'>
+                {/* <h2 className='signup-heading'>
                     Login
-                </h2>
+                </h2> */}
                 <form className='signup-form'>
                     <input className='signup-form-element' placeholder='Username' type='text' value={userName} onChange={(e) => setUserName(e.target.value)} name='username-form' required/>
                     <input className='signup-form-element' placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password-form' required/>
-                    <button className='singup-button' type='button' onClick={() => handleSubmitUser()}>Login</button>
+                    <button className='singup-button' type='button' onClick={() => handleSubmitUser()}>Register</button>
                     {error && <p>{error}</p>}
                 </form>
-                <div className='signup-link'>Dont have an account? <Link to='/signup'>Signup</Link></div>
+                <div className='signup-link'>Dont have an account? <Link to='/signup' style={ {color: "#3fa1a9" }}>Signup</Link></div>
             </div>
             </div>
     </>):''}</>
