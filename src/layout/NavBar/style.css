@@ -96,7 +96,7 @@
     left: 2vw;
     bottom: 2vh;
     overflow: hidden;
-    transition: height 0.5s;
+    /* transition: height 0.5s; */
     height: 10vh;
     width: auto;
     background-color: none;
@@ -217,6 +217,24 @@
     .desktop {
       display: none;
     }
+
+    .messages {
+      height: 35vh;
+      width: 50vw;
+    }
+
+    .closed {
+      position: fixed;
+      left: 2vw;
+      bottom: 2vh;
+      overflow: hidden;
+      /* transition: height 0.5s; */
+      height: 7vh;
+      width: auto;
+      background-color: none;
+    }
+ 
+  
 
 }
 

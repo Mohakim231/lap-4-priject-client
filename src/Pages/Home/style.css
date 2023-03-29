@@ -131,65 +131,7 @@
 
 }
 
-@media screen and (max-width: 800px) {
-  .description {
-    width: 40vw;
-    text-align:left;
-    font-size: 2vh;
-  }
-  .descriptions {
-    display: none;
-    /* display: flex;
-    flex-direction: row;
-    max-width: 90vw;
-    text-align: center;
-    justify-content: space-between;
-    padding-bottom: 2vh; */
-  }
-  .owners, .providers{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  .owners {
-    padding-right: 3vw;
-  }
-  .link-and-dog {
-    font-size: 1.5vh;
-    display: flex;
-    flex-direction: row;
-  }
-  .home-links {
-    padding: 2vh 3vw;
-  }
-  .message-button-div {
-    
-    position: fixed;
-    bottom: 3vh;
-    left: 4vw;
-    
-  }
-  .message-button-div h2 {
-    display: none;
-  }
-  .message-button {
-    height: 5vh;
-  }
-  .welcome {
-    color: white;
-    margin-top: 4vh;
-    padding: 1rem;
-    font-size: 6vh;
-    z-index: 100;
-    background-color:#68975952;
-    width: 80vw;
-  }
-  .signup-home {
-    background-color: #CFE1EE;
-    padding: 5rem;
-  }
 
-}
 
 /* .welcome {
     font-size: 8vh;
@@ -296,6 +238,81 @@
 .service-icon{
 margin-bottom: 5vh;
   height: 5vh;
+}
+
+
+@media screen and (max-width: 800px) {
+  .description {
+    width: 40vw;
+    text-align:left;
+    font-size: 2vh;
+  }
+  .descriptions {
+    display: none;
+    /* display: flex;
+    flex-direction: row;
+    max-width: 90vw;
+    text-align: center;
+    justify-content: space-between;
+    padding-bottom: 2vh; */
+  }
+  .owners, .providers{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .owners {
+    padding-right: 3vw;
+  }
+  .link-and-dog {
+    font-size: 1.5vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .home-links {
+    padding: 2vh 3vw;
+  }
+  .message-button-div {
+    
+    position: fixed;
+    bottom: 3vh;
+    left: 4vw;
+    
+  }
+  .message-button-div h2 {
+    display: none;
+  }
+  .message-button {
+    height: 5vh;
+  }
+  .welcome {
+    color: white;
+    margin-top: 4vh;
+    padding: 1rem;
+    font-size: 6vh;
+    z-index: 100;
+    background-color:#68975952;
+    width: 80vw;
+  }
+  .signup-home {
+    background-color: #CFE1EE;
+    padding: 5rem;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vh;
+    height: 1vh;
+    margin: 1vh;
+  }
+  .service-icon {
+    height: 2vh;
+  }
+
 }
 
 
