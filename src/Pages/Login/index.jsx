@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import httpClient from '../../httpClient';
 import { useAuth } from '../../context';
+import './style.css'
 
 
 const Login = () => {
@@ -108,10 +110,10 @@ const Login = () => {
     }
     
        {serviceChoice?(<>
-        <div>
-        <h2>
+        <div className='signup-service'>
+        {/* <h2>
             Login
-        </h2>
+        </h2> */}
         <form className='signup-form'>
             <input className='signup-form-element' placeholder='Username' type='text' value={serviceName} onChange={(e) => setServiceName(e.target.value)} name='service-username-form' required/>
             <input className='signup-form-element' placeholder='Password' type='password' value={servicePassword} onChange={(e) => setServicePassword(e.target.value)} name='service-password-form' required/>
@@ -119,19 +121,22 @@ const Login = () => {
             <button className='singup-button' type='button' onClick={() => handleSubmitService()}>Login</button>
             {error && <p>{error}</p>}
         </form>
+        <div className='signup-link'>Already have an account? <Link to='/login' style={ {color: "#3fa1a9" }}>Login</Link></div>
     </div>
        </>
         ): userChoice? (<>
-    <div>
-        <h2>
+    <div className='signup-service'>
+        {/* <h2>
             Login
-        </h2>
+        </h2> */}
         <form className='signup-form'>
             <input className='signup-form-element' placeholder='Username' type='text' value={userName} onChange={(e) => setUserName(e.target.value)} name='username-form' required/>
             <input className='signup-form-element' placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password-form' required/>
             <button className='singup-button' type='button' onClick={() => handleSubmitUser()}>Login</button>
+            
             {error && <p>{error}</p>}
         </form>
+        <div className='signup-link'>Already have an account? <Link to='/login' style={ {color: "#3fa1a9" }}>Login</Link></div>
     </div>
     </>):''}</>
   )
