@@ -1,13 +1,19 @@
 .filters {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
+    justify-content: space-around;
+    background-color: #68975952;
     align-self: left;
     margin-top: 3vh;
     padding-bottom: 3vh;
-
-    background-color: #68975952;
 }
+.serv-filter .ani-filters{
+    margin: 0 10px;
+   
 
+   
+}
 .services-title, .animals-title {
     /* background-color: #699759; */
     border-radius: 20px;
@@ -32,24 +38,57 @@
 
 .s-filters label,
 .a-filters label {
-    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-right: 20px;
     color: white;
     padding-top: 1.5vh;
-    min-width: 200px;
+   
     text-align: left;
+    width: 90%;
 }
 
 .s-filters, .a-filters {
     background-color: #699759;
     border-radius: 20px;
     padding: 2vh 5vh;
-    /* padding-top: 2vh; */
+    /* /* padding-top: 2vh; */ 
     /* margin: 2vw; */
     color: white;
-    text-align: center;
+    /* text-align: center; */
 }
-.s-filters input{
+.s-filters input, .a-filters input{
     float: right; 
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .filters {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 1vh;
+        padding-bottom: 1vh;
+        padding: 0rem 1rem;
+        width: 90vw;
+    }
+
+    .services-filters {
+        padding: 0rem 2rem;
+    }
+    .services-filters input {
+        padding: 5rem 0rem;
+    }
+
+    .s-filters {
+        font-size: 1.5vh;
+        padding: 1rem;
+        width: 40vw;
+    }
+    
 }
 
 

@@ -41,22 +41,14 @@ const ServiceProfile = () => {
 
   useEffect(() => {
        
-
             async function getUser () {
             const resp = await httpClient.get("http://localhost:5000/user");
             const id = resp.data.id
-            setUserId(id)
-            // console.log(id);
+            setUserId(id)           
         }
-
-            
+  
             getUser()
-
-        // setClicked(!clicked)
-        
-        // fetchEvents();
-    
-        
+ 
       }, []);
 
 async function handleSubmit(e) {
@@ -235,7 +227,7 @@ const handleAddress =()=>{
             
             
                 {/* <button disabled={loading} type='submit'>Submit</button> */}
-                <button  onClick={handleAddress} className='check-button'>Check</button>
+                <button  onClick={handleAddress}>Submit</button>
             </form>
             
             {error && <p>{error}</p>}

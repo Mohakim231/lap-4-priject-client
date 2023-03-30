@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './style.css'
 
-import { Calendar } from '../../Components';
+import { Calendar, ImageUpload } from '../../Components';
+
 const ServiceProfilePage = () => {
 
     const [loading, setLoading] = useState(false);
     const [provider, setProvider] = useState({});
     const {userId} = useParams()
     const navigate = useNavigate()
-    const[calendar, setCalendar] = useState(false)
-
+    const[calendar, setCalendar] = useState()
+const[upload, setUpload]= useState(false)
 
     useEffect(() => {
 
@@ -71,63 +72,69 @@ console.log(userId)
 console.log(data)
     }
 
+function showUpload(){
+setUpload(true)
+}
+const handleUpload=()=>{
+    setUpload(false)
+ }
+
     function displayProvider() {
         return (<>
-        <div className='service-profile-div'>
-                <div className='prov-card profile-card'>
-                    <div id='delete-account'>
-                        <button onClick={handleDeleteButton} >Delete account</button>
-                    </div>
-                
-                    <div className='details-and-filters'>
-                        {/* <h2>Your Company:</h2>     */}
-                        <div className='provider-info profile-page-details-holder'>
-                            <h2 className='company-name'>{provider.name}</h2> 
-                            <h3>Address:</h3>
-                            <h4>{provider.address }</h4>
-                            <h4>{provider.city}</h4>
-                            <h4>{provider.postcode}</h4>
-                            <h5>Contact number: {provider.phone}</h5> 
-                        </div>
-
-                        <div className='all-services ' >
-                            <h5>Your services:</h5>
-                            <p className="details-holder">
-                                
-                                { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
-                                { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
-                                { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
-                                { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
-                                { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
-                                { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
-                                { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
-
-                                {/* <button onClick={() => vote(id, 1)}>+</button>
-                                <button onClick={() => vote(id, -1)}>-</button> */}
-                                
-                            </p>
-                            <h5>Animals you provide for:</h5>
-                            <p className="details-holder">
-                                
-                                { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
-                                { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
-                                { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
-                                { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
-                                { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
-
-                            </p>
-                        </div>
-                    </div>
-                
-                
-                
-                <button onClick={handleCalendar} className='avail-btn'>Select availability</button>   
-                
-        
-                <br></br>
+        <div className='profile-card'>
+        <div className='picture-holder'>
+        <div id='delete-account'>
+                <button onClick={handleDeleteButton} >Delete account</button>
             </div>
-            <div className='calendar'>
-            {calendar? <Calendar userId = {userId}/>:''}  
+                   <div className='picture'>
+                    <img src={provider.picture? provider.picture:"../../animals.webp"} alt="walker-icon2" border="0"/>
+                   </div>
+                   </div>
+           
+        
+            <div className='details-and-filters'>
+                {/* <h2>Your Company:</h2>     */}
+                <div className='provider-info profile-page-details-holder'>
+                    <h2 className='company-name'>{provider.name}</h2> 
+                    <h3>Address:</h3>
+                    <h4>{provider.address }</h4>
+                    <h4>{provider.city}</h4>
+                    <h4>{provider.postcode}</h4>
+                    <h5>Contact number: {provider.phone}</h5> 
+                </div>
+
+                <div className='all-services'>
+                    <h5>Your services:</h5>
+                    <p className="details-holder">
+                        
+                        { provider.daily_care? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
+                        { provider.boarding_hotel ? <img src="../../pet-hotel.png" alt="grooming" className='icons'/> : ""}
+                        { provider.pet_sitter ? <img src="../../dog_sitter3.png" alt="sitting" className='icons'/> : ""}
+                        { provider.dog_walker ? <img src="../../dog_walker.png" alt="walking" className='icons'/> : ""}
+                        { provider.grooming ? <img src="../../dog_groomer.png" alt="grooming" className='icons'/> : ""}
+                        { provider.vet ? <img src="../../vet.png" alt="vet" className='icons'/> : ""}
+                        { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
+
+        </p>
+        <button className='add-photo-btn' onClick={showUpload}>Add photo</button>
+        {upload? <ImageUpload handleUpload={handleUpload}/> : ''}
+
+ 
+                        {/* <button onClick={() => vote(id, 1)}>+</button>
+                        <button onClick={() => vote(id, -1)}>-</button> */}
+                        
+                    
+                    <h5>Animals you provide for:</h5>
+                    <p className="details-holder">
+                        
+                        { provider.dog? <img src="../../dog-icon.png" alt="dog" className='icons'/> : ""}
+                        { provider.cat ? <img src="../../cat-icon.png" alt="cat" className='icons'/> : ""}
+                        { provider.bird ? <img src="../../bird.png" alt="bird" className='icons'/> : ""}
+                        { provider.rabbit ? <img src="../../rabbit.png" alt="rabbit" className='icons'/> : ""}
+                        { provider.reptile ? <img src="../../reptile-icon.png" alt="reptiles" className='icons'/> : ""}
+
+                    </p>
+                </div>
             </div>
         </div>
         

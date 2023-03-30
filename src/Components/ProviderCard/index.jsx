@@ -8,25 +8,26 @@ const linkStyle = {
   };
 
 
-const ProviderCard = ({ id, name,address, city,postcode, phone, dog, cat, rabbit,bird,reptile,daycare, hotel,petsitter,dogwalker,groomer,vet,trainer 
+const ProviderCard = ({ id,icon,  name,address, city,postcode, phone, dog, cat, rabbit,bird,reptile,daycare, hotel,petsitter,dogwalker,groomer,vet,trainer 
 }) => {
-
-    return <div className='prov-card s-p-card'>
-
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/DW5D3SJ/walker2.webp" alt="walker2" border="0"></a>
+<a href="https://ibb.co/jVPt6bW"><img src="https://i.ibb.co/3f9Kr4M/walker1.jpg" alt="walker1" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/hcrK0gf/walker-icon2.png" alt="walker-icon2" border="0"></a>
+<a href="https://ibb.co/Jmqw8hR"><img src="https://i.ibb.co/rF3RqWG/walker-icon1.png" alt="walker-icon1" border="0"></a> */}
+    return <div className='prov-card'>
+<div className='provider-icon'>
+        <img  src={icon? icon:"../../petpal-logo.jpg"} alt="walker-icon2" border="0"/>
+        </div>
         <div className='details1'>
-            <h3 className='service-name'><Link to={`/services/${id}`} style={linkStyle}>{name}</Link></h3>
-            <div className='contact-details'>
-                <h4>{address}</h4>
-                <h4>{city}</h4>
-                <h4>{postcode}</h4>
-                <h5>Contact us: {phone}</h5>
-            </div>
             
+            <h3 className='service-name'><Link to={`/services/${id}`} style={linkStyle}>{name}</Link></h3>
+            <h4>{address + city + postcode}</h4>
+            <h5>Contact us: {phone}</h5>
             
         </div>
         
         <div className="details2">
-            <h5>Our services:</h5>
+        <h5>Our services:</h5>
             <ul className="details-holder">
                 
                 { daycare? <img src="../../daycare.png" alt="daycare" className='icons'/> : ""}
