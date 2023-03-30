@@ -11,7 +11,7 @@
 
 .prov-card{
     width: 30vw;
-    height: 15vh;
+    height: 240px;
     border-radius:0;
     flex-wrap: wrap;
     padding-top: 1rem;
@@ -43,7 +43,7 @@
 }
 .provider-icon{
     width: 60%;
-    min-height: 18vh;
+    min-height: 170px;
     position: absolute;
     top: -90px;
     background-color: white;
@@ -101,5 +101,5 @@ transition: 0.5s;
     z-index: 1;
    position:absolute;
     margin-bottom: 5px;
-    border-radius: 0 0 45% 45%;
+    border-radius: 0 0 50% 50%;
 }

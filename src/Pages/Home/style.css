@@ -140,7 +140,9 @@
 }
 
 .service:hover {
-  padding: 5vh 5vw;
+  /* padding: 5vh 5vw; */
+  transform: translatey(-5px);
+  box-shadow: 5px 5px 10px rgb(95, 212, 59);
 }
 
 .buttons-home {

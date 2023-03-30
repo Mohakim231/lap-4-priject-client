@@ -72,7 +72,7 @@
     align-items: center;
     flex-shrink: 0;
     position: relative;
-    height: 25vh;
+    height: 240px;
     width: 20vw;
     margin-top: 13vh;
     transition: 0.5s;
@@ -81,7 +81,7 @@
     /* overflow: hidden; */
 }
 .prov-card:hover{
-    height: 360px;
+    height: 380px;
 }
 .filtering-part{
     margin-bottom: 20px;
@@ -111,7 +111,7 @@
 }
 .calendar{
     width: 500px;
-    height: 500px;
+    /* height: 450px; */
 }
 .fc-daygrid-body .fc-daygrid-body-unbalanced{
     width: 100%;

@@ -122,10 +122,72 @@
     font-weight: 400;
 }
 .calendar {
-    padding-left: 4vw;
-    padding-top: 5vh;
-   
+    margin-left: 2vw;
+    margin-top: 50px;
+    padding:20px;
+   background-color: #f8f3eed0;
+   border-radius: 10%;
+   box-shadow: 5px 5px 5px #777;
 }
+.calendar-enable{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.calendar-btn{
+    width: 90px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position:absolute;
+    margin-left: 30px;
+    -webkit-appearance: none;
+    background: linear-gradient(0deg, #1e5522, rgba(8, 34, 14));
+    outline:none;
+    border: none;
+    box-shadow: 0 0 0 2px #353535, 0 0 0 4px #3e3e3e, inset 0 0 15px rgb(5, 22, 9), 0 2px 15px rgba(8, 34, 14, .5), inset 0 0 10px rgba(8, 34, 14, .2);
+}
+.calendar-btn:checked{
+    background: linear-gradient(0deg, #18fa03, rgb(14, 88, 32));
+    box-shadow: 0 0 2px #51bb56, 0 0 0 2px #353535, 0 0 0 4px #3e3e3e, inset 0 0 15px rgba(8, 34, 14, 1), 0 2px 15px rgba(8, 34, 14, .5), inset 0 0 10px rgba(8, 34, 14, .2);
+}
+.calendar-btn:before{
+    content:'';
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(0deg, rgb(8, 34, 14 ),#225e26);
+    box-shadow: 0 0 0 1px rgb(6, 29, 12);
+    left: 0;
+    border-radius: 13px;
+    transform:scale(.98, .96);
+    transition: .5s;
+}
+.calendar-btn:checked:before{
+    left:40px;
+}
+
+
+.calendar-btn:after{
+    content:'';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+     left: 38px;
+   background: linear-gradient(0deg, #6b6b6b,#000) ;
+   border-radius: 50%;
+   transition: .5s;
+}
+.calendar-btn:checked:after{
+    left:78px;
+    background: #18b122;
+    box-shadow: 0 0 5px #4ff75a,0 0 15px #4ff75a;
+}
+
+
+
+
+
+
 .upload-btn{
     margin: 0 0 10px;
 }

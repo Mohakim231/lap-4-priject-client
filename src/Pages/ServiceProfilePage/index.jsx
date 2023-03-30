@@ -186,14 +186,17 @@ const handleUpload=async()=>{
         
         
         
-        <button onClick={handleCalendar} className='avail-btn'>Select availability</button>   
-        
+        {/* <button onClick={handleCalendar} className='avail-btn'>Select availability</button>    */}
+        <label className='calendar-enable'>{calendar? 'Disable calendar':'Enable calendar'}<input className='calendar-btn' type="checkbox"
+                checked={calendar}
+                onChange={handleCalendar}
+                ></input></label>
    
         <br></br>
     </div>
-    <div className='calendar'>
-      {calendar? <Calendar userId = {userId}/>:''}  
-    </div>
+    
+      {calendar? <div className='calendar'><Calendar userId = {userId}/></div>:''}  
+    
     <MessageIcon/>
     </>)
     
