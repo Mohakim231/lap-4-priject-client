@@ -130,21 +130,24 @@ function displayProviders() {
 }
   return (
     <main className="provider-main">
-      <div className='filters-and-results'>
+      {/* <div className='filters-and-results'> */}
         <div className="which-service-title">
-          <h1 >What are you looking for?</h1>
+          <h1 >Find a Service</h1>
           <h2>Filter by:</h2>
           <Filters dogs={dogs} setDogs={setDogs}cats={cats} setCats={setCats}rabbits={rabbits} setRabbits={setRabbits}birds={birds}setBirds={setBirds} reptiles={reptiles}setReptiles={setReptiles}daycares={daycares} setDaycares={setDaycares}hotels={hotels} setHotels={setHotels}petsitters={petsitters}setPetsitters={setPetsitters}dogwalkers={dogwalkers} setDogwalkers={setDogwalkers}groomers={groomers}setGroomers={setGroomers}vets={vets} setVets={setVets} trainers={trainers} setTrainers={setTrainers}/>
       
         </div>
+        <div className='cards-div'>
+            <div className="card-holder">
+                { displayProviders() }
+            </div>
+        </div>
         
-      <div className="card-holder">
-          { displayProviders() }
-      </div>
-      </div>
-      <div className="map">
-          <Map/>
-      </div>
+      
+        <div className="map">
+            <Map/>
+        </div>
+      {/* </div> */}
     </main>
   )
 }
