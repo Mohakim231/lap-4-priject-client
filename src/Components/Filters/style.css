@@ -3,7 +3,7 @@
     flex-direction: column;
     max-width: 600px;
     justify-content: space-around;
-    background-color: #68975952;
+    
     align-self: left;
     margin-top: 3vh;
     padding-bottom: 3vh;
@@ -34,6 +34,7 @@
 .s-filters, .a-filters {
     display: flex;
     flex-direction: column;
+    width: 15vw;
 }
 
 .s-filters label,

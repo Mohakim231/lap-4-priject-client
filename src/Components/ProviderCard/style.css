@@ -90,7 +90,7 @@ transition: 0.5s;
     transform: translateY(-25px);
 }
 .prov-card:hover .details2{
-    
+    display: flex;
 }
 .details2{
     background-color: white;
