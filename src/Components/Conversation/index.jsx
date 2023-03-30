@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context";
+import './styles.css'
 
 function Conversation(props) {
   const { user_id } = useAuth()
@@ -13,8 +14,13 @@ function Conversation(props) {
   }
 
   useEffect(() => {
-    getMessages(props.conversationId);
-  }, [props.conversationId]);
+    const intervalId = setInterval(() => {
+      getMessages(props.conversationId);
+    }, 10000); // 10 seconds in milliseconds
+  
+    // cleanup function to clear the interval
+    return () => clearInterval(intervalId);
+  }, []);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -32,46 +38,21 @@ function Conversation(props) {
     getMessages(props.conversationId);
   }
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   fetch("http://localhost:5000/conversations", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       user_id: user_id,
-  //       service_id: service_id,
-  //     }),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setMessage(data.message);
-  //     })
-  //     .catch((error) => {
-  //       setMessage(error.message);
-  //     });
-  // };
-
   return (
-    <div>
+    <div className="messages-box-navbar">
+      <div className="close-conversation-button" onClick={props.handleCloseConversation}>x</div>
       {messages.map((message) => (
-        <div className='message-box' key={message.id}>
-          <p>{message.sender}</p>
-          <p>{message.content}</p>
+        <div className={`message-box ${message.id == user_id && 'message-box-right'}`}
+        key={message.id}>
+          <div className={`message-blue ${message.id == user_id && 'message-grey'}`}>
+          <p className="message-content-sender">{message.sender}</p>
+          <p className="message-content-text">{message.content}</p>
+          </div>
         </div>
       ))}
-      <form onSubmit={handleSubmit}>
-        <label>
-          New message:
-          <input type="text" value={newMessage} onChange={(event) => setNewMessage(event.target.value)} />
-        </label>
-        <button type="submit">Send</button>
+      <form onSubmit={handleSubmit} className='send-message-form'>
+        <input type="text" className="message-input-here" value={newMessage} onChange={(event) => setNewMessage(event.target.value)} placeholder='Message here'/>
+        <button type="submit" className="send-message-form-button">Send</button>
       </form>
     </div>
   );

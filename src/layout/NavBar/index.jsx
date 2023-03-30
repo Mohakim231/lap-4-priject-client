@@ -1,16 +1,46 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Conversation from "../../Components/Conversation";
 import { useAuth } from "../../context";
+import Cookies from 'js-cookie';
 import "./style.css";
 
 function NavBar() {
-  const { username } = useAuth();
+  const { username, logout } = useAuth();
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+
+  // const { user_id } = useAuth()
+  // const [conversations, setConversations] = useState([]);
+  // const [selectedConversation, setSelectedConversation] = useState(null);
+
+  // async function getConversationsByUser(userId) {
+  //   const response = await fetch(`http://localhost:5000/conversations?user_id=${userId}`);
+  //   const data = await response.json();
+  //   setConversations(data.conversations);
+  // }
+
+  // function handleCloseConversation() { 
+  //   setSelectedConversation(null);
+  // }
+
+  // useEffect(() => {
+  //   // getConversationsByUser(user.id);
+  //   getConversationsByUser(user_id);
+  // }, []);
+
+  const handleLogout = () => {
+    // Remove the cookie with the authentication token
+    Cookies.remove('authToken');
+
+    // Call the logout function to clear the user state
+    logout();
+  };
 
   const activeStyle = {
     // textDecoration: "underline",
-    color: "white",
+    color: "white", 
     textShadow: "2px 2px black",
   };
   function openMenu() {
@@ -20,18 +50,18 @@ function NavBar() {
     setHamburgerClicked(false)
   }
 
-  function openMessages(){
-    setIsOpen(!isOpen)
-    console.log('open')
-  }
-  function closeMessages(){
-    setIsOpen(!isOpen)
-    console.log('close')
-  }
+  // function openMessages(){
+  //   setIsOpen(!isOpen)
+  //   console.log('open')
+  // }
+  // function closeMessages(){
+  //   setIsOpen(!isOpen)
+  //   console.log('close')
+  // }
 
-  const handleButtonClick = () => {
-    setIsOpen(!isOpen);
-  };
+  // const handleButtonClick = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
     <>
@@ -57,13 +87,16 @@ function NavBar() {
               </NavLink>
             </li>
             
-            <li className="navbar-list-item">
+            <li className="navbar-list-item"> 
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/pet"
               >
                 My Pet Profile
               </NavLink>
+            </li>
+            <li className="navbar-list-item" onClick={handleLogout}> 
+              Logout
             </li>
             {/* <li className="navbar-list-item">
               <NavLink
@@ -132,40 +165,28 @@ function NavBar() {
         </div>
       </nav>
       <Outlet />
-
-      <div className={isOpen ? "messages" : "closed"}>
+      {/* <div className={isOpen ? "messages" : "closed"}>
         <div className={isOpen ? "close-button-div" : "no-image"}>
-          <h2>Messages</h2>
+          <h2 className="messages-heading">Messages</h2>
           <button onClick={closeMessages} className={isOpen ? "close-button" : "no-image"}>X</button>
         </div>
         <div className={isOpen ? "messages-holder" : "no-image"}>
-            <div className='message'>
-              <h4>Service provider</h4>
-            </div>
-            <div className='message'>
-              <h4>Service provider</h4>
-            </div>
-            <div className='message'>
-              <h4>Service provider</h4>
-            </div>
+        {conversations.map((conversation) => (
+        <div
+          className='conversation-box'
+          key={conversation.conversation.id}
+          onClick={() => setSelectedConversation(conversation.conversation.id)}
+        >
+          <p className="conversation-box-username">{conversation.service.username}</p>
+        </div>
+      ))}
+      {selectedConversation && (
+          <Conversation conversationId={selectedConversation} handleCloseConversation={handleCloseConversation} />
+      )}
         </div>
             
             <img src="../../../chat.png" alt="chat" onClick={openMessages} className={isOpen ? "no-image" : "yes-image"}/>
-      </div>
-
-      {/* <div
-      className={`message-container-navbar ${isOpen ? 'open' : 'closed'}`}
-      style={{ width: '200px', height: '50px' }}
-    >
-      <div>
-        <button className="message-button-navbar" onClick={handleButtonClick}>
-          {isOpen ? 'Hide' : 'Show'}
-        </button>
-      </div>
-      <div>
-        
-      </div>
-    </div> */}
+      </div>  */}
     </>
   );
 }

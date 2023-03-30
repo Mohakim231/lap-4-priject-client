@@ -1,5 +1,5 @@
 import React from 'react'
-import { PetProfileForm } from '../../Components'
+import { MessageIcon, PetProfileForm } from '../../Components'
 import { useAuth } from '../../context'
 
 const UserProfile = () => {
@@ -8,6 +8,7 @@ const UserProfile = () => {
     <>
     <p>this is: {username}</p>
     <PetProfileForm/>
+    <MessageIcon />
     </>
   )
 }

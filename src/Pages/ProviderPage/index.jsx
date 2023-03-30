@@ -11,7 +11,7 @@ const ProviderPage = () => {
     const [provider, setProvider] = useState({});
     const {id} = useParams()
     const [isCalendar, setIsCalendar] = useState(false)
-    const{user} = useAuth
+    const{user_id} = useAuth()
 
     useEffect(() => {
 
@@ -109,30 +109,31 @@ const ProviderPage = () => {
         
     }
     
-  const handleSubmit = (event) => {
-//     event.preventDefault();
-//     fetch("http://localhost:5000/conversations", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         user_id: user.id,
-//         service_id: id,
-//       }),
-//     })
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error("Network response was not ok");
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         setMessage(data.message);
-//       })
-//       .catch((error) => {
-//         setMessage(error.message);
-//       });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(id)
+    console.log(user_id)
+    try {
+        const response = await fetch('http://localhost:5000/conversations', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            user_id: user_id,
+            service_id: id
+          }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error);
+        }
+        console.log(data.message);
+        // do something with the success message
+      } catch (error) {
+        console.error(error);
+        // do something with the error message
+      }
   };
 
 

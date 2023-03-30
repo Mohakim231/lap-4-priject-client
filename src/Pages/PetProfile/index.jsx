@@ -1,6 +1,7 @@
 // import { CardProfile } from "../../Components";
 // import { PetProfileForm } from "../../Components/PetProfileForm";
 import React, { useEffect, useState } from 'react';
+import { MessageIcon } from '../../Components';
 import { useAuth } from '../../context';
 import './style.css'
 
@@ -35,6 +36,7 @@ const PetProfile = () => {
   }, [user_id]);
 
   return (
+    <>
     <div className='pet-profile-page'>
       <h1>My Pets</h1>
       <em>Here you can see all the pets you've added to your profile and add more</em>
@@ -53,8 +55,9 @@ const PetProfile = () => {
           ))}
           <button className='add-pet' onClick={newPet}>+</button>
       </div>
-      
     </div>
+    <MessageIcon/>
+    </>
   );
 }
 export default PetProfile;
