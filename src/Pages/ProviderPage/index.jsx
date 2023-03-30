@@ -40,11 +40,14 @@ const ProviderPage = () => {
 
     function displayProvider() {
         return <>
-        <div className='user-view'>
+        <div className=''>
             <div id='back-btn'>
-                        <Link to="/services/filter/all"> <button>Back</button> </Link>
-            </div>
-            <div className='prov-card profile-card' id='user-view'>
+                        <Link to="/services/filter/all"> <button>Back</button> </Link> 
+                        </div>
+            <div className='sp-user-view'>
+            
+            
+            <div className='profile-card' id='user-view'>
                    <div className='picture-holder'>
                    <div className='picture'>
                     <img src={provider.picture? provider.picture:"../../animals.webp"} alt="walker-icon2" border="0"/>
@@ -94,7 +97,7 @@ const ProviderPage = () => {
                     <button onClick={handleSubmit}>Message</button>
                 <br></br>
             </div>
-            
+            </div>
             
             <div className='calendar'>
             {isCalendar? <CalendarUser userId={id}/>:''}

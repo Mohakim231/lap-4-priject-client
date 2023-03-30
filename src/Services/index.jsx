@@ -30,7 +30,7 @@ const [groomers, setGroomers] = useState(false)
 const [vets, setVets] = useState(false)
 const [trainers, setTrainers] = useState(false)
 const{id} = useParams()
-
+const[filteredSevices, setFilteredServices] = useState(null)
 
     function Map() {
         return (
@@ -38,17 +38,24 @@ const{id} = useParams()
             googleMapsApiKey = "AIzaSyAf81ZWQurI47K6AtmX9YF8u0YVHX5rQq8"
           >
             <GoogleMap
-            
               mapContainerStyle={mapContainerStyle}
               center={center}
               zoom={zoom}
-              
-              
-              
-            //   onZoomChanged={handleZoomChanged}
-            >
+              >
               { 
-              serviceProviders.map((p)=>(
+              serviceProviders
+              .filter(s=> !daycares || s.daily_care)
+              .filter(s=> !hotels || s.boarding_hotel)
+              .filter(s =>!petsitters || s.pet_sitter)
+              .filter(s=> !dogwalkers || s.dog_walker)
+              .filter(s=> !groomers || s.grooming)
+              .filter(s=> !vets || s.vet)
+              .filter(s=> !trainers || s.trainer)
+              .filter(s=> !dogs || s.dog)
+              .filter(s=> !cats || s.cat)
+              .filter(s=> !birds || s.bird)
+              .filter(s=> !rabbits || s.rabbit)
+              .filter(s=> !reptiles || s.reptile).map((p)=>(
                 <MarkerF key={p.id} position={{lat: p.latitude, lng: p.longitude}}
                 onClick={()=>{setSelected(p), setZoom(13), setCenter({lat: p.latitude, lng: p.longitude}) }}
                 icon={{url:"../../mapmarker.png", scaledSize: new window.google.maps.Size(30,30)}} />
@@ -104,12 +111,13 @@ const home={latitude:51.553742, longitude: 0.201989}
         }
         setService()
         loadServices()
+        
     }, [])
 
 
 
 function displayProviders() {
-    console.log(petsitters)
+   
     return serviceProviders
                     .filter(s=> !daycares || s.daily_care)
                     .filter(s=> !hotels || s.boarding_hotel)
@@ -160,7 +168,7 @@ export default Services
 // "servicePassword": "123"
 
     // "sp_id":1,
-    // "name": "ARK",
+    // "name": "CYpress",
     // "address":"127, Albany Road",
     // "city": "Hornchurch",
     // "post_code": "RM12 4AQ",
@@ -215,7 +223,7 @@ export default Services
 //     "serviceEmail": "bb@gmail.com",
 // "servicePassword": "123",
   //       "sp_id":3,
-  //   "name": "Bone and Bisquit",
+  //   "name": "Top Dog",
   //   "address": "300 Hornchurch Road",
   //   "city": "Hornchurch",
   //   "post_code": "RM11 1PY",
@@ -269,7 +277,7 @@ export default Services
 //     "serviceEmail":"remy@gmail.com",
 //   "servicePassword": "123",
   //       "sp_id":5,
-  //   "name": "Remy",
+  //   "name": "Hound Crew",
   //   "address":"89 Coronation Drive",
   //   "city": "Hornchurch",
   //   "post_code": "RM12 5BT",
@@ -296,7 +304,7 @@ export default Services
 //     "serviceEmail":"vfp@gmail.com",
 //   "servicePassword": "123",
     //     "sp_id":6,
-    // "name": "Vets for pets",
+    // "name": "Stay N Play",
     // "address":"130 Hornchurch Road",
     // "city": "Hornchurch",
     // "post_code": "RM11 1DP",
@@ -318,3 +326,4 @@ export default Services
     //   "icon": "https://i.ibb.co/mShFk98/daycare-icon3.jpg",
     // "picture": "https://i.ibb.co/3TBmz7G/daycare3.webp",
 //     }]
+

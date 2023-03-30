@@ -12,7 +12,9 @@ const ServiceProfilePage = () => {
     const navigate = useNavigate()
     const[calendar, setCalendar] = useState()
 const[upload, setUpload]= useState(false)
-
+const[isPicture, setIsPicture] = useState(false)
+const[isIcon, setIsIcon] = useState(false)
+const[logo, setLogo] = useState(false)
     useEffect(() => {
 
         setLoading(true);
@@ -73,10 +75,49 @@ console.log(data)
     }
 
 function showUpload(){
-setUpload(true)
+    if(logo){setLogo(false)}
+setUpload(!upload)
 }
-const handleUpload=()=>{
+function showLogo(){
+    if(upload){setUpload(false)}
+    setLogo(!logo)
+    }
+const handleUpload=async()=>{
     setUpload(false)
+    const picture = "https://i.ibb.co/Bwq8g9W/daycare2.webp"
+    const options = {
+        method:"POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            
+            picture:picture,
+        })
+    }
+    const response = await fetch(`http://localhost:5000/service/add-picture/${userId}`, options)
+    const data = await response.json()
+    console.log(data)
+ }
+ const handleLogoUpload = async()=>{
+    setLogo(false)
+    const logo = "https://i.ibb.co/0VtjcDk/sitter-icon1.webp"
+    const options = {
+        method:"POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            
+            icon:logo,
+        })
+    }
+  
+    const response = await fetch(`http://localhost:5000/service/add-icon/${userId}`, options)
+    const data = await response.json()
+    console.log(data)
  }
 
     function displayProvider() {
@@ -117,8 +158,9 @@ const handleUpload=()=>{
 
         </p>
         <button className='add-photo-btn' onClick={showUpload}>Add photo</button>
-        {upload? <ImageUpload handleUpload={handleUpload}/> : ''}
-
+        {upload? <ImageUpload handleUpload={handleUpload} userId={userId} setIsIcon={setIsIcon} setIsPicture= {setIsPicture} upload = {upload}/> : ''}
+        <button className='add-photo-btn' onClick={showLogo}>Add logo</button>
+        {logo? <ImageUpload handleLogoUpload={handleLogoUpload}  setIsIcon={setIsIcon} setIsPicture= {setIsPicture} logo = {logo}/> : ''}
  
                         {/* <button onClick={() => vote(id, 1)}>+</button>
                         <button onClick={() => vote(id, -1)}>-</button> */}
@@ -136,8 +178,17 @@ const handleUpload=()=>{
                     </p>
                 </div>
             </div>
-        </div>
         
+        
+        
+        <button onClick={handleCalendar} className='avail-btn'>Select availability</button>   
+        
+   
+        <br></br>
+    </div>
+    <div className='calendar'>
+      {calendar? <Calendar userId = {userId}/>:''}  
+    </div>
     </>)
     
         
