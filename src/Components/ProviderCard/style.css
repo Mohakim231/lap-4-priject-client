@@ -11,7 +11,7 @@
 
 .prov-card{
     width: 30vw;
-    height: 240px;
+    height: 260px;
     border-radius:0;
     flex-wrap: wrap;
     padding-top: 1rem;
@@ -59,7 +59,7 @@
 }
 .prov-card:hover .provider-icon{
     width: 80%;
-    min-height: 200px;
+    min-height: 215px;
 }
 .details1, .details2 {
     display: flex;
@@ -85,13 +85,13 @@
 }
 
 .details1{
-    transform: translateY(60px);
+    transform: translateY(40px);
    position: absolute;
    bottom: 105px;
 transition: 0.5s;
 }
 .prov-card:hover .details1{
-    transform: translateY(-25px);
+    transform: translateY(-70px);
 }
 .prov-card:hover .details2{
     display: flex;
