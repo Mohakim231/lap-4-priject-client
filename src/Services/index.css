@@ -73,6 +73,7 @@
     margin-top: 100px;
     transition: 0.5s;
     justify-content: flex-end;
+    max-width: 300px;
     /* overflow: hidden; */
 }
 .prov-card:hover{
