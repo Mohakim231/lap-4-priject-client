@@ -90,13 +90,15 @@
     background-color: white;
     height: 40vh;
     width: 20vw;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
   }
   .closed {
     position: fixed;
     left: 2vw;
     bottom: 2vh;
     overflow: hidden;
-    transition: height 0.5s;
+    /* transition: height 0.5s; */
     height: 10vh;
     width: auto;
     background-color: none;
@@ -130,14 +132,25 @@
     padding-top: 2vh;
   }
 
-  .message {
-    padding-bottom: 5vh;
+  .conversation-box{
+    border-bottom: 1px solid black;
+    margin: 5px 5px 2px 5px;
+    padding: 0 0 4px 0;
+    cursor: pointer;
   }
 
-  .messages-holder {
-    padding-left: 1vw;
+  .conversation-box-username{
+    margin-left: 4px;
+    font-weight: 600;
+    padding-bottom: 10px;
   }
 
+  .conversation-box-viewmessages{
+    font-size: 13px;
+    margin-left: 4px;
+    margin-bottom: 10px;
+    color: #898F9C;
+  }
 
   @media screen and (max-width: 800px) {
     .mobile-display{
@@ -217,6 +230,24 @@
     .desktop {
       display: none;
     }
+
+    .messages {
+      height: 35vh;
+      width: 50vw;
+    }
+
+    .closed {
+      position: fixed;
+      left: 2vw;
+      bottom: 2vh;
+      overflow: hidden;
+      /* transition: height 0.5s; */
+      height: 7vh;
+      width: auto;
+      background-color: none;
+    }
+ 
+  
 
 }
 
