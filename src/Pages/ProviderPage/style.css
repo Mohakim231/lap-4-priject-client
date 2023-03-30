@@ -3,6 +3,11 @@
   display: flex;
   flex-direction: row;
 }
+.sp-user-view{
+  display: flex;
+  flex-direction: row;
+  margin-top:80px;
+}
 
 .user-view .prov-card {
   margin-left: -40vw;

@@ -34,24 +34,24 @@
 .s-filters, .a-filters {
     display: flex;
     flex-direction: column;
-    width: 15vw;
+    width: 20vw;
 }
 
 .s-filters label,
 .a-filters label {
-    padding-left: 2vw;
-    padding-right: 20px;
+    padding-left: 1vw;
+    padding-right: 10px;
     color: white;
     padding-top: 1.5vh;
    
     text-align: left;
-    width: 90%;
+    width: 95%;
 }
 
 .s-filters, .a-filters {
     background-color: #699759;
     border-radius: 20px;
-    padding: 2vh 5vh;
+    padding: 2vh 1vh;
     /* /* padding-top: 2vh; */ 
     /* margin: 2vw; */
     color: white;
@@ -60,7 +60,7 @@
 .s-filters input, .a-filters input{
     float: right; 
     width: 20px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 

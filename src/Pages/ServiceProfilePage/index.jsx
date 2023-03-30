@@ -136,8 +136,17 @@ const handleUpload=()=>{
                     </p>
                 </div>
             </div>
-        </div>
         
+        
+        
+        <button onClick={handleCalendar} className='avail-btn'>Select availability</button>   
+        
+   
+        <br></br>
+    </div>
+    <div className='calendar'>
+      {calendar? <Calendar userId = {userId}/>:''}  
+    </div>
     </>)
     
         
