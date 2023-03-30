@@ -21,7 +21,8 @@ const ProviderCard = ({ id,icon,  name,address, city,postcode, phone, dog, cat, 
         <div className='details1'>
             
             <h3 className='service-name'><Link to={`/services/${id}`} style={linkStyle}>{name}</Link></h3>
-            <h4>{address + city + postcode}</h4>
+            <h4>{address}</h4>
+            <h4>{city + ', '+postcode}</h4>
             <h5>Contact us: {phone}</h5>
             
         </div>
