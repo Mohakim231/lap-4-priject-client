@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './style.css'
 
-import { Calendar, ImageUpload } from '../../Components';
+import { Calendar, ImageUpload, MessageIcon } from '../../Components';
 
 const ServiceProfilePage = () => {
 
@@ -41,8 +41,9 @@ console.log(userId)
 
     const handleDeleteButton = async () => {
         console.log("in")
+
         const options = {
-        method:"GET"
+        method:"DELETE"
         }
         const response = await fetch(`http://localhost:5000/services/providers/delete/${userId}`, options)
         console.log('response', response)
@@ -85,6 +86,7 @@ function showLogo(){
 const handleUpload=async()=>{
     setUpload(false)
     const picture = "https://i.ibb.co/Bwq8g9W/daycare2.webp"
+    // const picture="https://i.ibb.co/DW5D3SJ/walker2.webp"
     const options = {
         method:"POST",
         headers: {
@@ -100,9 +102,12 @@ const handleUpload=async()=>{
     const data = await response.json()
     console.log(data)
  }
+
+
  const handleLogoUpload = async()=>{
     setLogo(false)
     const logo = "https://i.ibb.co/0VtjcDk/sitter-icon1.webp"
+    // const logo= "https://i.ibb.co/d7syyYr/walker-icon2-2.jpg"
     const options = {
         method:"POST",
         headers: {
@@ -189,6 +194,7 @@ const handleUpload=async()=>{
     <div className='calendar'>
       {calendar? <Calendar userId = {userId}/>:''}  
     </div>
+    <MessageIcon/>
     </>)
     
         
