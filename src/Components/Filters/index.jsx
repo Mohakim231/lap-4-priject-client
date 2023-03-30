@@ -3,20 +3,21 @@ import './style.css'
 
 const Filters = ({dogs,setDogs,cats, setCats,rabbits, setRabbits,birds, setBirds, reptiles, setReptiles,daycares, setDaycares,hotels, setHotels,petsitters, setPetsitters,dogwalkers, setDogwalkers,groomers, setGroomers,vets, setVets, trainers, setTrainers}) => {
     
-    const [servicesClicked, setServicesClicked] = useState(false)
-    const [animalsClicked, setAnimalsClicked] = useState()
+    const [servicesClicked, setServicesClicked] = useState(true)
+    const [animalsClicked, setAnimalsClicked] = useState(true)
 
-    function showServicesFilters() {
-        setServicesClicked(!servicesClicked)
-    }
+    // function showServicesFilters() {
+    //     setServicesClicked(!servicesClicked)
+    // }
 
-    function showAnimalsFilters() {
-        setAnimalsClicked(!animalsClicked)
-    }
+    // function showAnimalsFilters() {
+    //     setAnimalsClicked(!animalsClicked)
+    // }
     
     return <div className="filters">
-        <div className='serv-filters'>
-            <h2 className="services-title" onClick={showServicesFilters}>Services</h2>
+        <div className='services-filters'>
+            <h2 className="services-title" >Services </h2>
+            
             {
                 servicesClicked ? 
                 <div className="s-filters">
@@ -59,11 +60,11 @@ const Filters = ({dogs,setDogs,cats, setCats,rabbits, setRabbits,birds, setBirds
         </div>
     
     
-    <div className='ani-filters'>
-        <h2 className="animals-title" onClick={showAnimalsFilters}>Animals</h2>
+    <div className='services-filters'>
+        <h2 className="animals-title" >Animals</h2>
         {
             animalsClicked ?
-            <div className="a-filters">
+            <div className="s-filters">
                 <label>Dogs<input type="checkbox"
                 checked={dogs}
                 onChange={()=> setDogs(!dogs)}></input></label>

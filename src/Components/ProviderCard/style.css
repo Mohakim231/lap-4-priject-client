@@ -6,7 +6,24 @@
 .prov-card {
     /* padding: 2vh 0vw; */
     background-color:white;
-    
+}
+
+.prov-card.s-p-card {
+    width: 30vw;
+    height: 15vh;
+    border-radius:0;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+}
+
+.s-p-card h3 {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.contact-details {
+    background-color: #68975952;
 }
 
 .service-name {

@@ -1,19 +1,29 @@
 .add-photo-btn{
     margin: 0 0 10px;
 }
+.service-profile-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .provider-profile {
     display: flex;
    
     align-items: center;
     justify-content: center;
     /* background-image: url("../../../background.png"); */
-    padding-bottom: 50vh;
+    padding-bottom: 40vh;
     
 
 }
 
 .company-name {
     color: black;
+    padding-bottom: 2vh;
+    font-size: 3vh;
 }
 
 .details-and-filters {
@@ -58,7 +68,7 @@
     display: flex;
     flex-direction: column;
     width: 50vw;
-    min-height: 80vh;
+    min-height: 75vh;
     /* justify-content: center; */
     margin-top: 5vh;
     /* justify-content: center; */
@@ -111,6 +121,8 @@
 }
 .calendar {
     padding-left: 4vw;
+    padding-top: 5vh;
+   
 }
 .upload-btn{
     margin: 0 0 10px;
@@ -119,11 +131,23 @@
     width: 30px !important;
 }
 @media screen and (max-width: 800px) {
+    .service-profile-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .profile-card {
+        height: 70vh;
+    }
+
     .details-and-filters {
         display: flex;
         flex-direction: column;
         background-color: white;
-        margin-top: 30vh;
+        margin-top: 9vh;
         border-radius: 20px;
     }
 
@@ -135,4 +159,18 @@
         text-align: center;
         max-width: 90vw;
       }
+
+      #delete-account {
+        display: flex;
+        flex-direction: row;
+        /* align-items: right; */
+        justify-content: flex-end;
+        width: 90vw;
+        margin-top: 1rem;
+        
+    }
+    .avail-btn {
+        margin-bottom: 5vh;
+        margin-top: 0vh;
+    }
 }

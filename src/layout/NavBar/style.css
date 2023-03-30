@@ -79,29 +79,65 @@
     border-color: black;
   }
 
-  .message-container-navbar {
+  .messages {
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    margin-right: 10px;
-    bottom: 0;
-    right: 0;
+    left: 0vw;
+    bottom: 2vh;
     overflow: hidden;
     transition: height 0.5s;
     background-color: white;
+    height: 40vh;
+    width: 20vw;
   }
-  
-  .message-container-navbar.open {
-    height: 100px;
-    bottom: -39%;
+  .closed {
+    position: fixed;
+    left: 2vw;
+    bottom: 2vh;
+    overflow: hidden;
+    /* transition: height 0.5s; */
+    height: 10vh;
+    width: auto;
+    background-color: none;
   }
-  
-  .message-container-navbar.closed {
-    height: 600px;
+
+  .no-image {
+    display: none;
   }
-  
-  .message-button-navbar {
-    width: 100%;
-    height: 40px;
+
+  .yes-image {
+    display: block;
   }
+
+  .close-button {
+    min-width: 2vw;
+    padding: 0rem;
+    margin-top: 1vh;
+    margin-right: 1vh;
+    
+  }
+  .close-button-div {
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-end; */
+    justify-content: flex-end;
+    padding-bottom: 1vh;
+    /* margin-top: -3vh; */
+  }
+
+  .close-button-div h2 {
+    padding-top: 2vh;
+  }
+
+  .message {
+    padding-bottom: 5vh;
+  }
+
+  .messages-holder {
+    padding-left: 1vw;
+  }
+
 
   @media screen and (max-width: 800px) {
     .mobile-display{
@@ -181,6 +217,24 @@
     .desktop {
       display: none;
     }
+
+    .messages {
+      height: 35vh;
+      width: 50vw;
+    }
+
+    .closed {
+      position: fixed;
+      left: 2vw;
+      bottom: 2vh;
+      overflow: hidden;
+      /* transition: height 0.5s; */
+      height: 7vh;
+      width: auto;
+      background-color: none;
+    }
+ 
+  
 
 }
 
