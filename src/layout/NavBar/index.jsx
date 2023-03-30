@@ -3,10 +3,11 @@ import { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Conversation from "../../Components/Conversation";
 import { useAuth } from "../../context";
+import Cookies from 'js-cookie';
 import "./style.css";
 
 function NavBar() {
-  const { username } = useAuth();
+  const { username, logout } = useAuth();
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -28,6 +29,14 @@ function NavBar() {
   //   // getConversationsByUser(user.id);
   //   getConversationsByUser(user_id);
   // }, []);
+
+  const handleLogout = () => {
+    // Remove the cookie with the authentication token
+    Cookies.remove('authToken');
+
+    // Call the logout function to clear the user state
+    logout();
+  };
 
   const activeStyle = {
     // textDecoration: "underline",
@@ -85,6 +94,9 @@ function NavBar() {
               >
                 My Pet Profile
               </NavLink>
+            </li>
+            <li className="navbar-list-item" onClick={handleLogout}> 
+              Logout
             </li>
             {/* <li className="navbar-list-item">
               <NavLink

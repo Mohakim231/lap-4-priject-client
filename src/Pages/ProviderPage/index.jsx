@@ -45,10 +45,12 @@ const ProviderPage = () => {
                         <Link to="/services/filter/all"> <button>Back</button> </Link>
             </div>
             <div className='prov-card profile-card' id='user-view'>
-                    {/* <div id='back-btn'>
-                        <Link to="/services/filter/all"> <button>Back</button> </Link>
-                    </div> */}
-                    
+                   <div className='picture-holder'>
+                   <div className='picture'>
+                    <img src={provider.picture? provider.picture:"../../animals.webp"} alt="walker-icon2" border="0"/>
+                   </div>
+                   </div>
+                   {/* <img clasName='icon' src={icon? icon:"../../petpal-logo.jpg"} alt="walker-icon2" border="0"/> */}
                     <div className='details-and-filters'>
                         <div className='provider-info profile-page-details-holder'>
                                 <h3 className='company-name'>{provider.name}</h3>

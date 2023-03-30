@@ -24,6 +24,7 @@
     "cloudinary-react": "^1.8.1",
     "fullcalendar": "^6.1.5",
     "geolib": "^3.3.3",
+    "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-geocode": "^0.2.3",

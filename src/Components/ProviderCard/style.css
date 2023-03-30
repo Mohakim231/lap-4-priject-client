@@ -4,19 +4,18 @@
 }
 
 .prov-card {
-    display: flex;
-    flex-direction: row;
-    padding: 4vh 2vw;
+    /* padding: 2vh 0vw; */
+    /* height: 30vh; */
     background-color:white;
 }
 
-.prov-card.s-p-card {
+.prov-card{
     width: 30vw;
     height: 15vh;
     border-radius:0;
     flex-wrap: wrap;
     padding-top: 1rem;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
 }
 
 .s-p-card h3 {
@@ -30,9 +29,10 @@
 
 .service-name {
     padding: 1vh 0vw;
+    font-size: 2.5rem;
 }
 
-.prov-card h5 {
+.prov-card:hover h5 {
     padding: 1vh;
 }
 
@@ -41,12 +41,34 @@
     display: flex;
     flex-direction: row;
 }
-
+.provider-icon{
+    width: 60%;
+    min-height: 15vh;
+    position: absolute;
+    top: -90px;
+    background-color: white;
+    border-radius: 20px;
+    /* box-shadow: 0 15px 50px rgba(0,0,0,0.35); */
+    overflow: hidden;
+    align-content: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    transition: 0.5s;
+    justify-content: center;
+}
+.prov-card:hover .provider-icon{
+    width: 80%;
+    min-height: 200px;
+}
 .details1, .details2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 1vh;
 }
 
 @media screen and (max-width: 800px) {
@@ -55,4 +77,29 @@
       display: flex;
       flex-direction: row;
     }
+}
+
+
+.provider-icon img{
+    width: 95%;
+}
+
+.details1{
+    transform: translateY(60px);
+   position: absolute;
+   bottom: 105px;
+transition: 0.5s;
+}
+.prov-card:hover .details1{
+    transform: translateY(-25px);
+}
+.prov-card:hover .details2{
+    display: flex;
+}
+.details2{
+    background-color: white;
+    z-index: 1;
+   position:absolute;
+    margin-bottom: 5px;
+    border-radius: 0 0 45% 45%;
 }

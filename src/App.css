@@ -36,6 +36,6 @@ h2 {
     cursor: pointer;
     border-radius: 25px;
     border: none;
-    min-width: 10vw;
+    /* min-width: 10vw; */
     /* background: #64d488; */
   }
