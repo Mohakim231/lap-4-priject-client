@@ -38,15 +38,10 @@ const[filteredSevices, setFilteredServices] = useState(null)
             googleMapsApiKey = "AIzaSyAf81ZWQurI47K6AtmX9YF8u0YVHX5rQq8"
           >
             <GoogleMap
-            
               mapContainerStyle={mapContainerStyle}
               center={center}
               zoom={zoom}
-              
-              
-              
-            //   onZoomChanged={handleZoomChanged}
-            >
+              >
               { 
               serviceProviders
               .filter(s=> !daycares || s.daily_care)
@@ -173,7 +168,7 @@ export default Services
 // "servicePassword": "123"
 
     // "sp_id":1,
-    // "name": "ARK",
+    // "name": "CYpress",
     // "address":"127, Albany Road",
     // "city": "Hornchurch",
     // "post_code": "RM12 4AQ",
@@ -228,7 +223,7 @@ export default Services
 //     "serviceEmail": "bb@gmail.com",
 // "servicePassword": "123",
   //       "sp_id":3,
-  //   "name": "Bone and Bisquit",
+  //   "name": "Top Dog",
   //   "address": "300 Hornchurch Road",
   //   "city": "Hornchurch",
   //   "post_code": "RM11 1PY",
@@ -282,7 +277,7 @@ export default Services
 //     "serviceEmail":"remy@gmail.com",
 //   "servicePassword": "123",
   //       "sp_id":5,
-  //   "name": "Remy",
+  //   "name": "Hound Crew",
   //   "address":"89 Coronation Drive",
   //   "city": "Hornchurch",
   //   "post_code": "RM12 5BT",
@@ -309,7 +304,7 @@ export default Services
 //     "serviceEmail":"vfp@gmail.com",
 //   "servicePassword": "123",
     //     "sp_id":6,
-    // "name": "Vets for pets",
+    // "name": "Stay N Play",
     // "address":"130 Hornchurch Road",
     // "city": "Hornchurch",
     // "post_code": "RM11 1DP",

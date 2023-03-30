@@ -29,7 +29,7 @@
 
 .service-name {
     padding: 1vh 0vw;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .prov-card:hover h5 {
@@ -43,7 +43,7 @@
 }
 .provider-icon{
     width: 60%;
-    min-height: 15vh;
+    min-height: 18vh;
     position: absolute;
     top: -90px;
     background-color: white;
