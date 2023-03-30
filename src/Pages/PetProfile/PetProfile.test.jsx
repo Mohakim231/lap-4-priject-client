@@ -1,17 +1,22 @@
 import React from 'react'; 
-import { describe, it, expect, beforeEach } from 'vitest'; 
+import { describe, it, expect, beforeEach, mock } from 'vitest'; 
 import { screen, render } from '@testing-library/react'; 
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
 import PetProfile from '.';
+import { AuthProvider } from '../../context';
 
 describe("PetProfile", () => {
     it("exists", () => {
       expect(PetProfile).toBeDefined();
     });
     it("renders", () => {
-      render(<PetProfile />);
-      expect(1 == 1).toBe(true);
+      render(
+        <AuthProvider>
+          <PetProfile />
+        </AuthProvider>
+      );
+      expect(1 == 1).toBeTruthy();
     });
 
   });

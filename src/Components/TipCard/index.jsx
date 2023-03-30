@@ -3,7 +3,7 @@ import './style.css'
 
 function TipCard() {
   return (
-    <div className='tip-card-holder'>
+    <div className='tip-card-holder' aria-label="area of page with cards that have pet tips">
         <div className='tip-card'>
             <div className='tip-info'>
                 <h2>House training<img src="../../../dog-icon.png" alt="dog" className='icons'/></h2>

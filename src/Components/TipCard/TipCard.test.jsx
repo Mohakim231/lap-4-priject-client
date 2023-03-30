@@ -12,6 +12,6 @@ describe("Tipcard", () => {
 
     it("renders", () => {
         render(<TipCard />);
-        expect(screen.getAllByRole('button')).toBeDefined();
+        expect(screen.getByLabelText("area of page with cards that have pet tips")).toBeInTheDocument();
     })
 })

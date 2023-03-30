@@ -1,65 +1,73 @@
 import React from 'react'; 
 
 import { describe, it, beforeEach, afterEach, expect } from 'vitest'; 
-import { screen, render, fireEvent } from '@testing-library/react'; 
+import { screen, render, fireEvent, cleanup } from '@testing-library/react'; 
+import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers'; 
 expect.extend(matchers); 
 import PetProfileForm from '.';
+import { AuthProvider } from '../../context';
 
+const mockFile = (name, size, type) => {
+  const file = new File([], name, { type });
+  Object.defineProperty(file, 'size', { get: () => size });
+  return file;
+};
+
+const uploadFile = (input, file) => {
+  const dataTransfer = new DataTransfer();
+  dataTransfer.items.add(file);
+  fireEvent.change(input, {target: {files: dataTransfer.files}});
+};
 
 describe("PetProfileForm", () => {
-
+    
     it("exists", () => {
       expect(PetProfileForm).toBeDefined();
     });
-    it("renders", () => {
-      render(PetProfileForm);
-      expect(1 == 1).toBe(true);
+    it("renders the form", async () => {
+      render(
+        <AuthProvider>
+          <PetProfileForm/>
+        </AuthProvider>
+      );
+      //test elements are rendered
+      expect(screen.getByText('Pet Profile')).toBeInTheDocument();
+      expect(screen.getByLabelText('Pet Name')).toBeInTheDocument();
+      expect(screen.getByLabelText('Pet Age')).toBeInTheDocument();
+      expect(screen.getByLabelText('Pet Species')).toBeInTheDocument();
+      expect(screen.getByLabelText('Special Instructions')).toBeInTheDocument();
+      expect(screen.getByText('Submit')).toBeInTheDocument();
+
+      await userEvent.type(screen.getByLabelText('Pet Name'), 'Test');
+      await userEvent.type(screen.getByLabelText('Pet Age'), '3');
+      await userEvent.type(screen.getByLabelText('Pet Species'), 'Test');
+      await userEvent.type(screen.getByLabelText('Special Instructions'), 'Test');
+      
+      expect(screen.getByLabelText('Pet Name')).toHaveValue('Test')
+      expect(screen.getByLabelText('Pet Age')).toHaveValue('3')
+      expect(screen.getByLabelText('Pet Species')).toHaveValue('Test')
+      expect(screen.getByLabelText('Special Instructions')).toHaveValue('Test')
     });
 
+    // it("handles file upload", () => {
+    //   render(
+    //     <AuthProvider>
+    //       <PetProfileForm/>
+    //     </AuthProvider>
+    //   );
+      
+    //   const fileInput = screen.getByLabelText('Upload Pet Profile Image');
+    //   const testFile = mockFile('test-image.jpg', 5000, 'image/jpeg');
+    //   uploadFile(fileInput, testFile)
+    
+    
+    
+
+    afterEach(() => {
+      cleanup();
+    });
+    
   });
 
 
-//extra tests
-//mocking the fetch function:
-global.fetch = jest.fn(() => {
-  Promise.resolve({
-    json: () => Promise.resolve({ message: 'Image uploaded successfully'})
-  })
-})
-
-beforeEach(() => {
-  fetch.mockClear();
-});
-
-it('renders component and uploads', async ({expect}) => {
-  const { getByText, getByLabelText, getByAltText } = render(petProfileForm);
-
-  expect(getByText('Upload an image')).toBeInTheDocument();
-
-  const file = new File(['test-image'], 'test-image.png', {
-    type: 'image/png'
-  });
-
-  const fileInput = getByLabelText('image');
-  fireEvent.change(fileInput, { target:{files: [file]}});
-
-  const preview = getByAltText('chosen');
-  expect(preview).toBeInTheDocument();
-
-  const submitButton = getByText('Submit');
-  fireEvent.click(submitButton);
-  await waitFor(() => getByText('Image uploaded successfully'));
-
-  expect(fetch).toHaveBeenCalledWith('http://localhost:5000/pets/upload', {
-    method: 'POST',
-    body: JSON.stringify({ data: expect.any(String) }),
-    headers: {
-      'Content-type': 'application/json',
-    },
-  });
-
-  afterEach(() => {
-    cleanup();
-  })
-});

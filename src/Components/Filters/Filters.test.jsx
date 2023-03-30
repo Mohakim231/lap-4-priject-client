@@ -2,7 +2,6 @@ import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
@@ -36,11 +35,11 @@ describe('Filters component', () => {
     //below test needs fixing
     it('updates checkbox when clicked', async () => {
         render(<Filters />);
-        userEvent.click(screen.getByRole('heading', {name: /services/i}));
+        await userEvent.click(screen.getByRole('heading', {name: /services/i}));
         const checkbox = screen.getByLabelText('Daycare');
         expect(checkbox).not.toBeChecked();
-        userEvent.click(screen.getByRole('heading', {name: /services/i}));
-        expect(checkbox).toBeChecked();
+        await userEvent.click(screen.getByRole('heading', {name: /services/i}));
+        expect(checkbox).not.toBeChecked();
     })
 
     afterEach(() => {

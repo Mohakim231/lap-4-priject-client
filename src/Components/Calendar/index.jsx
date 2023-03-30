@@ -79,6 +79,7 @@ console.log(userId)
 
   return (
     <FullCalendar
+      data-testid="calendar"
       plugins={[dayGridPlugin, interactionPlugin]}
       initialView="dayGridMonth"
       selectable={true}
