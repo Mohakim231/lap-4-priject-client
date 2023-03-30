@@ -1,12 +1,15 @@
 .messages-box-navbar{
     background-color: white;
     position: absolute;
-    top: 68px;
-    height: 89%;
-    width: 100%;
+    /* bottom: 0px; */
+    /* top: 0;
+    height: 100%;
+    width: 100%; */
+    bottom: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: 1000;
 }
 .send-message-form{
     position: absolute;
@@ -26,7 +29,7 @@
     padding-right: 0;
 }
 .message-box{
-    background-color: #0084FF;
+    background-color: #699759;
     border-radius: 15px;
     width: 90%;
     max-width: 250px;
