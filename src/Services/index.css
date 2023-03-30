@@ -12,6 +12,11 @@ text-align: left;
     padding-top: 3vh;
 }
 
+.filter-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .provider-main h2 {
     text-align: left;
     padding-top: 2vh;
@@ -33,12 +38,31 @@ text-align: left;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
+    position: relative;
+    height: 200px;
+    margin-top: 100px;
+    transition: 0.5s;
+    justify-content: flex-end;
+    /* overflow: hidden; */
+}
+.prov-card:hover{
+    height: 360px;
+}
+.filtering-part{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .details-holder{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     max-width: 100%;
+}
+
+.details2 .details-holder{
+    padding: 0;
 }
 .map{
     height:400px;

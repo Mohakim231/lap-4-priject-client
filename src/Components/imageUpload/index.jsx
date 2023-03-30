@@ -50,8 +50,8 @@ const ImageUpload = ({handleUpload}) => {
 
   return (
     <div>
-        <button><label htmlFor="fileInput">
-          Choose file
+        <button className='upload-btn'><label className='upload-lbl' htmlFor="fileInput">
+        Choose file
           <input
             id="fileInput"
             type="file"
@@ -61,7 +61,7 @@ const ImageUpload = ({handleUpload}) => {
             className="form-input"
           />
         </label></button>
-<button onClick={()=>handleUpload()}>Upload</button>
+<button className='upload-btn' onClick={()=>handleUpload()}>Upload</button>
     </div>
   )
 }

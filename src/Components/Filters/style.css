@@ -1,9 +1,12 @@
 .filters {
     display: flex;
     flex-direction: row;
-    align-self: left;
+    max-width: 600px;
+    justify-content: space-around;
 }
-
+.serv-filter .ani-filters{
+    margin: 0 10px;
+}
 .services-title, .animals-title {
     /* background-color: #699759; */
     border-radius: 20px;
@@ -27,22 +30,26 @@
 
 .s-filters label,
 .a-filters label {
-    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-right: 20px;
     color: white;
     padding-top: 1vh;
-    min-width: 200px;
+   
     text-align: left;
+    width: 90%;
 }
 
 .s-filters, .a-filters {
     background-color: #699759;
     border-radius: 20px;
-    padding: 5vh;
-    padding-top: 2vh;
+    padding: 20px 0;
+    /* padding-top: 2vh; */
     /* margin: 2vw; */
     color: white;
-    text-align: center;
+    /* text-align: center; */
 }
-.s-filters input{
+.s-filters input, .a-filters input{
     float: right; 
+    width: 20px;
+    margin-right: 10px;
 }

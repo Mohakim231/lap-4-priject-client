@@ -10,7 +10,7 @@ const ServiceProfilePage = () => {
     const [provider, setProvider] = useState({});
     const {userId} = useParams()
     const navigate = useNavigate()
-    const[calendar, setCalendar] = useState(false)
+    const[calendar, setCalendar] = useState()
 const[upload, setUpload]= useState(false)
 
     useEffect(() => {
@@ -81,10 +81,16 @@ const handleUpload=()=>{
 
     function displayProvider() {
         return (<>
-        <div className='prov-card profile-card'>
-            <div id='delete-account'>
+        <div className='profile-card'>
+        <div className='picture-holder'>
+        <div id='delete-account'>
                 <button onClick={handleDeleteButton} >Delete account</button>
             </div>
+                   <div className='picture'>
+                    <img src={provider.picture? provider.picture:"../../animals.webp"} alt="walker-icon2" border="0"/>
+                   </div>
+                   </div>
+           
         
             <div className='details-and-filters'>
                 {/* <h2>Your Company:</h2>     */}
@@ -110,9 +116,9 @@ const handleUpload=()=>{
                         { provider.trainer ? <img src="../../dog_trainer.png" alt="training" className='icons'/> : ""}
 
         </p>
-        <button onClick={showUpload}>Add photo</button>
+        <button className='add-photo-btn' onClick={showUpload}>Add photo</button>
         {upload? <ImageUpload handleUpload={handleUpload}/> : ''}
-<button onClick={handleDeleteButton}>Delete account</button>
+
  
                         {/* <button onClick={() => vote(id, 1)}>+</button>
                         <button onClick={() => vote(id, -1)}>-</button> */}
