@@ -33,6 +33,7 @@ const Register = () => {
         userName,
         password,
       });
+      window.location.href = "/login";
     } catch (error) {
       if (error.response.status == 401) {
         alert("Invalid credintals");

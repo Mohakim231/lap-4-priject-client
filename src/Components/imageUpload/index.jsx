@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-const ImageUpload = ({handleUpload}) => {
+const ImageUpload = ({handleUpload, setIsIcon, setIsPicture, handleLogoUpload, upload, logo}) => {
 
     const [fileInputState, setFileInputState] = useState("");
     const [previewSource, setPreviewSource] = useState("");
 
     const handleFileInputChange = (e) => {
+setIsPicture(true)
         const file = e.target.files[0];
         previewFile(file);
-        setSelectedFile(file);
-        setFileInputState(e.target.value);
+        // setSelectedFile(file);
+        // setFileInputState(e.target.value);
 
       };
     
@@ -22,6 +23,14 @@ const ImageUpload = ({handleUpload}) => {
       };
     
      
+    const handleLogoInputChange = (e) => {
+      setIsIcon(true)
+              const file = e.target.files[0];
+              previewFile(file);
+              // setSelectedFile(file);
+              // setFileInputState(e.target.value);
+      
+            };
     
     //   const uploadImage = async (base64EncodedImage) => {
     //     try {
@@ -50,8 +59,9 @@ const ImageUpload = ({handleUpload}) => {
 
   return (
     <div>
-        <button className='upload-btn'><label className='upload-lbl' htmlFor="fileInput">
-        Choose file
+      {upload? <div>
+      <button className='upload-btn'><label className='upload-lbl' htmlFor="fileInput">
+        Choose photo
           <input
             id="fileInput"
             type="file"
@@ -61,7 +71,22 @@ const ImageUpload = ({handleUpload}) => {
             className="form-input"
           />
         </label></button>
-<button className='upload-btn' onClick={()=>handleUpload()}>Upload</button>
+<button className='upload-btn' onClick={()=>handleUpload()}>Upload</button></div> 
+:logo? <div><button className='upload-btn'><label className='upload-lbl' htmlFor="fileInput">
+Choose logo
+  <input
+    id="fileInput"
+    type="file"
+    name="image"
+    onChange={handleLogoInputChange}
+    value={fileInputState}
+    className="form-input"
+  />
+</label></button>
+<button className='upload-btn' onClick={()=>handleLogoUpload()}>Upload</button> 
+</div>
+:'' }
+        
     </div>
   )
 }
