@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
-import './style.css'
+import "./style.css";
 
 const Home = () => {
   const { username } = useAuth();
@@ -9,75 +9,88 @@ const Home = () => {
   return (
     <div className="home-page">
       <div className="backg-dog">
-        <div className='welcome-and-image'>
+        <div className="welcome-and-image">
           {/* <h1 className='welcome'>Welcome</h1>  */}
-          <h1 className="pet-pal">Pet <img src="../../../paw.png" alt="paw" className='welcome-image'/> Pal</h1>
+          <h1 className="pet-pal">
+            Pet{" "}
+            <img src="../../../paw.png" alt="paw" className="welcome-image" />{" "}
+            Pal
+          </h1>
         </div>
-        <div className='line'></div>
-        <em >All your pet needs in one convenient place</em>
-        
-      {
-        !username ? 
-        
-        <div className="buttons-home">
-          <button className="signup-home"><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/login">Login</Link></button>
-          <button className="signup-home"><Link style={{ color: '#1746a2', textDecoration: "none"}} to="/signup">Signup</Link></button>
-        </div> : <h2 className='welcome'>Welcome {username}</h2>
-      }
-        
+        <div className="line"></div>
+        <em>All your pet needs in one convenient place</em>
+
+        {!username ? (
+          <div className="buttons-home">
+            <Link
+              style={{ color: "#1746a2", textDecoration: "none" }}
+              to="/login"
+            >
+              <button className="signup-home">Login</button>
+            </Link>
+            <Link
+              style={{ color: "#1746a2", textDecoration: "none" }}
+              to="/signup"
+            >
+              <button className="signup-home">Signup</button>
+            </Link>
+          </div>
+        ) : (
+          <h2 className="welcome">Welcome {username}</h2>
+        )}
 
         <div className="paw-prints">
           <div className="paw-print-1">
             <img className="pad" src="../../../paw.png" alt="paw" />
           </div>
-              
+
           <div className="paw-print-2">
-              <img src="../../../paw.png" alt="paw" className="pad"/>
-          </div>    
-              
-          <div className="paw-print-3">
-          <img src="../../../paw.png" alt="paw" className="pad"/>
-          </div>    
-              
-          <div className="paw-print-4">
-          <img src="../../../paw.png" alt="paw" className="pad"/>
+            <img src="../../../paw.png" alt="paw" className="pad" />
           </div>
 
-          
-              
+          <div className="paw-print-3">
+            <img src="../../../paw.png" alt="paw" className="pad" />
+          </div>
+
+          <div className="paw-print-4">
+            <img src="../../../paw.png" alt="paw" className="pad" />
+          </div>
+
           <div className="paw-print-5">
-          <img src="../../../paw.png" alt="paw" className="pad"/>
+            <img src="../../../paw.png" alt="paw" className="pad" />
           </div>
-              
+
           <div className="paw-print-6">
-          <img src="../../../paw.png" alt="paw" className="pad"/>
+            <img src="../../../paw.png" alt="paw" className="pad" />
           </div>
-              
+
           <div className="paw-print-7">
-          <img src="../../../paw.png" alt="paw" className="pad"/>
+            <img src="../../../paw.png" alt="paw" className="pad" />
           </div>
 
           <div className="paw-print-8">
-          <img src="../../../paw.png" alt="paw" className="pad"/>
+            <img src="../../../paw.png" alt="paw" className="pad" />
           </div>
-        </div> 
+        </div>
 
-        {
-          !username ? 
-          
-          <div className='descriptions'>
-            <div className='owners'>
+        {!username ? (
+          <div className="descriptions">
+            <div className="owners">
               <h3>Owners</h3>
-              <p className='description'>Browse pet services by location, contact services and view top tips for caring for your pet </p>
+              <p className="description">
+                Browse pet services by location, contact services and view top
+                tips for caring for your pet{" "}
+              </p>
             </div>
-            <div className='providers'>
+            <div className="providers">
               <h3>Service Providers</h3>
-              <p className='description'>Connect with new potential customers and show your availability</p>
+              <p className="description">
+                Connect with new potential customers and show your availability
+              </p>
             </div>
-            
-          </div> : null
-        }
-        
+          </div>
+        ) : null}
+
         {/* <div className='message-button-div'><Link 
                 style={{ color: 'white', textDecoration: "none"}}
                 to="/services"
@@ -88,57 +101,74 @@ const Home = () => {
           
             
         </div> */}
-        
-        <div className='link-and-dog'>
-          
-              <button className='home-links'><Link 
-                style={{ color: '#1746a2', textDecoration: "none"}}
-                to="/services/filter/all"
-              >
-                Explore Services
-              </Link></button>
-              <button className='home-links'><Link 
-                style={{ color: '#1746a2', textDecoration: "none"}}
-                to="/pet-profile"
-              >
-                Create Pet Profile
-              </Link></button>
-              <img src="../../Subject.png" alt="dog" className='dog-pic'/>
+
+        <div className="link-and-dog">
+          <Link
+            style={{ color: "#1746a2", textDecoration: "none" }}
+            to="/services/filter/all"
+          >
+            <button className="home-links">Explore Services</button>
+          </Link>
+          <Link
+            style={{ color: "#1746a2", textDecoration: "none" }}
+            to="/pet-profile"
+          >
+            <button className="home-links">Create Pet Profile</button>
+          </Link>
+          <img src="../../Subject.png" alt="dog" className="dog-pic" />
         </div>
       </div>
 
-        <div className="services"><Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/1">
-          <div className='service'>
+      <div className="services">
+        <Link
+          style={{ color: "#070707", textDecoration: "none" }}
+          to="/services/filter/1"
+        >
+          <div className="service">
             Sitters
-            <img src={'../../dog_sitter3.png'} className='service-icon' />
+            <img src={"../../dog_sitter3.png"} className="service-icon" />
           </div>
-              </Link>
-              <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/2">
-          <div className='service'>
+        </Link>
+        <Link
+          style={{ color: "#070707", textDecoration: "none" }}
+          to="/services/filter/2"
+        >
+          <div className="service">
             Walkers
-            <img src={'../../dog_walker.png'} className='service-icon' />
-          </div></Link>
-          <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/4">
-          <div className='service'>
+            <img src={"../../dog_walker.png"} className="service-icon" />
+          </div>
+        </Link>
+        <Link
+          style={{ color: "#070707", textDecoration: "none" }}
+          to="/services/filter/4"
+        >
+          <div className="service">
             Vets
-            <img src={'../../vet.png'} className='service-icon' />
-          </div></Link>
-          <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/3">
-          <div className='service'>
+            <img src={"../../vet.png"} className="service-icon" />
+          </div>
+        </Link>
+        <Link
+          style={{ color: "#070707", textDecoration: "none" }}
+          to="/services/filter/3"
+        >
+          <div className="service">
             Groomers
-            <img src={'../../dog_groomer.png'} className='service-icon' />
-          </div></Link>
-          
-          <Link style={{ color: '#070707', textDecoration: "none"}} to="/services/filter/5">
-          <div className='service'>
-            Trainers
-            <img src={'../../dog_trainer.png'} className='service-icon' />
-          </div></Link>
-        </div>
-      
-      
-    </div>
-  )
-}
+            <img src={"../../dog_groomer.png"} className="service-icon" />
+          </div>
+        </Link>
 
-export default Home
+        <Link
+          style={{ color: "#070707", textDecoration: "none" }}
+          to="/services/filter/5"
+        >
+          <div className="service">
+            Trainers
+            <img src={"../../dog_trainer.png"} className="service-icon" />
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
