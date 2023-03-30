@@ -1,25 +1,79 @@
+.service-profile-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
 .provider-profile {
     display: flex;
+   
     align-items: center;
     justify-content: center;
     /* background-image: url("../../../background.png"); */
-    padding-bottom: 50vh;
+    padding-bottom: 40vh;
+    
 
 }
 
-.profile-card {
+.company-name {
+    color: black;
+    padding-bottom: 2vh;
+    font-size: 3vh;
+}
+
+.details-and-filters {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-top: 30vh;
+    border-radius: 20px;
+}
+
+.profile-page-details-holder {
+    background-color: #68975952;
+    border-radius: 0px;
+    justify-content: center;
+    margin: 1rem;
+    
+}
+
+#delete-account {
+    display: flex;
+    flex-direction: row;
+    /* align-items: right; */
+    justify-content: flex-end;
     width: 50vw;
-    height: 60vh;
+    margin-top: 2rem;
+    
+}
+
+#delete-account button {
+    font-size: 1.5vh;
+}
+
+.avail-btn {
+    margin-bottom: 5vh;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 75vh;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 5vh;
     justify-content: center;
+    background-image: url('../../../dog-bath.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .details-holder {
     /* list-style:none; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
@@ -27,5 +81,52 @@
 }
 
 .calendar {
-    padding-left: 2vw;
+    padding-left: 4vw;
+    padding-top: 5vh;
+   
+}
+
+@media screen and (max-width: 800px) {
+    .service-profile-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .profile-card {
+        height: 70vh;
+    }
+
+    .details-and-filters {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin-top: 9vh;
+        border-radius: 20px;
+    }
+
+    .user-view {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        max-width: 90vw;
+      }
+
+      #delete-account {
+        display: flex;
+        flex-direction: row;
+        /* align-items: right; */
+        justify-content: flex-end;
+        width: 90vw;
+        margin-top: 1rem;
+        
+    }
+    .avail-btn {
+        margin-bottom: 5vh;
+        margin-top: 0vh;
+    }
 }

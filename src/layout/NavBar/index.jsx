@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import Conversation from "../../Components/Conversation";
 import { useAuth } from "../../context";
 import "./style.css";
 
 function NavBar() {
+  const { username } = useAuth();
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,8 +21,17 @@ function NavBar() {
     setHamburgerClicked(false)
   }
 
+  function openMessages(){
+    setIsOpen(!isOpen)
+    console.log('open')
+  }
+  function closeMessages(){
+    setIsOpen(!isOpen)
+    console.log('close')
+  }
+
   const handleButtonClick = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
+    setIsOpen(!isOpen);
   };
 
   const { user_id } = useAuth()
@@ -54,32 +63,35 @@ function NavBar() {
             </NavLink>
           </div>
           {/* <h1 className="pet-pal">PetPal</h1> */}
-          <ul className="nav-links">
+          {
+            username ? <ul className="nav-links">
             <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/pet-profile"
               >
-                Pet Profile
+                My Pet Profile
               </NavLink>
             </li>
-            <li className="navbar-list-item">
+            {/* <li className="navbar-list-item">
               <NavLink
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/petinfo"
               >
                 Pet Tips
               </NavLink>
-            </li>
+            </li> */}
             <li className="navbar-list-item">
               <NavLink 
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/message"
               >
-                  Message
+                  Messages
               </NavLink>
             </li>
-          </ul>
+          </ul> : null
+          }
+          
         </div>
         <div className="mobile-display">
           <div className="nav-section">
@@ -96,57 +108,38 @@ function NavBar() {
           
         </div>
 
-            {/* <h2 className="pet-pal">PetPal</h2> */}
-            <div
+            {
+              username ? <div
               className={hamburgerClicked ? "clicked" : "container"}
               onClick={openMenu}
             >
               <div className="bar1"></div>
               <div className="bar2"></div>
               <div className="bar3"></div>
-            </div>
+            </div> : null
+            }
+            
+            
           </div>
 
           {hamburgerClicked ? <div className="menu-list">
             <ul className="nav-links-menu">
-              <li className='menu-list-item' onClick={closeMenu}>
-                <NavLink
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  to="/login"
-                >
-                  Login
-                </NavLink>
-              </li>
-              <li className='menu-list-item' onClick={closeMenu}>
-                <NavLink
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  to="/signup"
-                >
-                  Signup
-                </NavLink>
-              </li>
+              
               <li className='menu-list-item' onClick={closeMenu}>
                 <NavLink
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   to="/pet-profile"
                 >
-                  Pet Profile
+                  My Pet Profile
                 </NavLink>
               </li>
-              <li className='menu-list-item' onClick={closeMenu}>
-                <NavLink
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                  to="/petinfo"
-                >
-                  Pet Tips
-                </NavLink>
-              </li>
+             
               <li className='menu-list-item' onClick={closeMenu}>
               <NavLink 
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 to="/message"
               >
-                  Message
+                  Messages
               </NavLink>
             </li>
             </ul>
@@ -154,17 +147,38 @@ function NavBar() {
         </div>
       </nav>
       <Outlet />
+
+      <div className={isOpen ? "messages" : "closed"}>
+        <div className={isOpen ? "close-button-div" : "no-image"}>
+          <h2>Messages</h2>
+          <button onClick={closeMessages} className={isOpen ? "close-button" : "no-image"}>X</button>
+        </div>
+        <div className={isOpen ? "messages-holder" : "no-image"}>
+            <div className='message'>
+              <h4>Service provider</h4>
+            </div>
+            <div className='message'>
+              <h4>Service provider</h4>
+            </div>
+            <div className='message'>
+              <h4>Service provider</h4>
+            </div>
+        </div>
+            
+            <img src="../../../chat.png" alt="chat" onClick={openMessages} className={isOpen ? "no-image" : "yes-image"}/>
+      </div>
+
       {/* <div
-      className={`message-container-navbar ${isOpen ? 'closed' : 'open'}`}
-      style={{ width: '400px', height: '600px' }}
-      >
-      <div className="message-heading-navbar">
-        <p>Messages</p>
+      className={`message-container-navbar ${isOpen ? 'open' : 'closed'}`}
+      style={{ width: '200px', height: '50px' }}
+    >
+      <div>
         <button className="message-button-navbar" onClick={handleButtonClick}>
           {isOpen ? 'Hide' : 'Show'}
         </button>
       </div>
       <div>
+<<<<<<< HEAD
       <h2>Conversations</h2>
       {conversations.map((conversation) => (
         <div
@@ -184,6 +198,10 @@ function NavBar() {
         </div>
       )}
     </div>
+=======
+        
+      </div>
+>>>>>>> af66dc1bc61e032b66ab06a3e13c4edf6953809f
     </div> */}
     </>
   );
