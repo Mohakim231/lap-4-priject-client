@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: column;
     width: 20vw;
+    max-width: 300px;
 }
 
 .s-filters label,

@@ -97,11 +97,12 @@ const ProviderPage = () => {
                     <button onClick={handleSubmit}>Message</button>
                 <br></br>
             </div>
+            
+            {isCalendar? <div className='calendar'><CalendarUser userId={id}/></div>:''}
+            
             </div>
             
-            <div className='calendar'>
-            {isCalendar? <CalendarUser userId={id}/>:''}
-            </div>
+            
         </div>
         
     </>
