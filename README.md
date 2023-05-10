@@ -4,8 +4,8 @@ Pet Pal is an all-in-one application that connects pet owners with local pet ser
 # Installation
 To install Pet Pal, follow these steps:
 
-1. Clone the repository to your machine using `git clone https://github.com/yourusername/pet-pal.git`
-2. Install all dependencies by running npm install
+1. Clone the repository to your machine using `git clone https://github.com/yourusername/pet-pal.git`.
+2. Install all dependencies by running npm install.
 3. If some dependencies are outdated, run `npm install --force` to download and install the latest versions.
 # Usage
 To use Pet Pal, visit https://pet-pal.onrender.com/ and follow these steps:
