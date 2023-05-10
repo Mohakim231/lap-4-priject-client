@@ -10,7 +10,7 @@ To install Pet Pal, follow these steps:
 # Usage
 To use Pet Pal, visit https://pet-pal.onrender.com/ and follow these steps:
 
-1. Create an account with Pet Pal
-2. Create a profile for your pet
-3. Browse available services near your location using the map
-4. Connect with service providers in your area
+1. Create an account with Pet Pal.
+2. Create a profile for your pet.
+3. Browse available services near your location using the map.
+4. Connect with service providers in your area.
